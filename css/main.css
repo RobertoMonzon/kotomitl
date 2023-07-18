@@ -1,4 +1,4 @@
-* {
+body {
     background-color: antiquewhite;
 }
 
@@ -53,12 +53,10 @@
     }
 }
 
-.Barra {
+.custom-navbar {
     background-color: #CBA328;
-    height: 10px;
-    padding-bottom: 35px;
-    padding-top: 35px;
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .iconoSuperior {
@@ -67,4 +65,8 @@
 
 .nav-link {
     color: white;
+}
+
+h1{
+    padding: 1.5rem;
 }
