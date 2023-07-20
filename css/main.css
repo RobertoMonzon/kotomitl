@@ -1,3 +1,7 @@
+*{
+    font-family: 'georama', sans-serif
+}
+
 body {
     background-color: antiquewhite;
 }
@@ -68,5 +72,31 @@ body {
 }
 
 h1{
-    padding: 1.5rem;
+    padding: 1rem 0 .5rem 0;
+    font-family: 'Koulen', cursive;
+}
+
+
+
+.nombre__integrante{
+    text-align: center;
+    color: rgb(80, 80, 80);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.profesion__integrante{
+    text-align: center;
+    color: rgb(157, 140, 10);
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.card__team:hover{
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
