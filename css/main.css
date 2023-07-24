@@ -100,3 +100,24 @@ h1{
 .card__team:hover{
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
+
+.inf-contact{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.dir-contact,.tel-contact,.email-contact{
+    text-align: left;
+    font-size: 12px;
+    padding-left: 5%;
+}
+
+.maps{
+    align-items: center;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 15%;
+}
