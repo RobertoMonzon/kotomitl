@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama&family=Koulen&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -83,159 +86,180 @@
                 <h1>Sobre este proyecto</h1>
             </div>
             <!-- ============= Resumen del proyecto ================ -->
-            <div class="card">
+            <div class="card" style="margin-bottom: 1.5rem;">
                 <div class="card-body">
-                    El proyecto trata acerca de la elaboración de un e-commerce enfocado a la venta de prendas
-                    antesanales encocafa a hombres, mujeres y niños.
+                    <p>Este proyecto es un e-commerce enfocado a la venta de vestimenta para personas con gusto y
+                        apreciación de lo artesanal.</p>
+                    <p>Su desarrollo se dio durante el bootcamp de Generation Mexico para convertinos en Desarrolladores Java Full Stack Jr. En el proceso, cada uno de nosotros colaboramos estrechamente bajo el marco de trabajo SCRUM y para el desarrollo Frontend se utilizaron tecnologías web como HTML, CSS y Javascript, con apoyo de Bootstrap.</p>
+                    <p>A continuación, los integrantes del equipo desarrollador nos presentamos.</p>
+                    
                 </div>
             </div>
             <!-- ========== contenedor de biografías =========== -->
             <div class="container">
-
-                <!-- AlexisSanchez -->
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
-                    <div class="card card__team mb-3" style="max-width:calc(50% - 2rem); margin: 1.5rem 1rem 0 1rem">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/img/nosotros/AlexisSanchez.jpeg" style="width: 210px; height: 210px;"
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-6">
+                    <!-- 1 Alexis -->
+                    <div class="col" style="margin-bottom: 1rem;">
+                        <div class="card card__team">
+                            <div style="text-align: center;">
+                                <img src="src/img/nosotros/AlexisSanchez.jpeg"
+                                    style="width: 150px; height: 150px; margin-top: 1rem;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"
                                     class="img-fluid rounded" alt="...">
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Alexis Sánchez León</h5>
-                                    <p class="card-text">Desarrollador Java | Ing. Industrial</p>
-                                    <p class="card-text">Soy un desarrollador Java, enfocado en el frontend y en la
-                                        gestión de proyectos.
-                                    </p>
+                            <div class="card-body">
+                                <div class="nombre__integrante">
+                                    <span>Alexis Sánchez León</span>
                                 </div>
+                                <div class="profesion__integrante">
+                                    <span>Desarrollador Java | Ing. Industrial</span>
+                                </div>
+                                <p class="card-text" style="text-align: justify;">Soy un desarrollador Java, enfocado en
+                                    el frontend y en la gestión de proyectos con el marco de trabajo SCRUM para la
+                                    entrega de valor oportuna.</p>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- BryanMartinez -->
-                    <div class="card card__team mb-3" style="max-width: calc(50% - 2rem); margin: 1.5rem 1rem 0 1rem;">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Bryan Alexis Martínez Alvarado</h5>
-                                    <p class="card-text">Desarrollador Java | Ing. en Sistemas Computacionales.</p>
-                                    <p class="card-text">Apasionado por la tecnología y por el desarrollo de software.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="src/img/nosotros/BryanMartinez.jpeg" style="width: 210px; height: 210px;"
+                    <!-- 2 Bryan -->
+                    <div class="col" style="margin-bottom: 1rem;">
+                        <div class="card card__team">
+                            <div style="text-align: center;">
+                                <img src="src/img/nosotros/BryanMartinez.jpeg"
+                                    style="width: 150px; height: 150px; margin-top: 1rem;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"
                                     class="img-fluid rounded" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="nombre__integrante">
+                                    <span>Bryan Alexis Martínez Alvarado</span>
+                                </div>
+                                <div class="profesion__integrante">
+                                    <span>Desarrollador Java | Ing. en Sistemas Computacionales</span>
+                                </div>
+                                <p class="card-text" style="text-align: justify;">Apasionado por la tecnología y por el
+                                    desarrollo de software con base en metodologías ágiles, aportando lo mejor de mí en
+                                    cada proyecto.</p>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- JuanCarlosBernal -->
-                    <div class="card card__team mb-3" style="max-width:calc(50% - 2rem); margin: 1.5rem 1rem 0 1rem">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/img/nosotros/JuanCarlos.jpeg" style="width: 210px; height: 210px;"
+                    <!-- 3 Carlos -->
+                    <div class="col" style="margin-bottom: 1rem;">
+                        <div class="card card__team">
+                            <div style="text-align: center;">
+                                <img src="src/img/nosotros/JuanCarlos.jpeg"
+                                    style="width: 150px; height: 150px; margin-top: 1rem;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"
                                     class="img-fluid rounded" alt="...">
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Carlos Bernal</h5>
-                                    <p class="card-text">Desarrollador Java Fullstack</p>
-                                    <p class="card-text">Entusiasta por la tecnología y apasionado por la programación,
-                                        me gusta la
-                                        resolución de problemas y participar activamente del trabajo en equipo.</p>
+                            <div class="card-body">
+                                <div class="nombre__integrante">
+                                    <span>Carlos Bernal</span>
                                 </div>
+                                <div class="profesion__integrante">
+                                    <span>Desarrollador Java | Ing. en Sistemas Computacionales</span>
+                                </div>
+                                <p class="card-text" style="text-align: justify;">Entusiasta por la tecnología y
+                                    apasionado por la programación, me gusta la resolución de problemas y participar
+                                    activamente del trabajo en equipo.
+                                </p>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- IgnacioZepeda -->
-                    <div class="card card__team mb-3" style="max-width: calc(50% - 2rem); margin: 1.5rem 1rem 0 1rem;">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ignacio Zepeda</h5>
-                                    <p class="card-text">Full Stack Java Developer Jr | Data Analyst | Ing. Ambiental
-                                    </p>
-                                    <p class="card-text">Apasionado por la optimización y automatización de procesos con
-                                        ayuda de la tecnología en conjunto a herramientas de gestión de procesos</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="src/img/nosotros/CarlosZepeda.jpeg" style="width: 210px; height: 210px;"
+                    <!-- 4 Ignacio -->
+                    <div class="col" style="margin-bottom: 1rem;">
+                        <div class="card card__team">
+                            <div style="text-align: center;">
+                                <img src="src/img/nosotros/CarlosZepeda.jpeg"
+                                    style="width: 150px; height: 150px; margin-top: 1rem;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"
                                     class="img-fluid rounded" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="nombre__integrante">
+                                    <span>Ignacio Zepeda</span>
+                                </div>
+                                <div class="profesion__integrante">
+                                    <span>Desarrollador Java | Ing. Ambiental</span>
+                                </div>
+                                <p class="card-text" style="text-align: justify;">Busco optimizar y automatizar procesos
+                                    con ayuda de la tecnología en sinergia con el framework SCRUM para potenciar los
+                                    resultados.
+                                </p>
                             </div>
                         </div>
                     </div>
 
-
-                    <!-- LuisCruz -->
-                    <div class="card card__team mb-3" style="max-width:calc(50% - 2rem); margin: 1.5rem 1rem 0 1rem">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="src/img/nosotros/JuanAristeo.jpeg" style="width: 210px; height: 210px;"
+                    <!-- 5 Luis-->
+                    <div class="col" style="margin-bottom: 1rem;">
+                        <div class="card card__team">
+                            <div style="text-align: center;">
+                                <img src="src/img/nosotros/JuanAristeo.jpeg"
+                                    style="width: 150px; height: 150px; margin-top: 1rem;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"
                                     class="img-fluid rounded" alt="...">
                             </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Juan Luis Cruz Aristeo</h5>
-                                    <p class="card-text">Desarrollador Java | Ing. Mecatrónico.</p>
-
-                                    <p class="card-text">Un ingeniero apasionado por la tecnología enfocado en la
-                                        programación con
-                                        habilidades en dirección de proyectos.</p>
+                            <div class="card-body">
+                                <div class="nombre__integrante">
+                                    <span>J. Luis Cruz</span>
                                 </div>
+                                <div class="profesion__integrante">
+                                    <span>Desarrollador Java | Ing. en Mecatrónica</span>
+                                </div>
+                                <p class="card-text" style="text-align: justify;">
+                                    Un ingeniero apasionado por la tecnología enfocado en la programación con
+                                    habilidades en dirección de proyectos.
+                                </p>
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- RobertoRivas -->
-                    <div class="card card__team mb-3" style="max-width: calc(50% - 2rem); margin: 1.5rem 1rem 0 1rem;">
-                        <div class="row g-0">
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Roberto Alexis Rivas Monzón</h5>
-                                    <p class="card-text">Desarrollador Java | Ing. Biomédico.</p>
-
-                                    <p class="card-text">Un soñador bohemio e ingeniero enfocado al backend</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="src/img/nosotros/RobertoRivas.jpeg" style="width: 210px; height: 210px;"
+                    <!-- 6 Roberto Rivas -->
+                    <div class="col" style="margin-bottom: 1rem;">
+                        <div class="card card__team">
+                            <div style="text-align: center;">
+                                <img src="src/img/nosotros/RobertoRivas.jpeg"
+                                    style="width: 150px; height: 150px; margin-top: 1rem;box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);"
                                     class="img-fluid rounded" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="nombre__integrante">
+                                    <span>Roberto Rivas</span>
+                                </div>
+                                <div class="profesion__integrante">
+                                    <span>Desarrollador Java | Ing. Biomédico</span>
+                                </div>
+                                <p class="card-text" style="text-align: justify;">
+                                    Un soñador bohemio e ingeniero enfocado al backend. Con gusto por el aprendizaje de
+                                    idiomas y tecnologías.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
 
-    <!--FOOTER-->
-
-    <div class="footerFinal" id="footer">
-        <footer class="footerFinal col-md-5 offset-md-5">
-            <ul class="footerFinal col-md-4 justify-content-center list-unstyled d-flex">
-                <li class="footerFinal ms-3"><a class="footerFinal text-body" href="#"><img class="footerFinal"
-                            id="facebookLogo" src="src/img/facebookLogo.png" alt="faecbookLogo"></a>
-                <li class="footerFinal ms-3"><a class="footerFinal text-body" href="#"><img class="footerFinal"
-                            id="twitterLogo" src="src/img/twitterLogo.png" alt="twitterLogo"></a></li>
-                <li class="footerFinal ms-3"><a class="footerFinal text-body" href="#"><img class="footerFinal"
-                            id="instagramLogo" src="src/img/instagramLogo.png" alt="instagramlogo"></a></li>
-            </ul>
-        </footer>
-    </div>
-    <!--FOOTER-->
 
 
-    <!--Funcionalidad Menu de Hamburguesa-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+        <!--FOOTER-->
+
+        <div class="footerFinal" id="footer">
+            <footer class="footerFinal col-md-5 offset-md-5">
+                <ul class="footerFinal col-md-4 justify-content-center list-unstyled d-flex">
+                    <li class="footerFinal ms-3"><a class="footerFinal text-body" href="#"><img class="footerFinal"
+                                id="facebookLogo" src="src/img/facebookLogo.png" alt="faecbookLogo"></a>
+                    <li class="footerFinal ms-3"><a class="footerFinal text-body" href="#"><img class="footerFinal"
+                                id="twitterLogo" src="src/img/twitterLogo.png" alt="twitterLogo"></a></li>
+                    <li class="footerFinal ms-3"><a class="footerFinal text-body" href="#"><img class="footerFinal"
+                                id="instagramLogo" src="src/img/instagramLogo.png" alt="instagramlogo"></a></li>
+                </ul>
+            </footer>
+        </div>
+        <!--FOOTER-->
+
+
+        <!--Funcionalidad Menu de Hamburguesa-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
 </body>
 
 </html>
