@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarsExample05">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link" aria-current="page" href="">Inicio</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
@@ -46,7 +46,7 @@
                             <a class="nav-link" href="./nosotros.html">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
                     </ul>
                     <div class="iconoSuperior">
@@ -100,10 +100,55 @@
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8272010292694!2d-100.93749478506517!3d21.15927398592777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b3fa9def5bc27%3A0x5af5e12e7f481a3e!2sOaxaca%2026%2C%20Centro%2C%2037800%20Dolores%20Hidalgo%20Cuna%20de%20la%20Independencia%20Nacional%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1690227695897!5m2!1ses-419!2smx"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                   </div>
-                  <div class="col">
-                    Juan Carlos
-                    <!--Pega tu codigo aqui Juan-->
-                  </div>
+                  <div class="col colForm">
+                    
+                    <div class="alert alert-danger fade show" style="display:none;"
+                                                 role="alert" id="alertValidaciones">
+                        <p id="alertValidacionesTexto"></p>
+                    </div>
+    
+                        <form class="needs-validation">
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Juan Pérez" value="" required>
+                                <div class="invalid-feedback">
+                                    Nombre inválido
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telInput" class="form-label">Teléfono</label>
+                                <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" type="tel" class="form-control" id="telInput" placeholder="555 123 4567" value="" required minlength="10" maxlength="10" autocomplete="tel">
+                                <div class="invalid-feedback">
+                                    Telefono inválido
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="correo@example.com" value="" required>
+                                <div class="invalid-feedback">
+                                    Email inválido
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="asuntoInput" class="form-label">Asunto</label>
+                                <input type="text" class="form-control" id="asuntoInput" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Asunto inválido
+                                </div>
+                            </div>
+                                <div class="mb-3">
+                                <label for="msjArea" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="msjArea" rows="3" value="" required></textarea>
+                                <div class="invalid-feedback">
+                                    Mensaje inválido
+                                </div>
+                            </div>
+    
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <button class="btn btn-warning" type="button" id="btnEnviar" style="margin-bottom: 10rem;">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
               </div>
                <!--aqui termina la seccion-->

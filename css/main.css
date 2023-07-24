@@ -121,3 +121,15 @@ h1{
     padding-top: 5%;
     padding-bottom: 15%;
 }
+
+.btn{
+    background-color: #CBA328;
+}
+
+.colForm{
+    text-align: left;
+}
+
+.container{
+    margin-top: 2rem;
+}
