@@ -9,38 +9,25 @@ let alertValidaciones = document.getElementById("alertValidaciones");
 let isValid = true;
 
 function validarTelInput(){
-    if(telInput.value.length<10){
-        return false;
-    }
-
-    if(isNaN(telInput.value)){
-        return false;
-    }
-
-    if(parseFloat(telInput.value)<=0){
-        return false;
+    regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    let phone = telInput.value.trim()
+    if(!regexPhone.test(phone)){
+        return false
     }
     return true;
 }
 
 function validarNameInput(){
-    if(nameInput.value.length==0){
-        return false;
+    regexName = /^[a-zA-Z]{3,}$/;
+    let name = nameInput.value.trim()
+    if(!regexName.test(name)){
+        return false
     }
-
-    if(!isNaN(nameInput.value)){
-        return false;
-    }
-
     return true;
 }
 
 function validarAsuntoInput(){
     if(asuntoInput.value.length==0){
-        return false;
-    }
-
-    if(!isNaN(asuntoInput.value)){
         return false;
     }
 
@@ -52,9 +39,6 @@ function validarMsjArea(){
         return false;
     }
 
-    if(!isNaN(msjArea.value)){
-        return false;
-    }
     return true;
 }
 
@@ -64,7 +48,6 @@ function validaEmail(){
     if(!regexEmail.test(email)){
         return false
     }
-
     return true;
 }
 
@@ -94,7 +77,7 @@ btnEnviar.addEventListener("click", function(event){
     }
 
     if(!validarNameInput()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Nombre</strong> no es correcta.<br/>`);
+        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Nombre</strong> no es correcto.<br/>`);
         alertValidaciones.style.display="block"
         nameInput.style.border="solid 0.5px red";
         isValid = false;
@@ -131,12 +114,29 @@ btnEnviar.addEventListener("click", function(event){
 
     //Esto es para mandar el email, aun no esta listo OJO...
     if(isValid){
-        emailjs.sendForm('<service_vuqu1sh>','template_frgobld', '#myForm')
-	.then(function(response) {
-	   console.log('SUCCESS!', response.status, response.text);
-	}, function(err) {
-	   console.log('FAILED...', err);
-	});
+        console.log("aqui mero")
+        const btn = document.getElementById("btnEnviar");
+        console.log("aqui mero1")
+
+        document.getElementById("form")
+        .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        btn.value = "Sending...";
+
+        const serviceID = "default_service";
+        const templateID = "template_frgobld";
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                console.log("aqui mero2")
+            btn.value = "Enviar";
+            alert("Mensaje enviado correctamente");
+            }, (err) => {
+            btn.value = "Enviar";
+            alert(JSON.stringify(err));
+            });
+        });
     }
     //Aqui termina el envio del email
 });
