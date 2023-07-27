@@ -61,7 +61,7 @@ window.addEventListener("load", function (event) {
                                         alt="iconoBusqueda" width="35px" height="35px"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./contacto"><img src="./src/img/logos/IconoUsuario.png"
+                                <a class="nav-link" href="./perfil.html"><img src="./src/img/logos/IconoUsuario.png"
                                         alt="IconoUsuario" width="35px" height="35px"></a>
                             </li>
                             <li class="nav-item">
