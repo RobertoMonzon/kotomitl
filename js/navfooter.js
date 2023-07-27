@@ -39,13 +39,13 @@ window.addEventListener("load", function (event) {
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
                         <li class="nav-item especial">
-                            <a class="nav-link" href="#">Perfil</a>
+                            <a class="nav-link" href="./perfil.html">Perfil</a>
                         </li>
                         <li class="nav-item especial">
-                            <a class="nav-link" href="#">Carrito</a>
+                            <a class="nav-link" href="./carrito.html">Carrito</a>
                         </li>
                         <li class="nav-item especial">
-                            <a class="nav-link" href="#">Favoritos</a>
+                            <a class="nav-link" href="./favoritos.html">Favoritos</a>
                         </li>
                         <li class="nav-item especial">
                             <input type="text" class="form-control" id="nameInput" placeholder="Buscar... " value=""
@@ -61,15 +61,15 @@ window.addEventListener("load", function (event) {
                                         alt="iconoBusqueda" width="35px" height="35px"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><img src="./src/img/logos/IconoUsuario.png"
+                                <a class="nav-link" href="./contacto"><img src="./src/img/logos/IconoUsuario.png"
                                         alt="IconoUsuario" width="35px" height="35px"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><img src="./src/img/logos/corazonLogo.png"
+                                <a class="nav-link" href="./favoritos"><img src="./src/img/logos/corazonLogo.png"
                                         alt="corazonLogo" width="35px" height="35px"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><img src="./src/img/logos/IconoCarrito.png"
+                                <a class="nav-link" href="./carrito"><img src="./src/img/logos/IconoCarrito.png"
                                         alt="IconoCarrito" width="35px" height="35px"></a>
                             </li>
                             <li class="nav-item">
