@@ -1,6 +1,6 @@
 /* ======== GENERAL ========= */
 
-*{
+* {
     font-family: 'georama', sans-serif
 }
 
@@ -10,13 +10,17 @@ body {
 }
 
 
-h1{
+h1 {
     padding: 1rem 0 .5rem 0;
     font-family: 'Koulen', cursive;
 }
 
 /* ======= NAVBAR ======== */
-
+.nav-item{
+    font-size: 25px;
+    padding-right: 5px;
+    
+}
 
 .custom-navbar {
     background-color: #CBA328;
@@ -32,25 +36,34 @@ h1{
     color: white;
 }
 
-.especial{
+.especial {
     display: none;
 }
 
 .dropdown-menu,
-.dropdown-item{
-background-color: antiquewhite;
+.dropdown-item {
+    background-color: antiquewhite;
 }
 
 
 @media (max-width: 992px) {
-    .especial{
-        display:contents;
-    }
-    .iconoSuperior{
-        display: none;
+    .especial {
+        display: contents;
     }
 
-} 
+    .iconoSuperior {
+        display: none;
+    }
+    .filtro-catalogo{
+        display: none;
+    }
+    .contenedor-navbar-catalogo{
+        display: hidden;
+        border-right: none;
+
+    }
+
+}
 
 /* ======= FOOTER ======== */
 .footerFinal,
@@ -106,14 +119,14 @@ background-color: antiquewhite;
 
 /* ========== CARDS DE "NOSOTROS" ============== */
 
-.nombre__integrante{
+.nombre__integrante {
     text-align: center;
     color: rgb(80, 80, 80);
     font-size: 1rem;
     font-weight: bold;
 }
 
-.profesion__integrante{
+.profesion__integrante {
     text-align: center;
     color: rgb(157, 140, 10);
     font-size: 0.8rem;
@@ -121,16 +134,16 @@ background-color: antiquewhite;
     margin-bottom: 0.5rem;
 }
 
-.card{
+.card {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.card__team:hover{
+.card__team:hover {
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* ============= CONCACTO ================== */
-.inf-contact{
+.inf-contact {
     padding-top: 5%;
     padding-bottom: 5%;
     font-size: 15px;
@@ -138,23 +151,69 @@ background-color: antiquewhite;
     padding-left: 5%;
 }
 
-.dir-contact,.tel-contact,.email-contact{
+.dir-contact,
+.tel-contact,
+.email-contact {
     text-align: left;
     font-size: 12px;
     padding-left: 5%;
 }
 
-.maps{
+.maps {
     align-items: center;
     width: 100%;
     padding-top: 5%;
     padding-bottom: 15%;
 }
 
-.colForm{
+.colForm {
     text-align: left;
 }
 
-.container{
+.container {
     margin-top: 2rem;
 }
+
+/*Características del catálogo
+*/
+.container-products {
+    width: 100%;
+    margin: 35px 0 35px 0;
+}
+
+.catalogo-navbar {
+    position: fixed;
+    /* padding-bottom: 10%;
+    padding-top: 10%;  */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.titulo-catalogo {
+    text-align: center;
+
+}
+
+.contenedor-navbar-catalogo {
+    border-right: solid #000;
+    padding-top: 1%;
+    margin: 80px 0 42px 0;
+}
+
+.filtro-catalogo {
+    font-size: 35px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.filtro-catalogo:hover {
+    cursor: pointer;
+    font-size: 45px;
+    transition: .5s;
+    text-shadow: #CBA328 3px 3px;
+}
+
