@@ -122,7 +122,7 @@ btnEnviar.addEventListener("click", function(event){
         document.getElementById("form")
         .addEventListener("submit", function(event) {
         event.preventDefault();
-
+        console.log("aqui meromcmcm")
         btn.value = "Sending...";
 
         const serviceID = "default_service";
