@@ -11,7 +11,7 @@ window.addEventListener("load", function (event) {
     <nav class="navbar navbar-expand-lg custom-navbar" aria-label="Fifth navbar example">
 
             <div class="container-fluid ">
-                <a class="navbar-brand " href="#"><img src="./src/img/logos/komitl.png" alt="Kotomitl"></a>
+                <a class="navbar-brand " href="./index.html"><img src="./src/img/logos/komitl.png" width="220px" alt="Kotomitl"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="true"
                     aria-label="Toggle navigation">
@@ -27,9 +27,9 @@ window.addEventListener("load", function (event) {
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                                 aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Hombres</a></li>
-                                <li><a class="dropdown-item" href="#">Mujeres</a></li>
-                                <li><a class="dropdown-item" href="#">Niños</a></li>
+                                <li><a class="dropdown-item" href="./hombre.html">Hombres</a></li>
+                                <li><a class="dropdown-item" href="./hombre.html">Mujeres</a></li>
+                                <li><a class="dropdown-item" href="./hombre.html">Niños</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -51,26 +51,26 @@ window.addEventListener("load", function (event) {
                             <input type="text" class="form-control" id="nameInput" placeholder="Buscar... " value=""
                                 required>
                             <!-- <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
-                                    alt="iconoBusqueda" width="35px" height="35px"></a> -->
+                                    alt="iconoBusqueda" width="40px" height="40px"></a> -->
                         </li>
                     </ul>
                     <div class="iconoSuperior media">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
-                                        alt="iconoBusqueda" width="35px" height="35px"></a>
+                                        alt="iconoBusqueda" width="40px" height="40px"></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./perfil.html"><img src="./src/img/logos/IconoUsuario.png"
-                                        alt="IconoUsuario" width="35px" height="35px"></a>
+                                        alt="IconoUsuario" width="40px" height="40px"></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./favoritos"><img src="./src/img/logos/corazonLogo.png"
-                                        alt="corazonLogo" width="35px" height="35px"></a>
+                                        alt="corazonLogo" width="40px" height="40px"></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./carrito"><img src="./src/img/logos/IconoCarrito.png"
-                                        alt="IconoCarrito" width="35px" height="35px"></a>
+                                        alt="IconoCarrito" width="40px" height="40px"></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><strong>0/MXN</strong></a>
