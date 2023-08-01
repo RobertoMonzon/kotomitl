@@ -1,11 +1,58 @@
+/* ======== GENERAL ========= */
+
 *{
     font-family: 'georama', sans-serif
 }
+
 
 body {
     background-color: antiquewhite;
 }
 
+
+h1{
+    padding: 1rem 0 .5rem 0;
+    font-family: 'Koulen', cursive;
+}
+
+/* ======= NAVBAR ======== */
+
+
+.custom-navbar {
+    background-color: #CBA328;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.iconoSuperior {
+    padding-left: 30px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.especial{
+    display: none;
+}
+
+.dropdown-menu,
+.dropdown-item{
+background-color: antiquewhite;
+}
+
+
+@media (max-width: 992px) {
+    .especial{
+        display:contents;
+    }
+    .iconoSuperior{
+        display: none;
+    }
+
+} 
+
+/* ======= FOOTER ======== */
 .footerFinal,
 .icono,
 .nav {
@@ -57,26 +104,7 @@ body {
     }
 }
 
-.custom-navbar {
-    background-color: #CBA328;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.iconoSuperior {
-    padding-left: 30px;
-}
-
-.nav-link {
-    color: white;
-}
-
-h1{
-    padding: 1rem 0 .5rem 0;
-    font-family: 'Koulen', cursive;
-}
-
-
+/* ========== CARDS DE "NOSOTROS" ============== */
 
 .nombre__integrante{
     text-align: center;
@@ -101,6 +129,7 @@ h1{
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
+/* ============= CONCACTO ================== */
 .inf-contact{
     padding-top: 5%;
     padding-bottom: 5%;

@@ -10,7 +10,7 @@ let alertValidaciones = document.getElementById("alertValidaciones");
 let isValid = true;
 
 function validarTelInput(){
-    regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    let regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
     let phone = telInput.value.trim()
     if(!regexPhone.test(phone)){
         return false
@@ -19,7 +19,7 @@ function validarTelInput(){
 }
 
 function validarNameInput(){
-    regexName = /^[a-zA-Z]{3,}$/;
+    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú]{3,}$/;
     let name = nameInput.value.trim()
     if(!regexName.test(name)){
         return false
@@ -28,10 +28,9 @@ function validarNameInput(){
 }
 
 function validarAsuntoInput(){
-    if(asuntoInput.value.length==0){
+    if(asuntoInput.value.length==null){
         return false;
     }
-
     return true;
 }
 
@@ -39,12 +38,11 @@ function validarMsjArea(){
     if(msjArea.value.length==0){
         return false;
     }
-
     return true;
 }
 
 function validaEmail(){
-    regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+    let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
     let email = emailInput.value.trim()
     if(!regexEmail.test(email)){
         return false
