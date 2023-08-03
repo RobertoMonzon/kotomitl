@@ -1,39 +1,55 @@
 /* ======== GENERAL ========= */
 
 * {
-    font-family: 'georama', sans-serif
+    font-family: 'georama', sans-serif;
+    font-size: 62.5%;
 }
 
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
 
 body {
     background-color: antiquewhite;
+    position: relative;
+    margin:0;
+    min-height: 100%;
+    padding-bottom: 0rem;
+    box-sizing: inherit;
 }
 
 
 h1 {
-    padding: 1rem 0 .5rem 0;
-    font-family: 'Koulen', cursive;
+    padding: 1rem 0 2rem 0;
+    font-weight: 600;
+    text-align: center;
 }
 
 /* ======= NAVBAR ======== */
 .nav-item{
-    font-size: 25px;
-    padding-right: 5px;
-    
+    font-size: 2rem;
+    padding-right: 4rem; 
+}
+
+
+.navbar-brand{
+    padding:  1rem 6rem 1rem 2rem;
 }
 
 .custom-navbar {
     background-color: #CBA328;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.iconoSuperior {
-    padding-left: 30px;
 }
 
 .nav-link {
     color: white;
+}
+
+.nav-link:hover{    
+    color: #5C5346;
+}
+.nav--icon{
+    font-size: 2.5rem;
 }
 
 .especial {
@@ -43,6 +59,18 @@ h1 {
 .dropdown-menu,
 .dropdown-item {
     background-color: antiquewhite;
+    font-size: 1.6rem;
+}
+
+.precio{
+    margin-top: .4rem;
+    margin-left: 4rem;
+    font-weight: bold;
+}
+
+.precio a:hover{
+    color: white;
+    cursor: default;
 }
 
 
@@ -66,17 +94,23 @@ h1 {
 }
 
 /* ======= FOOTER ======== */
-.footerFinal,
-.icono,
-.nav {
+footer{
+    margin-top:3rem ;
+    font-size: 1.8rem;
+    padding: 3.5rem;
+    text-align: center;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background-color: #5C5346;
+    
 }
 
-#footer {
-    padding-top: 2%;
-    padding-bottom: 1%;
-    width: 100%;
+
+footer ul li a {
+    padding: 0 1rem 0 1rem;
 }
+
 
 #facebookLogo:hover {
     animation: shaker 1s;
@@ -119,26 +153,33 @@ h1 {
 
 /* ========== CARDS DE "NOSOTROS" ============== */
 
-.nombre__integrante {
+.nombre__integrante{
+    display: flex;
+    justify-content: center;
     text-align: center;
     color: rgb(80, 80, 80);
-    font-size: 1rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
-.profesion__integrante {
+.profesion__integrante{
     text-align: center;
     color: rgb(157, 140, 10);
-    font-size: 0.8rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.card {
+.card-body{
+    font-size: 2.5rem;
+    color: #353028;
+}
+
+.card{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.card__team:hover {
+.card-team:hover {
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -146,7 +187,7 @@ h1 {
 .inf-contact {
     padding-top: 5%;
     padding-bottom: 5%;
-    font-size: 15px;
+    font-size: 1.6rem;
     text-align: left;
     padding-left: 5%;
 }
@@ -155,7 +196,7 @@ h1 {
 .tel-contact,
 .email-contact {
     text-align: left;
-    font-size: 12px;
+    font-size: 1.2rem;
     padding-left: 5%;
 }
 
@@ -183,8 +224,6 @@ h1 {
 
 .catalogo-navbar {
     position: fixed;
-    /* padding-bottom: 10%;
-    padding-top: 10%;  */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -212,7 +251,7 @@ h1 {
 
 .filtro-catalogo:hover {
     cursor: pointer;
-    font-size: 45px;
+    font-size: 4.5rem;
     transition: .5s;
     text-shadow: #CBA328 3px 3px;
 }
