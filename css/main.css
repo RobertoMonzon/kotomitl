@@ -17,6 +17,7 @@ body {
     min-height: 100%;
     padding-bottom: 0rem;
     box-sizing: inherit;
+    color: #353028;
 }
 
 
@@ -189,22 +190,30 @@ footer ul li a {
     padding-bottom: 5%;
     font-size: 1.6rem;
     text-align: left;
-    padding-left: 5%;
 }
 
-.dir-contact,
-.tel-contact,
-.email-contact {
-    text-align: left;
-    font-size: 1.2rem;
-    padding-left: 5%;
+.inf-contact span{
+    font-size: 2rem;
+    font-weight: 600;
 }
 
-.maps {
+.inf-contact p{
+    font-size: 1.6rem;
+    padding: 3% 0 0 3%;
+}
+
+.icon__contacto{
+    font-size: 1.6rem;
+    padding-right: 2rem;
+}
+
+.maps{
     align-items: center;
     width: 100%;
-    padding-top: 5%;
-    padding-bottom: 15%;
+}
+
+iframe{
+    border-radius: 5px;
 }
 
 .colForm {
@@ -213,6 +222,10 @@ footer ul li a {
 
 .container {
     margin-top: 2rem;
+}
+
+form, form label,.form-control, #btnEnviar{
+    font-size: 1.6rem;
 }
 
 /* ============= PRODUCTOS ================== */
