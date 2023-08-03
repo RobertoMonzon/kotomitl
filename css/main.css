@@ -1,39 +1,64 @@
 /* ======== GENERAL ========= */
 
 * {
-    font-family: 'georama', sans-serif
+    font-family: 'georama', sans-serif;
+    font-size: 62.5%;
 }
 
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
 
 body {
     background-color: antiquewhite;
+    position: relative;
+    margin:0;
+    min-height: 100%;
+    padding-bottom: 0rem;
+    box-sizing: inherit;
+    color: #353028;
 }
 
 
 h1 {
-    padding: 1rem 0 .5rem 0;
-    font-family: 'Koulen', cursive;
+    padding: 2rem 0 2rem 0;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h2 {
+    padding: 2rem 0 1rem 0;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2.3rem;
 }
 
 /* ======= NAVBAR ======== */
 .nav-item{
-    font-size: 25px;
-    padding-right: 5px;
-    
+    font-size: 2rem;
+    padding-right: 4rem; 
+}
+
+
+.navbar-brand{
+    padding:  1rem 6rem 1rem 2rem;
 }
 
 .custom-navbar {
     background-color: #CBA328;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.iconoSuperior {
-    padding-left: 30px;
 }
 
 .nav-link {
     color: white;
+}
+
+.nav-link:hover{    
+    color: #5C5346;
+}
+.nav--icon{
+    font-size: 2.5rem;
 }
 
 .especial {
@@ -43,6 +68,18 @@ h1 {
 .dropdown-menu,
 .dropdown-item {
     background-color: antiquewhite;
+    font-size: 1.6rem;
+}
+
+.precio{
+    margin-top: .4rem;
+    margin-left: 4rem;
+    font-weight: bold;
+}
+
+.precio a:hover{
+    color: white;
+    cursor: default;
 }
 
 
@@ -66,17 +103,23 @@ h1 {
 }
 
 /* ======= FOOTER ======== */
-.footerFinal,
-.icono,
-.nav {
+footer{
+    margin-top:3rem ;
+    font-size: 1.8rem;
+    padding: 3.5rem;
+    text-align: center;
+    right: 0;
+    left: 0;
+    bottom: 0;
     background-color: #5C5346;
+    
 }
 
-#footer {
-    padding-top: 2%;
-    padding-bottom: 1%;
-    width: 100%;
+
+footer ul li a {
+    padding: 0 1rem 0 1rem;
 }
+
 
 #facebookLogo:hover {
     animation: shaker 1s;
@@ -117,53 +160,85 @@ h1 {
     }
 }
 
-/* ========== CARDS DE "NOSOTROS" ============== */
+/* ========== CARDS ============== */
 
-.nombre__integrante {
+.title__card{
+    display: flex;
+    justify-content: center;
     text-align: center;
     color: rgb(80, 80, 80);
-    font-size: 1rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
-.profesion__integrante {
+.subtitle__card{
     text-align: center;
     color: rgb(157, 140, 10);
-    font-size: 0.8rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.card {
+.card-body{
+    font-size: 2.5rem;
+    color: #353028;
+    padding: .5rem 1.5rem 2rem 1.5rem;
+    }
+
+.card{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.card__team:hover {
+.card-team:hover {
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
+
+.card-footer{
+    background-color: transparent;
+}
+
+.social__media{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.social__media__icon{
+    font-size: 2.5rem;
+}
+
 
 /* ============= CONCACTO ================== */
 .inf-contact {
     padding-top: 5%;
     padding-bottom: 5%;
-    font-size: 15px;
+    font-size: 1.6rem;
     text-align: left;
-    padding-left: 5%;
 }
 
-.dir-contact,
-.tel-contact,
-.email-contact {
-    text-align: left;
-    font-size: 12px;
-    padding-left: 5%;
+.inf-contact span{
+    font-size: 2rem;
+    font-weight: 600;
 }
 
-.maps {
+.inf-contact p{
+    font-size: 1.6rem;
+    padding: 3% 0 0 3%;
+}
+
+.icon__contacto{
+    font-size: 1.6rem;
+    padding-right: 2rem;
+}
+
+.maps{
     align-items: center;
     width: 100%;
-    padding-top: 5%;
-    padding-bottom: 15%;
+}
+
+iframe{
+    border-radius: 5px;
 }
 
 .colForm {
@@ -174,46 +249,58 @@ h1 {
     margin-top: 2rem;
 }
 
-/*Características del catálogo
-*/
+form, form label,.form-control, #btnEnviar{
+    font-size: 1.6rem;
+}
+
+/* ============= PRODUCTOS ================== */
+
 .container-products {
     width: 100%;
-    margin: 35px 0 35px 0;
 }
 
 .catalogo-navbar {
     position: fixed;
-    /* padding-bottom: 10%;
-    padding-top: 10%;  */
     display: block;
     margin-left: auto;
     margin-right: auto;
 
 }
 
-.titulo-catalogo {
-    text-align: center;
+.catalogo-navbar ul{
+    padding: 0;
+}
 
+.catalogo-navbar ul li {
+    padding-bottom: 5rem;
+}
+
+.titulo-catalogo {
+    text-align: center; 
 }
 
 .contenedor-navbar-catalogo {
-    border-right: solid #000;
-    padding-top: 1%;
-    margin: 80px 0 42px 0;
+    border-right: solid #353028;
+    margin: 90px 0 10px 0;
 }
 
 .filtro-catalogo {
-    font-size: 35px;
+    font-size: 2.5rem;
     text-decoration: none;
-    color: black;
+    color: #353028;
     font-weight: bold;
     list-style-type: none;
 }
 
 .filtro-catalogo:hover {
     cursor: pointer;
-    font-size: 45px;
+    font-size: 2.8rem;
     transition: .5s;
-    text-shadow: #CBA328 3px 3px;
+    text-shadow: 2px 0px 1px#CBA328 ;
 }
 
+.btn-producto{
+    font-size: 1.3rem;
+    width:9rem; 
+    margin: 1rem 2rem 2rem 0;
+}
