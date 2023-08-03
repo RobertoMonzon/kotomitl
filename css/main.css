@@ -253,6 +253,10 @@ form, form label,.form-control, #btnEnviar{
     font-size: 1.6rem;
 }
 
+#alertValidaciones, #alertValidacionesTexto, #alertValidacionesTexto strong {
+    font-size: 1.6rem;
+}
+
 /* ============= PRODUCTOS ================== */
 
 .container-products {
