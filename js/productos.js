@@ -19,7 +19,7 @@ function addItem(prods) {
                                 <div class="subtitle__card">
                                     <span>${prod.Origen}</span>
                                 </div>
-                                <p class="card-text" style="text-align: justify;">${prod.description.slice(0, 80)} ... </p>
+                                <p class="card-text" style="text-align: justify;">${prod.description} ... </p>
                             </div>
                             
                             <div style="text-align:right; margin-top:0;">
@@ -31,79 +31,137 @@ function addItem(prods) {
                             </button>
 
                             </div>
-
                             <div class="modal fade" id="exampleModal${prod.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h6 class="modal-title"><strong>${prod.title}</strong>  </h6>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>${prod.description}</p>
-                                        </div>
-                                        <div style="text-align:right;">
-                                            <p><strong>Price:</strong> ${prod.price} USD &ensp;&ensp;</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
+                            <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title"><strong>${prod.title}</strong>  </h6>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <div class="container-fluid text-center" id="singleprod">
+    <div class="row" style="width: 100%;">
+      <div class="col" style="width: 15%;">
+        <ul class="list-group">
+            <li class="list-group-item"><img src="${prod.image}" class="rounded mx-auto d-block" alt="..." style="width: 75px; height: 150px;"></li>
+            <li class="list-group-item"><img src="${prod.image2}" class="rounded mx-auto d-block" alt="..." style="width: 75px; height: 150px;"></li>
+            <li class="list-group-item"><img src="${prod.image3}" class="rounded mx-auto d-block" alt="..." style="width: 75px; height: 150px;"></li>
+
+          </ul>
+      </div>
+      <div class="col" style="width: 50%;">
+        <img src="${prod.image}" class="rounded mx-auto d-block" alt="..." style="width: 300px; height: 450px;">
+      </div>
+      <div class="col" style="width: 35%;">
+        <!--Nombre del producto-->
+        <h5 id="nombre_producto">Precio: $ ${prod.price}</h5>
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <p class="codigo">Codigo:</p>
+              </div>
+              <div class="col">
+                <p class="codigo">${prod.id}</p>
+              </div>
+            </div>
+          </div>
+        
+        <!--Talla-->
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <p class="codigo">Talla</p>
+              </div>
+              <div class="col">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Elige una talla
+                    </button>
+                    <ul class="dropdown-menu" id="menutallas">
+                      <li>Chica</li>
+                      <li>Mediana</li>
+                      <li>Grande</li>
+                      <li>Extra Grande</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!--Color-->
+        <p class="codigo">Color</p>
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1"><div class="col-1 red"></div></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2"><div class="col-1 green"></div></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2"> <div class="col-1" style="background-color: blue;
+                width: 10px;
+                height: 10px;"></div></label>
+              </div>
+        </div>
+
+          <!--Descripcion-->
+          <div class="descripciones-modal">
+            <p>Descripción</p>
+            <ul>
+                <li>${prod.Desc1}</li>
+                <li>${prod.Desc2}</li>
+                <li>${prod.Desc3}</li>
+                <li>${prod.Origen}</li>
+                <p>${prod.description}</p>
+            </ul>
+          </div>
+          <!--Botones-->
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btnmodal btn-secondary">Comprar</button>
+            <button type="button" class="btn btnmodal btn-secondary">Carrito</button>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btnmodal btn-secondary"
+                                        data-bs-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-            `
-        );
+                </div>
+            </div>
+    `
+);
 
-    });
+});
 }
 
 
 prod1 = [
 
-    { id: 1, title: "Camisa otomi", price: 500, description: "Preciosa camisa blanca Otomi bordada a mano!", Origen: "Otomi", image: "https://lahamacayelrebozo.com.mx/cdn/shop/products/image_e5c76d8c-8739-42c2-a405-e53f9c01a766_1800x1800.png?v=1642200281", rating: { "rate": 4.9, "count": 500 } },
+{ id: 1, title: "Camisa Yucateca manga corta", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/camisa1-blanca.jpg", image2: "./src/img/ropa-kotomitl/camisa1-azul.jpg", image3: "./src/img/ropa-kotomitl/camisa1-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
+{ id: 2, title: "Camisa Yucateca manga larga", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/camisa2-blanca.jpg", image2: "./src/img/ropa-kotomitl/camisa2-azul.jpg", image3: "./src/img/ropa-kotomitl/camisa2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-    //Pantalones
-    { id: 1, title: "Pantalón Artesanal", price: 450, description: "Precioso pantalón artesanal de origen zapoteco!", Origen: "zapoteco", image: "https://i.etsystatic.com/8278454/r/il/09a113/2880098562/il_570xN.2880098562_rs7g.jpg", rating: { "rate": 4.9, "count": 450 } },
+{ id: 3, title: "Poncho mexicano", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/poncho2-blanco.jpg", image2: "./src/img/ropa-kotomitl/poncho1-azul.jpg", image3: "./src/img/ropa-kotomitl/poncho1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-    { id: 2, title: "Pantalón Artesanal", price: 480, description: "Precioso pantalón artesanal de origen veracruzano!", Origen: "veracruzano", image: "https://i.etsystatic.com/8278454/r/il/d1804b/2682649219/il_570xN.2682649219_4a2i.jpg", rating: { "rate": 4.9, "count": 480 } },
+{ id: 4, title: "Short artesanal", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/short1-blanca.jpg", image2: "./src/img/ropa-kotomitl/short1-azul.jpg", image3: "./src/img/ropa-kotomitl/short1-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-    //Guayaberas
+{ id: 5, title: "Traje de baño artesanal", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/short2-blanca.jpg", image2: "./src/img/ropa-kotomitl/short2-azul.jpg", image3: "./src/img/ropa-kotomitl/short2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-    { id: 3, title: "Guayabera artesanal", price: 800, description: "Guayaberas para Hombre - Camisa de Manta Artesanal Mexicana Tipo Manga Corta -", Origen: "Otomi", image: "https://m.media-amazon.com/images/I/81zIR907hoL._AC_SX679_.jpg", rating: { "rate": 4.9, "count": 500 } },
+{ id: 6, title: "Zapato de piel", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/zapato1-blanca.jpg", image2: "./src/img/ropa-kotomitl/zapato1-azul.jpg", image3: "./src/img/ropa-kotomitl/zapato1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-    { id: 4, title: "Guayabera Yucateca", price: 400, description: "Teya Artesanal Camisa Guayabera Yucateca de Lino Modelo Colibrí Bordado Manga Larga", Origen: "Otomi", image: "https://m.media-amazon.com/images/I/61iM1M9XnPL._AC_SX679_.jpg", rating: { "rate": 4.9, "count": 500 } },
+{ id: 7, title: "Camisa Yucateca", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/pantalon1-blanca.jpg", image2: "./src/img/ropa-kotomitl/pantalon2-azul.jpg", image3: "./src/img/ropa-kotomitl/pantalon2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-    //Camisa
-
-    {
-        id: 5, title: "Pulsera", price: 500, description: "Accesorio para hombre, hecha de material textil café trenzado, con hilo encerado color marrón como decoración.", Origen: "Mexa", image: "http://www.pulccino.mx/PCAdmin/productos/media/15257250505af0b77a8ac4c.JPG",
-        rating: { "rate": 4.9, "count": 500 }
-    },
-
-    //Pulsera
-
-    {
-        id: 6, title: "Zapatos artesanales", price: 500, description: "Zapatos artesanales hechos a mano, super comodos", Origen: "Mexa",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHFZBkDyv69mW64aBeUqhYyJC3gfb55pd2b1vnJA-XBy91ydEkMk1Zq4rboB02kLhG0rk&usqp=CAU", rating: { "rate": 4.9, "count": 500 }
-    },
-
-
-    //Chamarras
-    { id: 7, title: "Sudadera estilo otomi", price: 500, description: "Cómoda susadera estilo otomi, distintas tallas y colores", Origen: "Mexa", image: "https://image.spreadshirtmedia.net/image-server/v1/products/T20A2PA5098PT17X76Y21D166927473W19381H19453/views/1,width=550,height=550,appearanceId=2,backgroundColor=F2F2F2,modelId=5627,crop=list/arte-mexicano-estilo-otomi-pajaro-pavo-real-animales-sudadera-con-capucha-premium-hombre.jpg", rating: { "rate": 4.9, "count": 500 } },
-
-    { id: 8, title: "Sudadera multicolor", price: 500, description: "Sudadera distintas tallas y colores", Origen: "Otomi", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_0F9YGmx0QmUwMWQxJoO0yQ3jYjJB2hINw&usqp=CAU", rating: { "rate": 4.9, "count": 500 } },
-
-    //Short
-    { id: 56, title: "Short Beige Artesanal", price: 500, description: "Mágnifico short beige, fresco bordado a mano!", Origen: "Maya", image: "https://i.etsystatic.com/8278454/r/il/3abf35/3792936547/il_570xN.3792936547_ebk3.jpg", rating: { "rate": 4.9, "count": 380 } },
-    
-
-    { id: 34, title: "Short Azul Marino", price: 500, description: "Asombroso short azul marino, estilo playero bordado a mano!", Origen: "Maya", image: "https://www.korner.es/uploads/media/images/21005530_830_1.jpg", rating: { "rate": 4.9, "count": 390 } }
 
 ];
 
