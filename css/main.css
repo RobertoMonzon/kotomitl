@@ -253,6 +253,10 @@ form, form label,.form-control, #btnEnviar{
     font-size: 1.6rem;
 }
 
+#alertValidaciones, #alertValidacionesTexto, #alertValidacionesTexto strong {
+    font-size: 1.6rem;
+}
+
 /* ============= PRODUCTOS ================== */
 
 .container-products {
@@ -304,3 +308,47 @@ form, form label,.form-control, #btnEnviar{
     width:9rem; 
     margin: 1rem 2rem 2rem 0;
 }
+
+/* modal */
+[class*="col-1 green"] {
+    background-color: rgb(227, 204, 204);
+    width: 10px;
+    height: 10px;
+    border-color: black;
+
+    border-width: thin;
+  }
+  
+  [class*="col-1 red"] {
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-color: black;
+
+    border-width: thin;
+  }
+  
+  [class*="col-1 blue"] {
+    background-color: blue;
+    width: 10px;
+    height: 10px;
+    border-color: black;
+
+    border-width: thin;
+  }
+  
+  .descripciones-modal{
+    font-size: 4rem;
+  }
+  .modal-title{
+    font-size: 5rem;
+  }
+
+  .dropdown-toggle,.codigo,#menutallas li{
+    font-size: 2rem;
+  }
+
+  .form-check,.btnmodal,#nombre_producto{
+    font-size: 2rem;
+  }
+/* modal */
