@@ -67,7 +67,7 @@ btnEnviar.addEventListener("click", function(event){
     msjArea.value = msjArea.value.trim();
 
     if(!validarTelInput()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Numero de telefono</strong> no es correcto.<br/>`);
+        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Número de teléfono</strong> no es correcto.<br/>`);
         alertValidaciones.style.display="block"
         telInput.style.border="solid 0.5px red";
         isValid = false;

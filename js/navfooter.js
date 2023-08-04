@@ -30,7 +30,7 @@ window.addEventListener("load", function (event) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="./productos.html">Hombres</a></li>
                                 <li><a class="dropdown-item" href="./productos.html">Mujeres</a></li>
-                                <li><a class="dropdown-item" href="./productos.html">Niños</a></li>
+                                <li><a class="dropdown-item" href="./productos.html">Infantes</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
