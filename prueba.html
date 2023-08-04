@@ -7,40 +7,48 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
     <main class="container">
-    <form action="">
+    <form action="" class="needs-validation">
+        <div class="alert alert-danger fade show" style="display:none;" role="alert"
+                            id="alertValidaciones">
+                            <p id="alertValidacionesTexto"></p>
+        </div>
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body carga-imagen">
                         <label for="file-input">
-                            <img src="src/img/camara.png" width=100% alt="">
+                            
+                            <img src="src/img/camara.png" width=100% alt="" id="previa">
+                            
                         </label>
-                        <input style="display: none;" id="file-input" name="foto" type="file" />
+                        <input style="display: none;" id="file-input" name="foto" type="file" accept="image/" />
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Código</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="codigoInput" class="form-label">Código</label>
+                    <input type="text" class="form-control" id="codigoInput" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Cantidad disponible</label>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-primary">-</button>
+                    <label for="cantidadInput" class="form-label">Cantidad disponible</label>
+                    <div class="row d-flex justify-content-start">
+                        <div class="col-md-2 col-sm-1">
+                            <button type="button" class="btn btn-primary" id="btnMenos">-</button>
                         </div>
-                        <div class="col-md-2">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                        <div class="col-md-2 col-sm-1">
+                            <input type="number" class="form-control" id="cantidadInput"
+                                aria-describedby="emailHelp" style="text-align: center;" value="0">
                         </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-primary">+</button>
+                        <div class="col-md-2 col-sm-1">
+                            <button type="button" class="btn btn-primary" id="btnMas">+</button>
                         </div>
                     </div>
                 </div>
@@ -50,37 +58,43 @@
         <div class="row">
             <div class="col">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Nombre de producto</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="nombreInput" class="form-label">Nombre de producto</label>
+                    <input type="text" class="form-control" id="nombreInput" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Precio unitario</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="precioInput" class="form-label">Precio unitario</label>
+                    <input type="number" class="form-control" id="precioInput" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Costo unitario</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="costoInput" class="form-label">Costo unitario</label>
+                    <input type="number" class="form-control" id="costoInput" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Categoria</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select class="form-select" aria-label="Default select example" id="categoria">
+                        <option selected>Seleccione la categoria</option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>
                         <option value="3">Humanos pequeños</option>
                       </select>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion" rows="3"></textarea>
                 </div>
             </div>
+        </div>
+        <div class="col-md-1 col-sm-1">
+            <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
         </div>
     </form>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+    <!--NAVFOOTER-->
+    <script src="./js/navfooter.js"></script>    
+    <script src="js/alta.js"></script>
 </body>
 
 </html>
