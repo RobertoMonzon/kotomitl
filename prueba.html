@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ================= NAVBAR ============== -->
+    <header id="navbar"></header>
+    <main class="container">
+        <form action="" class="needs-validation">
+            <div class="alert alert-danger fade show" style="display:none;" role="alert" id="alertValidaciones">
+                <p id="alertValidacionesTexto"></p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body carga-imagen">
+                            <label for="file-input">
+
+                                <img src="src/img/camara.png" width=100% alt="" id="previa">
+
+                            </label>
+                            <input style="display: none;" id="file-input" name="foto" type="file" accept="image/" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="codigoInput" class="form-label">Código</label>
+                        <input type="text" class="form-control" id="codigoInput" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cantidadInput" class="form-label">Cantidad disponible</label>
+                        <div class="row d-flex justify-content-start">
+                            <div class="col-md-2 col-sm-1">
+                                <button type="button" class="btn btn-primary" id="btnMenos">-</button>
+                            </div>
+                            <div class="col-md-2 col-sm-1">
+                                <input type="number" class="form-control" id="cantidadInput"
+                                    aria-describedby="emailHelp" style="text-align: center;" value="0">
+                            </div>
+                            <div class="col-md-2 col-sm-1">
+                                <button type="button" class="btn btn-primary" id="btnMas">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="nombreInput" class="form-label">Nombre de producto</label>
+                        <input type="text" class="form-control" id="nombreInput" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="precioInput" class="form-label">Precio unitario</label>
+                        <input type="number" class="form-control" id="precioInput" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="costoInput" class="form-label">Costo unitario</label>
+                        <input type="number" class="form-control" id="costoInput" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="categoria" class="form-label">Categoria</label>
+                        <select class="form-select" aria-label="Default select example" id="categoria">
+                            <option selected>Seleccione la categoria</option>
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                            <option value="3">Humanos pequeños</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-sm-1">
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+            </div>
+        </form>
+    </main>
+    <!-- ================= FOOTER ============== -->
+    <footer class="text-center text-lg-center justify-content-center d-flex" id="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!--NAVFOOTER-->
+    <script src="./js/navfooter.js"></script>
+    <script src="js/alta.js"></script>
+</body>
+
+</html>
