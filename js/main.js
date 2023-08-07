@@ -18,12 +18,12 @@ function validarNombre() {
     alert_nombre_txt.innerHTML = "";
 
     if (regexName.test(name)) {
-        nombreInput.style.border = "solid thin green";
+        nombreInput.style.border = "solid 2px green";
         return true
     } else {
         alert_nombre_txt.insertAdjacentHTML("afterbegin", `Nombre incorrecto`);
         alert_nombre.style.display = "flex";
-        nombreInput.style.border = "solid thin red";
+        nombreInput.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
     }
 }
@@ -59,12 +59,12 @@ function validarTelefono() {
     }
     //valida el cumplimiento del regex y que no supere 5 dígitos repetidos
     if (regexPhone.test(phone) && !(sum > 5)) {
-        telInput.style.border = "solid thin green";
+        telInput.style.border = "solid 2px green";
         return true
     } else {
         alert_telefono_txt.insertAdjacentHTML("afterbegin", `Teléfono incorrecto`);
         alert_telefono.style.display = "flex";
-        telInput.style.border = "solid thin red";
+        telInput.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
     }
 }
@@ -90,12 +90,12 @@ function validarEmail() {
     alert_email_txt.innerHTML = "";
 
     if (regexEmail.test(email)) {
-        emailInput.style.border = "solid thin green";
+        emailInput.style.border = "solid 2px green";
         return true;
     } else {
         alert_email_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
         alert_email.style.display = "flex";
-        emailInput.style.border = "solid thin red";
+        emailInput.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
     }
 }
@@ -119,12 +119,12 @@ function validarMensaje() {
     alert_mensaje_txt.innerHTML = "";
 
     if (mensaje > 10) {
-        msjArea.style.border = "solid thin green";
+        msjArea.style.border = "solid 2px green";
         return true;
     } else {
         alert_mensaje_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
         alert_mensaje.style.display = "flex";
-        msjArea.style.border = "solid thin red";
+        msjArea.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
     }
 }

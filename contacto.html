@@ -24,12 +24,9 @@
 
     <!-- ================= CONTENIDO ============== -->
     <main class="container mb-5">
-        <section>
-            <!--aqui comienza la seccion-->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-
+        <section class="informacion__seccion text-center">
+                    <!--=================== Sección de información ===============-->
+                    <div class="columna">
                         <h1>Contáctenos</h1>
                         <!--Info contacto-->
                         <div class="inf-contact">
@@ -43,15 +40,16 @@
                         <div class="maps">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8270754170117!2d-100.93788102504558!3d21.15927898328351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b3fa9def5bc27%3A0x5af5e12e7f481a3e!2sOaxaca%2026%2C%20Centro%2C%2037800%20Dolores%20Hidalgo%20Cuna%20de%20la%20Independencia%20Nacional%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1691083849483!5m2!1ses-419!2smx"
-                                width="450rem" height="250rem" style="border:0;" allowfullscreen="" loading="lazy"
+                                width="100%" height="100%" style="border:1px;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <!--=================== FORMULARIO DE CONTACTO ===============-->
-                    <div class="col colForm">
+                    <!--=================== Formulario de contacto ===============-->
+                    <div class="columna colForm">
                         <h1 style="text-align: center;">Cuéntanos sobre ti</h1>
 
-                        <form class="needs-validation" id="form" action="https://formsubmit.co/nhfe_yheoi87@kewip.com" method="POST">
+                        <form class="needs-validation" id="form"
+                            action="https://formsubmit.co/tester.anonimo.85@gmail.com" method="POST">
 
                             <!-- Nombre -->
                             <div class="mb-3">
@@ -63,8 +61,9 @@
                                         <span id="alert_nombre_txt"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="nombreInput" placeholder="Ej. Michell Flores"
-                                    required minlength="3" maxlength="50" autocomplete="name" name="name">
+                                <input type="text" class="form-control" id="nombreInput"
+                                    placeholder="Ej. Michell Flores" required minlength="3" maxlength="50"
+                                    autocomplete="name" name="name">
                             </div>
 
                             <!-- Teléfono -->
@@ -79,8 +78,8 @@
                                 </div>
                                 <input
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    type="tel" class="form-control" id="telInput" placeholder="10 dígitos"
-                                    required minlength="10" maxlength="10" autocomplete="tel" name="phone">
+                                    type="tel" class="form-control" id="telInput" placeholder="10 dígitos" required
+                                    minlength="10" maxlength="10" autocomplete="tel" name="phone">
                             </div>
                             <!-- Email -->
                             <div class="mb-3">
@@ -106,26 +105,23 @@
                                         <span id="alert_mensaje_txt"></span>
                                     </div>
                                 </div>
-                                <textarea class="form-control" id="msjArea" rows="3"  required name="message"></textarea>
+                                <textarea class="form-control" id="msjArea" rows="3" required name="message"></textarea>
                             </div>
                             <!-- Botón de envío -->
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <button type="button" class="btn btn-warning" id="btnEnviar" style="margin: 2rem 0 2rem 0;">
-                                    <span  style="margin:0 1rem 0 auto; font-size: 2.5rem;"><i class="bi bi-send"></i></span>
+                                <button type="button" class="btn btn-warning" id="btnEnviar"
+                                    style="margin: 2rem 0 2rem 0;">
+                                    <span style="margin:0 1rem 0 auto; font-size: 2.5rem;"><i
+                                            class="bi bi-send"></i></span>
                                     Enviar mensaje </button>
                             </div>
 
                             <!-- deshabilitar propiedad de captcha y página por defecto de form submit   -->
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="http://127.0.0.1:5501/contacto.html">
+                            <input type="hidden" name="_next" value="https://robertomonzon.github.io/kotomitl/contacto">
 
                         </form>
                     </div>
-                    <!--=================== TERMINA FORMULARIO DE CONTACTO ===============-->
-                </div>
-            </div>
-            <!--aqui termina la seccion-->
-
         </section>
     </main>
 
