@@ -1,7 +1,8 @@
 /* ======== GENERAL ========= */
 
 * {
-    font-family: 'georama', sans-serif;
+    /* font-family: 'georama', sans-serif; */
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 62.5%;
 }
 
@@ -231,6 +232,10 @@ form label,
     font-size: 1.6rem;
 }
 
+form{
+    padding-top: 5%;
+}
+
 #alertValidaciones,
 #alertValidacionesTexto,
 #alertValidacionesTexto strong {
@@ -240,7 +245,11 @@ form label,
 .icon__warning {
     font-size: 1.5rem;
     margin-right: 1rem;
-    ;
+}
+
+.icon__send{
+    margin:0 1rem 0 auto; 
+    font-size: 1.5rem;
 }
 
 .warning__text {
