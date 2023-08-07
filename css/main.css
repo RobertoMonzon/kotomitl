@@ -257,6 +257,16 @@ form, form label,.form-control, #btnEnviar{
     font-size: 1.6rem;
 }
 
+.icon__warning{
+    font-size: 1.5rem;
+    margin-right: 1rem;;
+}
+
+.warning__text{
+    margin-left: auto;
+    font-size: 2rem;
+}
+
 /* ============= PRODUCTOS ================== */
 
 .container-products {
@@ -308,3 +318,4 @@ form, form label,.form-control, #btnEnviar{
     width:9rem; 
     margin: 1rem 2rem 2rem 0;
 }
+

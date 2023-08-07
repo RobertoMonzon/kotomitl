@@ -1,141 +1,168 @@
 
-let nameInput = document.getElementById("nameInput");
+
+// =========== VALIDACIÓN DE FORMULARIO DE CONTACTO ===========
+
+//   ***********  Validación de nombre  ***********
+let nombreInput = document.getElementById("nombreInput");
+
+function validarNombre() {
+    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü]{3,}$/;
+    let name = nombreInput.value.trim().toUpperCase();
+
+    let alert_nombre = document.getElementById("alert_nombre");
+    let alert_nombre_txt = document.getElementById("alert_nombre_txt");
+
+    //elementos de validación limpios
+    nombreInput.style.border = "";
+    alert_nombre.style.display = "none";
+    alert_nombre_txt.innerHTML = "";
+
+    if (regexName.test(name)) {
+        nombreInput.style.border = "solid thin green";
+        return true
+    } else {
+        alert_nombre_txt.insertAdjacentHTML("afterbegin", `Nombre incorrecto`);
+        alert_nombre.style.display = "flex";
+        nombreInput.style.border = "solid thin red";
+        return false;
+    }
+}
+
+nombreInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarNombre();
+})
+
+// ***********  Validación de teléfono  ***********
 let telInput = document.getElementById("telInput");
-let emailInput = document.getElementById("emailInput");
-let asuntoInput = document.getElementById("asuntoInput");
-let msjArea = document.getElementById("msjArea");
-let btnEnviar = document.getElementById("btnEnviar");
-let alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
-let alertValidaciones = document.getElementById("alertValidaciones");
-let isValid = true;
 
-function validarTelInput(){
+function validarTelefono() {
     let regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
-    let phone = telInput.value.trim()
-    if(!regexPhone.test(phone)){
-        return false
-    }
-    return true;
-}
+    let phone = telInput.value.trim();
 
-function validarNameInput(){
-    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú]{3,}$/;
-    let name = nameInput.value.trim()
-    if(!regexName.test(name)){
-        return false
-    }
-    return true;
-}
+    let alert_telefono = document.getElementById("alert_telefono");
+    let alert_telefono_txt = document.getElementById("alert_telefono_txt");
 
-function validarAsuntoInput(){
-    if(asuntoInput.value.length==null){
+    //elementos de validación limpios
+    telInput.style.border = "";
+    alert_telefono.style.display = "none";
+    alert_telefono_txt.innerHTML = "";
+
+    // contador para sumar dígitos repetidos
+    let sum = 0;
+
+    //determina si los dígitos se repiten consecutivamente, lo cual más adelante sirve como control de errores.
+    for (i = 0; i < phone.length; i++) {
+        if (phone.charAt(i) == phone.charAt(i + 1)) {
+            sum++;
+        }
+    }
+    //valida el cumplimiento del regex y que no supere 5 dígitos repetidos
+    if (regexPhone.test(phone) && !(sum > 5)) {
+        telInput.style.border = "solid thin green";
+        return true
+    } else {
+        alert_telefono_txt.insertAdjacentHTML("afterbegin", `Teléfono incorrecto`);
+        alert_telefono.style.display = "flex";
+        telInput.style.border = "solid thin red";
         return false;
     }
-    return true;
 }
 
-function validarMsjArea(){
-    if(msjArea.value.length==0){
-        return false;
-    }
-    return true;
-}
+telInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarTelefono();
+})
 
-function validaEmail(){
+// ***********  Validación de email  ***********
+let emailInput = document.getElementById("emailInput");
+
+function validarEmail() {
     let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-    let email = emailInput.value.trim()
-    if(!regexEmail.test(email)){
-        return false
+    let email = emailInput.value.trim().toLowerCase();
+
+    let alert_email = document.getElementById("alert_email");
+    let alert_email_txt = document.getElementById("alert_email_txt");
+
+    //elementos de validación limpios
+    emailInput.style.border = "";
+    alert_email.style.display = "none";
+    alert_email_txt.innerHTML = "";
+
+    if (regexEmail.test(email)) {
+        emailInput.style.border = "solid thin green";
+        return true;
+    } else {
+        alert_email_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
+        alert_email.style.display = "flex";
+        emailInput.style.border = "solid thin red";
+        return false;
     }
-    return true;
 }
 
-btnEnviar.addEventListener("click", function(event){
+emailInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarEmail();
+})
+
+// ***********  Validación de mensaje  ***********
+let msjArea = document.getElementById("msjArea");
+
+function validarMensaje() {
+    let alert_mensaje = document.getElementById("alert_mensaje");
+    let alert_mensaje_txt = document.getElementById("alert_mensaje_txt");
+    let mensaje = msjArea.value.trim().length;
+
+    //elementos de validación limpios
+    msjArea.style.border = "";
+    alert_mensaje.style.display = "none";
+    alert_mensaje_txt.innerHTML = "";
+
+    if (mensaje > 10) {
+        msjArea.style.border = "solid thin green";
+        return true;
+    } else {
+        alert_mensaje_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
+        alert_mensaje.style.display = "flex";
+        msjArea.style.border = "solid thin red";
+        return false;
+    }
+}
+
+msjArea.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarMensaje();
+})
+
+// ***********  Alerta de error  ***********
+function alertWrong() {
+    swal("Información inválida", "Por favor revisa nuevamente el formulario", "error");
+}
+
+// ***********  Alerta de éxito  ***********
+function alertSuccess() {
+    swal("Mensaje enviado", "Nos contactáremos muy pronto contigo", "success");
+}
+
+// ***********  Botón de envío  ***********
+let btnEnviar = document.getElementById("btnEnviar");
+let form = document.getElementById('form');
+
+btnEnviar.addEventListener("click", function (event) {
     event.preventDefault();
-    isValid = true;
-    alertValidaciones.style.display="none";
-    nameInput.style.border="";
-    telInput.style.border="";
-    emailInput.style.border="";
-    asuntoInput.style.border="";
-    msjArea.style.border="";
+    let esNombre = validarNombre();
+    let esTelefono = validarTelefono();
+    let esEmail = validarEmail();
+    let esMensaje = validarMensaje();
 
-    nameInput.value = nameInput.value.trim();
-    telInput.value = telInput.value.trim();
-    emailInput.value = emailInput.value.trim();
-    asuntoInput.value = asuntoInput.value.trim();
-    msjArea.value = msjArea.value.trim();
-
-    if(!validarTelInput()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Numero de telefono</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display="block"
-        telInput.style.border="solid 0.5px red";
-        isValid = false;
+    if (esNombre && esTelefono && esEmail && esMensaje) {
+        alertSuccess();
+        form.submit();
+        nombreInput.value = "";
         telInput.value = "";
-        telInput.focus();
+        emailInput.value = "";
+        msjArea.value = "";
+    } else {
+        alertWrong();
     }
-
-    if(!validarNameInput()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Nombre</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display="block"
-        nameInput.style.border="solid 0.5px red";
-        isValid = false;
-        nameInput.value="";
-        nameInput.focus();
-    }
-
-    if(!validaEmail()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>e-mail</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display="block"
-        emailInput.style.border="solid 0.5px red";
-        isValid = false;
-        emailInput.value="";
-        emailInput.focus();
-    }
-
-    if(!validarAsuntoInput()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Asunto</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display="block"
-        asuntoInput.style.border="solid 0.5px red";
-        isValid = false;
-        asuntoInput.value="";
-        asuntoInput.focus();
-    }
-
-    if(!validarMsjArea()){
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin",`El <strong>Mensaje</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display="block"
-        msjArea.style.border="solid 0.5px red";
-        isValid = false;
-        msjArea.value="";
-        msjArea.focus();
-    }
-
-    //Esto es para mandar el email, aun no esta listo OJO...
-    if(isValid){
-        console.log("aqui mero")
-        const btn = document.getElementById("btnEnviar");
-        console.log("aqui mero1")
-
-        document.getElementById("form")
-        .addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        btn.value = "Sending...";
-
-        const serviceID = "default_service";
-        const templateID = "template_frgobld";
-
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-                console.log("aqui mero2")
-            btn.value = "Enviar";
-            alert("Mensaje enviado correctamente");
-            }, (err) => {
-            btn.value = "Enviar";
-            alert(JSON.stringify(err));
-            });
-        });
-    }
-    //Aqui termina el envio del email
 });
