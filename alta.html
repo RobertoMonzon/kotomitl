@@ -20,11 +20,15 @@
     <!-- ================= NAVBAR ============== -->
     <header id="navbar"></header>
     <main class="container">
-        <div id="liveAlertPlaceholder"></div>
+        
         <form action="" class="needs-validation">
             <div class="alert alert-danger fade show" style="display:none;" role="alert" id="alertValidaciones">
                 <p id="alertValidacionesTexto"></p>
             </div>
+            <div class="alert alert-success fade show" style="display:none;" role="alert" id="alertValidacionesBueno">
+                <p style="font-size: 25px;" id="alertValidacionesTextoBueno"></p>
+            </div>
+            
             <div class="row">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
@@ -34,7 +38,7 @@
                                 <img src="src/img/camara.png" width=100% alt="" id="previa">
 
                             </label>
-                            <input style="display: none;" id="file-input" name="foto" type="file" accept="image/" />
+                            <input style="display: none;" id="file-input" name="foto" type="file" accept="image/" onchange="imagePreview(event, `#previa`)" />
                         </div>
                     </div>
                 </div>
@@ -78,7 +82,7 @@
                     <div class="mb-3">
                         <label for="categoria" class="form-label">Categoria</label>
                         <select class="form-control" id="categoria">
-                            <option selected>Seleccione la categoria</option>
+                            <option selected value="0">Seleccione la categoria</option>
                             <option value="1">Hombre</option>
                             <option value="2">Mujer</option>
                             <option value="3">Humanos pequeños</option>

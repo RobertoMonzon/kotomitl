@@ -13,33 +13,16 @@ let btnGuardar = document.getElementById("btnGuardar");
 let alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
 let alertValidaciones = document.getElementById("alertValidaciones");
 
+let alertValidacionesBueno = document.getElementById("alertValidacionesBueno");
+let alertValidacionesTextoBueno = document.getElementById("alertValidacionesTextoBueno");
+
 let cantidad = cantidadInput.value;
 let isValid = true;
 let num = 0;
 let cont = 0;
 let ls = localStorage;
-
-fileInput.addEventListener("change", function previewImage(event, querySelector) {
-
-    //Recuperamos el input que desencadeno la acción
-    const input = event.target;
-
-    //Recuperamos la etiqueta img donde cargaremos la imagen
-    $previa = document.querySelector(querySelector);
-
-    // Verificamos si existe una imagen seleccionada
-    if (!input.files.length) return
-
-    //Recuperamos el archivo subido
-    file = input.files[0];
-
-    //Creamos la url
-    objectURL = URL.createObjectURL(file);
-
-    //Modificamos el atributo src de la etiqueta img
-    $previa.src = objectURL;
-
-});
+let urlPrevia;
+let imgExist = false;
 
 function validarCodigoInput() {
     regexName = /^[a-zA-Z0-9]{3,}$/;
@@ -87,9 +70,16 @@ function validarCostoInput() {
 }
 
 function validarDescripcionInput() {
-    regexDescripcion = /^[a-zA-Z0-9" "]{3,}$/;
+    regexDescripcion = /^[a-zA-Z0-9" ".-()]{3,}$/;
     let descrip = descripcion.value.trim()
     if (!regexDescripcion.test(descrip)) {
+        return false
+    }
+    return true;
+}
+
+function validarCategoriaInput() {
+    if (!(categoriaInput.value>0)) {
         return false
     }
     return true;
@@ -119,6 +109,34 @@ cantidadInput.addEventListener("keyup", function (event) {
     cantidad = cantidadInput.value;
     console.log(cantidad);
 })
+
+function imagePreview(event, querySelector){
+
+    //Recuperamos el input que desencadeno la acción
+    const input = event.target;
+
+    //Recuperamos la etiqueta img donde cargaremos la imagen
+    $previa = document.querySelector(querySelector);
+
+    // Verificamos si existe una imagen seleccionada
+    if (!input.files.length) {
+        imgExist=false;
+        return
+    }
+
+    //Recuperamos el archivo subido
+    file = input.files[0];
+
+    //Creamos la url
+    objectURL = URL.createObjectURL(file);
+
+    //Modificamos el atributo src de la etiqueta img
+    $previa.src = objectURL;
+
+    urlPrevia = objectURL;
+    imgExist=true;
+    console.log(urlPrevia);
+}
 
 btnGuardar.addEventListener("click", function (event) {
     event.preventDefault();
@@ -194,34 +212,42 @@ btnGuardar.addEventListener("click", function (event) {
         descripcion.value = "";
         descripcion.focus();
     }
+
+    if (!validarCategoriaInput()) {
+        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `Seleccione una <strong>categoria </strong> valida.<br/>`);
+        alertValidaciones.style.display = "block"
+        categoriaInput.style.border = "solid 0.5px red";
+        isValid = false;
+        categoriaInput.value = "0";
+        categoriaInput.focus();
+    }
+
+    if (!imgExist) {
+        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `Seleccione una <strong>imagen </strong> valida.<br/>`);
+        alertValidaciones.style.display = "block"
+        isValid = false;
+    }
+
     console.log("si");
     if (isValid) {
         console.log("si1");
         cont++;
-        let producto = `{codigo: ${codigoInput.value}, cantidad: ${cantidadInput.value}, nombre: ${nombreInput.value}, precio: ${precioInput.value}, costo: ${costoInput.value}, categoria: ${categoriaInput.value}, descripcion: ${descripcion.value}}`
+        let producto = `{codigo: ${codigoInput.value}, imagen: ${urlPrevia}, cantidad: ${cantidadInput.value}, nombre: ${nombreInput.value}, precio: ${precioInput.value}, costo: ${costoInput.value}, categoria: ${categoriaInput.value}, descripcion: ${descripcion.value}}`
         ls.setItem(cont, JSON.stringify(producto));
         console.log("si2");
+        alertValidacionesTextoBueno.insertAdjacentHTML("afterbegin", `El producto se agrego correctamente.`);
+        alertValidacionesBueno.style.display = "block";
 
-        disparaAlerta = document.getElementById('btnGuardar')
-        if (disparaAlerta) {
-            disparaAlerta.addEventListener('click', () => {
-                appendAlert('Se ha guardado la informacion con exito.', 'success')
-            })
-        }
+        codigoInput.value="";
+        cantidadInput.value="0";
+        nombreInput.value="";
+        costoInput.value="";
+        precioInput.value="";
+        categoriaInput.value="0";
+        descripcion.value="";
     }
 
 });
 
-const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-const appendAlert = (message, type) => {
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = [
-        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-        `   <div>${message}</div>`,
-        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-        '</div>'
-    ].join('')
 
-    alertPlaceholder.append(wrapper)
-}
 
