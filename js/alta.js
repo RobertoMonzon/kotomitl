@@ -70,7 +70,7 @@ function validarCostoInput() {
 }
 
 function validarDescripcionInput() {
-    regexDescripcion = /^[a-zA-Z0-9" ".-()]{3,}$/;
+    regexDescripcion = /^[a-zA-Z0-9" "]{3,}$/;
     let descrip = descripcion.value.trim()
     if (!regexDescripcion.test(descrip)) {
         return false
@@ -119,10 +119,8 @@ function imagePreview(event, querySelector){
     $previa = document.querySelector(querySelector);
 
     // Verificamos si existe una imagen seleccionada
-    if (!input.files.length) {
-        imgExist=false;
-        return
-    }
+    if (!input.files.length) return
+    
 
     //Recuperamos el archivo subido
     file = input.files[0];
@@ -134,8 +132,23 @@ function imagePreview(event, querySelector){
     $previa.src = objectURL;
 
     urlPrevia = objectURL;
+
     imgExist=true;
     console.log(urlPrevia);
+}
+
+function restauraImagen(){
+    //Recuperamos la etiqueta img donde cargaremos la imagen
+    $previa = document.getElementById("previa");
+
+    //Creamos la url
+    objectURL = "src/img/camara.png";
+
+    //Modificamos el atributo src de la etiqueta img
+    $previa.src = objectURL;
+
+    imgExist=true;
+    
 }
 
 btnGuardar.addEventListener("click", function (event) {
@@ -245,6 +258,7 @@ btnGuardar.addEventListener("click", function (event) {
         precioInput.value="";
         categoriaInput.value="0";
         descripcion.value="";
+        restauraImagen();
     }
 
 });
