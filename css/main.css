@@ -54,7 +54,7 @@ h2 {
     color: white;
 }
 
-.nav-link:hover, .filtro-catalogo:active {
+.nav-link:hover {
     color: #5C5346;
 }
 
@@ -93,17 +93,17 @@ footer ul li a {
 }
 
 
-#facebookLogo:hover, #facebookLogo:active {
+#facebookLogo:hover{
     animation: shaker 1s;
     animation-iteration-count: infinite;
 }
 
-#twitterLogo:hover, #twitterLogo:active {
+#twitterLogo:hover {
     animation: shaker 1s;
     animation-iteration-count: infinite;
 }
 
-#instagramLogo:hover, #instagramLogo:active {
+#instagramLogo:hover {
     animation: shaker 1s;
     animation-iteration-count: infinite;
 }
@@ -161,7 +161,7 @@ footer ul li a {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.card-team:active, .card-team:hover {
+.card-team:hover {
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
@@ -290,7 +290,7 @@ form label,
     list-style-type: none;
 }
 
-.filtro-catalogo:hover, .filtro-catalogo:active {
+.filtro-catalogo:hover {
     cursor: pointer;
     font-size: 2.8rem;
     transition: .5s;
