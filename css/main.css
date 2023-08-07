@@ -232,6 +232,16 @@ form label,
     font-size: 1.6rem;
 }
 
+
+label{
+    margin-left: 3rem;
+}
+
+.form-control{
+    width: 90%;
+    margin: auto;
+}
+
 form{
     padding-top: 5%;
 }
