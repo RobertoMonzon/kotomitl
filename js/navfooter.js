@@ -81,11 +81,6 @@ window.addEventListener("load", function (event) {
                                     <i class="bi bi-cart-fill nav--icon"></i>
                                 </a>
                             </li>
-
-                            <li class="nav-item precio">
-                                <a class="nav-link" href="#">0.00 MXN</a>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
@@ -97,17 +92,17 @@ window.addEventListener("load", function (event) {
     `
         <ul class="list-unstyled d-flex">
             <li>
-                <a href="#">
+                <a href="https://es-la.facebook.com/" target="_blank">
                     <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://twitter.com/?lang=es" target="_blank">
                     <img id="twitterLogo" src="./src/img/logos/twitterLogo.png" alt="twitterLogo">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.instagram.com/" target="_blank">
                     <img id="instagramLogo" src="./src/img/logos/instagramLogo.png" alt="instagramlogo">
                 </a>
             </li>

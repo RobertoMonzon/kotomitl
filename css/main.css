@@ -5,7 +5,7 @@
     font-size: 62.5%;
 }
 
-html{
+html {
     height: 100%;
     box-sizing: border-box;
 }
@@ -13,7 +13,7 @@ html{
 body {
     background-color: antiquewhite;
     position: relative;
-    margin:0;
+    margin: 0;
     min-height: 100%;
     padding-bottom: 0rem;
     box-sizing: inherit;
@@ -36,14 +36,14 @@ h2 {
 }
 
 /* ======= NAVBAR ======== */
-.nav-item{
+.nav-item {
     font-size: 2rem;
-    padding-right: 4rem; 
+    padding-right: 4rem;
 }
 
 
-.navbar-brand{
-    padding:  1rem 6rem 1rem 2rem;
+.navbar-brand {
+    padding: 1rem 6rem 1rem 2rem;
 }
 
 .custom-navbar {
@@ -54,10 +54,11 @@ h2 {
     color: white;
 }
 
-.nav-link:hover{    
+.nav-link:hover, .filtro-catalogo:active {
     color: #5C5346;
 }
-.nav--icon{
+
+.nav--icon {
     font-size: 2.5rem;
 }
 
@@ -71,21 +72,11 @@ h2 {
     font-size: 1.6rem;
 }
 
-.precio{
-    margin-top: .4rem;
-    margin-left: 4rem;
-    font-weight: bold;
-}
-
-.precio a:hover{
-    color: white;
-    cursor: default;
-}
 
 
 /* ======= FOOTER ======== */
-footer{
-    margin-top:3rem ;
+footer {
+    margin-top: 3rem;
     font-size: 1.8rem;
     padding: 3.5rem;
     text-align: center;
@@ -93,7 +84,7 @@ footer{
     left: 0;
     bottom: 0;
     background-color: #5C5346;
-    
+
 }
 
 
@@ -102,17 +93,17 @@ footer ul li a {
 }
 
 
-#facebookLogo:hover {
+#facebookLogo:hover, #facebookLogo:active {
     animation: shaker 1s;
     animation-iteration-count: infinite;
 }
 
-#twitterLogo:hover {
+#twitterLogo:hover, #twitterLogo:active {
     animation: shaker 1s;
     animation-iteration-count: infinite;
 }
 
-#instagramLogo:hover {
+#instagramLogo:hover, #instagramLogo:active {
     animation: shaker 1s;
     animation-iteration-count: infinite;
 }
@@ -143,7 +134,7 @@ footer ul li a {
 
 /* ========== CARDS ============== */
 
-.title__card{
+.title__card {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -152,7 +143,7 @@ footer ul li a {
     font-weight: bold;
 }
 
-.subtitle__card{
+.subtitle__card {
     text-align: center;
     color: rgb(157, 140, 10);
     font-size: 2rem;
@@ -160,34 +151,36 @@ footer ul li a {
     margin-bottom: 0.5rem;
 }
 
-.card-body{
+.card-body {
     font-size: 2.5rem;
     color: #353028;
     padding: .5rem 1.5rem 2rem 1.5rem;
-    }
+}
 
-.card{
+.card {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 
-.card-team:hover {
+.card-team:active, .card-team:hover {
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
-.card-footer{
+.card-footer {
     background-color: transparent;
 }
 
-.social__media{
+.social__media {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: flex-end;
 }
 
-.social__media__icon{
+.social__media__icon {
     font-size: 2.5rem;
+    color: rgb(83, 83, 83);
 }
+
 
 
 /* ============= CONCACTO ================== */
@@ -198,28 +191,28 @@ footer ul li a {
     text-align: left;
 }
 
-.inf-contact span{
+.inf-contact span {
     font-size: 2rem;
     font-weight: 600;
 }
 
-.inf-contact p{
+.inf-contact p {
     font-size: 1.6rem;
     padding: 3% 0 0 3%;
 }
 
-.icon__contacto{
+.icon__contacto {
     font-size: 1.6rem;
     padding-right: 2rem;
 }
 
-.maps{
+.maps {
     width: 70%;
     height: 25rem;
     margin: 2rem auto 2rem auto;
 }
 
-iframe{
+iframe {
     border-radius: 5px;
 }
 
@@ -231,25 +224,31 @@ iframe{
     margin-top: 2rem;
 }
 
-form, form label,.form-control, #btnEnviar{
+form,
+form label,
+.form-control,
+#btnEnviar {
     font-size: 1.6rem;
 }
 
-#alertValidaciones, #alertValidacionesTexto, #alertValidacionesTexto strong {
+#alertValidaciones,
+#alertValidacionesTexto,
+#alertValidacionesTexto strong {
     font-size: 1.6rem;
 }
 
-.icon__warning{
+.icon__warning {
     font-size: 1.5rem;
-    margin-right: 1rem;;
+    margin-right: 1rem;
+    ;
 }
 
-.warning__text{
+.warning__text {
     margin-left: auto;
     font-size: 2rem;
 }
 
-.informacion__seccion{
+.informacion__seccion {
     display: flex;
 }
 
@@ -266,7 +265,7 @@ form, form label,.form-control, #btnEnviar{
     margin-right: auto;
 }
 
-.catalogo-navbar ul{
+.catalogo-navbar ul {
     padding: 0;
 }
 
@@ -275,7 +274,7 @@ form, form label,.form-control, #btnEnviar{
 }
 
 .titulo-catalogo {
-    text-align: center; 
+    text-align: center;
 }
 
 .contenedor-navbar-catalogo {
@@ -291,16 +290,16 @@ form, form label,.form-control, #btnEnviar{
     list-style-type: none;
 }
 
-.filtro-catalogo:hover {
+.filtro-catalogo:hover, .filtro-catalogo:active {
     cursor: pointer;
     font-size: 2.8rem;
     transition: .5s;
-    text-shadow: 2px 0px 1px#CBA328 ;
+    text-shadow: 2px 0px 1px#CBA328;
 }
 
-.btn-producto{
+.btn-producto {
     font-size: 1.3rem;
-    width:9rem; 
+    width: 9rem;
     margin: 1rem 2rem 2rem 0;
 }
 
@@ -314,29 +313,32 @@ form, form label,.form-control, #btnEnviar{
     .iconoSuperior {
         display: none;
     }
-    .filtro-catalogo{
+
+    .filtro-catalogo {
         display: none;
     }
-    .contenedor-navbar-catalogo{
+
+    .contenedor-navbar-catalogo {
         display: hidden;
         border-right: none;
     }
-    .informacion__seccion{
+
+    .informacion__seccion {
         flex-direction: column;
     }
-    
-    .informacion__seccion > div {
+
+    .informacion__seccion>div {
         width: 100%;
     }
-    
+
 }
 
-@media Screen and (min-width:1024px){
-    .informacion__seccion{
+@media Screen and (min-width:1024px) {
+    .informacion__seccion {
         flex-direction: row;
     }
 
-    .informacion__seccion > div {
+    .informacion__seccion>div {
         width: 50%;
     }
 }
