@@ -60,7 +60,7 @@ window.addEventListener("load", function (event) {
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="./perfil.html">
+                                <a class="nav-link" href="./registroUsuario.html">
                                     <i class="bi bi-person-circle nav--icon"></i>
                                 </a>
                             </li>

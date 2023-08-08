@@ -63,7 +63,7 @@ function showProducts(prods) {
 
           </ul>
       </div>
-      <div class="col" style="width: 50%;align-items: center;display: flex;"" id="imagen-principal">
+      <div class="col" style="width: 50%;align-items: center;" id="imagen-principal">
         <img src="${prod.image}" class="rounded mx-auto d-block" alt="..." " style=" width: auto; height: 350px;">
       </div>
       <div class="col" style="width: 35%;">
