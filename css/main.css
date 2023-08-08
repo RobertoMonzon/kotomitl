@@ -14,11 +14,13 @@ body {
     background-color: #faebd7;
     position: relative;
     margin: 0;
-    min-height: 100%;
+    min-height: 100vh;/* Mínimo alto de la ventana del navegador */
     padding-bottom: 0rem;
     box-sizing: inherit;
     color: #353028;
 }
+
+
 
 h1 {
     padding: 2rem 0 2rem 0;
@@ -85,6 +87,9 @@ footer {
     left: 0;
     bottom: 0;
     background-color: #1c412f;
+
+    position: relative;
+    
 }
 
 footer ul li a {
