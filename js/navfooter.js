@@ -33,6 +33,7 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item">
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
+                        <!--
                         <li class="nav-item especial">
                             <a class="nav-link" href="./perfil.html">Perfil</a>
                         </li>
@@ -40,12 +41,12 @@ window.addEventListener("load", function (event) {
                             <a class="nav-link" href="./carrito.html">Carrito</a>
                         </li>
                         <li class="nav-item especial">
-                            <a class="nav-link" href="./favoritos.html">Favoritos</a>
+                            <a class="nav-link" href="./alta.html">Favoritos</a>
                         </li>
                         <li class="nav-item especial">
                             <input type="text" class="form-control" id="nameInput" placeholder="Buscar... " value=""
                                 required>
-                            <!-- <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
+                        <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
                                     alt="iconoBusqueda" width="40px" height="40px"></a> -->
                         </li>
                     </ul>
@@ -65,7 +66,7 @@ window.addEventListener("load", function (event) {
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="./favoritos.html">
+                                <a class="nav-link" href="./alta.html">
                                     <i class="bi bi-heart-fill nav--icon"></i>
                                 </a>
                             </li>

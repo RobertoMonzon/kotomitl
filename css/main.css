@@ -1,7 +1,6 @@
 /* ======== GENERAL ========= */
 
 * {
-    /* font-family: 'georama', sans-serif; */
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 62.5%;
 }
@@ -12,7 +11,7 @@ html {
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: #faebd7;
     position: relative;
     margin: 0;
     min-height: 100%;
@@ -116,7 +115,7 @@ footer ul li a {
 
     20%,
     80% {
-        transform: translate(-3px, -0px);
+        transform: translate(-3px, 0px);
     }
 
     30%,
@@ -423,6 +422,10 @@ form {
 /* ============= MEDIAS ================== */
 
 @media screen and (max-width: 992px) {
+    /* .navbar-nav .nav-item a{
+        display: inline;
+    } */
+
     .especial {
         display: contents;
     }
@@ -436,8 +439,9 @@ form {
     }
 
     .contenedor-navbar-catalogo {
-        display: hidden;
-        border-right: none;
+        display: none;
+        visibility: hidden;
+        width: 6.2rem;
     }
 
     .informacion__seccion {
@@ -447,7 +451,48 @@ form {
     .informacion__seccion>div {
         width: 100%;
     }
+
+    #barra-catalogo {
+        display: none;
+    }
+
+    main #filt_cat2 {
+        display: inline-block;
+        padding-bottom: 1%;
+    }
+
+    #filtro-superior #filt_mas2 {
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 3%;
+    }
+
+    #filtro-superior #filt_fem2 {
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 3%;
+    }
+
+    #filtro-superior #filt_inf2 {
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 3%;
+    }
+
+    /* modal */
+
+    #imagen-principal {
+        display: none;
+    }
+
+    .modal-title,
+    .codigo {
+        display: none;
+    }
+
+
 }
+
 
 @media Screen and (min-width:1024px) {
     .informacion__seccion {
@@ -477,34 +522,4 @@ form {
     font-size: 6rem;
     background-color: #1c412f;
     color: white;
-    -webkit-animation: text-focus-in 6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 6s 1 both;
-    animation: text-focus-in 6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 6s 1 both;
-}
-
-@-webkit-keyframes text-focus-in {
-    0% {
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes text-focus-in {
-    0% {
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
 }
