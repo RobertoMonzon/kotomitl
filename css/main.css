@@ -5,6 +5,16 @@
     font-size: 62.5%;
 }
 
+button{
+    color: antiquewhite;
+    background-color: #CBA328;
+}
+
+p{
+    font-family: 'georama', sans-serif;
+    font-size: 62.5%;
+}
+
 html{
     height: 100%;
     box-sizing: border-box;

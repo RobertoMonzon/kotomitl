@@ -24,8 +24,19 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
                         </li>
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link" href="./productos.html">Productos</a>
+=======
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                aria-expanded="false">Productos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./productos.html">Hombres</a></li>
+                                <li><a class="dropdown-item" href="./productos.html">Mujeres</a></li>
+                                <li><a class="dropdown-item" href="./productos.html">Infantes</a></li>
+                            </ul>
+>>>>>>> dad096793dc1c467f8627a9e1c24553fbd2d6802
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./nosotros.html">Nosotros</a>
