@@ -52,7 +52,7 @@ p{
 }
 
 .custom-navbar {
-    background-color: #CBA328;
+    background-color: #3a8761;
 }
 
 .nav-link {
@@ -88,7 +88,7 @@ footer {
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: #5C5346;
+    background-color: #1c412f;
 }
 
 
@@ -149,7 +149,7 @@ footer ul li a {
 
 .subtitle__card {
     text-align: center;
-    color: rgb(157, 140, 10);
+    color: rgb(10, 96, 54);
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
