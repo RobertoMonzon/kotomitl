@@ -140,6 +140,7 @@ footer ul li a {
     color: rgb(80, 80, 80);
     font-size: 2.5rem;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 .subtitle__card {
@@ -148,6 +149,7 @@ footer ul li a {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
 }
 
 .card-body {
@@ -323,7 +325,7 @@ form{
 .btn-producto {
     font-size: 1.3rem;
     width: 9rem;
-    margin: 1rem 2rem 2rem 0;
+    margin: auto;
 }
 
 #filtro-superior {
@@ -409,6 +411,11 @@ form{
     height: 450px;
 }
 
+.descripciones-modal > ul{
+    /* list-style: none; */
+    text-align: left;
+    padding: 1.5rem;
+}
 /* modal */
 
 

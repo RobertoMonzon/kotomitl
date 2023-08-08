@@ -19,7 +19,7 @@ function showProducts(prods) {
                         <div class="card card__team h-100">
                             <div style="text-align: center;">
                                 <img src="${prod.image}"
-                                    style="width: 150px; height: 150px; margin-top: 1rem;"
+                                    style="width: auto; height: 150px; margin-top: 1rem;"
                                     class="img-fluid rounded" alt="${prod.title}">
                             </div>
                             <div class="card-body">
@@ -32,7 +32,7 @@ function showProducts(prods) {
                                 <p class="card-text" style="text-align: justify;">${prod.description} ... </p>
                             </div>
                             
-                            <div style="text-align:right; margin-top:0;">
+                            <div style="text-align:center; margin: 0 auto 1.5rem auto;">
                             <button type="button" class="btn btn-warning btn-producto" data-bs-toggle="modal" data-bs-target="#exampleModal${prod.id}">
                             Ver más 
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
@@ -57,14 +57,14 @@ function showProducts(prods) {
     <div class="row" style="width: 100%;">
       <div class="col" style="width: 15%;">
         <ul class="list-group">
-            <li class="list-group-item"><img src="${prod.image}" class="rounded mx-auto d-block" alt="..." style="width: 75px; height: 150px;"></li>
-            <li class="list-group-item"><img src="${prod.image2}" class="rounded mx-auto d-block" alt="..." style="width: 75px; height: 150px;"></li>
-            <li class="list-group-item"><img src="${prod.image3}" class="rounded mx-auto d-block" alt="..." style="width: 75px; height: 150px;"></li>
+            <li class="list-group-item"><img src="${prod.image}" class="rounded mx-auto d-block" alt="..." style="width: auto; height: 150px;"></li>
+            <li class="list-group-item"><img src="${prod.image2}" class="rounded mx-auto d-block" alt="..." style="width: auto; height: 150px;"></li>
+            <li class="list-group-item"><img src="${prod.image3}" class="rounded mx-auto d-block" alt="..." style="width: auto; height: 150px;"></li>
 
           </ul>
       </div>
-      <div class="col" style="width: 50%;" id="imagen-principal">
-        <img src="${prod.image}" class="rounded mx-auto d-block" alt="..." " style=" width: 300px; height: 450px;">
+      <div class="col" style="width: 50%;align-items: center;display: flex;"" id="imagen-principal">
+        <img src="${prod.image}" class="rounded mx-auto d-block" alt="..." " style=" width: auto; height: 350px;">
       </div>
       <div class="col" style="width: 35%;">
         <!--Nombre del producto-->
@@ -124,11 +124,13 @@ function showProducts(prods) {
           <div class="descripciones-modal">
             <p>Descripción</p>
             <ul>
+            <p>${prod.description}</p>
+            
                 <li>${prod.Desc1}</li>
                 <li>${prod.Desc2}</li>
                 <li>${prod.Desc3}</li>
                 <li>${prod.Origen}</li>
-                <p>${prod.description}</p>
+                
             </ul>
           </div>
           <!--Botones-->
