@@ -78,17 +78,14 @@ let btnEnviar = document.getElementById("btnEnviar");
 
 btnEnviar.addEventListener("click", function (event) {
     event.preventDefault();
-    let esNombre = validarNombre();
-    let esTelefono = validarTelefono();
+
     let esEmail = validarEmail();
     let esPassword = validarpassword();
 
-    if (esNombre && esTelefono && esEmail && esMensaje) {
+    if (esEmail) {
         alertSuccess();
-        nombreInput.value = "";
-        telInput.value = "";
         emailInputLogin.value = "";
-        msjArea.value = "";
+        
     } else {
         alertWrong();
     }
