@@ -60,7 +60,7 @@ function addItem(prods) {
         <div class="container text-center">
             <div class="row">
               <div class="col">
-                <p class="codigo">Codigo:</p>
+                <p class="codigo">Código:</p>
               </div>
               <div class="col">
                 <p class="codigo">${prod.id}</p>
