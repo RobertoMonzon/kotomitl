@@ -35,7 +35,7 @@ h2 {
     font-size: 2.3rem;
 }
 
-p{
+p {
     font-size: 1.6rem;
 }
 
@@ -92,7 +92,7 @@ footer ul li a {
     padding: 0 1rem 0 1rem;
 }
 
-#facebookLogo:hover{
+#facebookLogo:hover {
     animation: shaker 1s;
     animation-iteration-count: 1;
 }
@@ -231,16 +231,16 @@ form label,
     font-size: 1.6rem;
 }
 
-label{
+label {
     margin-left: 3rem;
 }
 
-.form-control{
+.form-control {
     width: 90%;
     margin: auto;
 }
 
-form{
+form {
     padding-top: 5%;
 }
 
@@ -255,8 +255,8 @@ form{
     margin-right: 1rem;
 }
 
-.icon__send{
-    margin:0 1rem 0 auto; 
+.icon__send {
+    margin: 0 1rem 0 auto;
     font-size: 1.5rem;
 }
 
@@ -411,11 +411,12 @@ form{
     height: 450px;
 }
 
-.descripciones-modal > ul{
+.descripciones-modal>ul {
     /* list-style: none; */
     text-align: left;
     padding: 1.5rem;
 }
+
 /* modal */
 
 
@@ -458,7 +459,7 @@ form{
     }
 }
 
-.texto_boton{
+.texto_boton {
     font-size: 1.5rem;
     margin-right: .8rem;
 }
@@ -467,7 +468,43 @@ form{
     font-size: 2rem;
 }
 
-.featurette-divider{
-    margin-top: 5rem;
+.featurette-divider {
+    margin-top: 3rem;
     margin-bottom: 2.5rem;
+}
+
+.text-focus-in {
+    font-size: 6rem;
+    background-color: #1c412f;
+    color: white;
+    -webkit-animation: text-focus-in 6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 6s 1 both;
+    animation: text-focus-in 6s cubic-bezier(0.550, 0.085, 0.680, 0.530) 6s 1 both;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
 }
