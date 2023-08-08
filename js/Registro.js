@@ -188,6 +188,36 @@ function validarpassword() {
         return false;
     }
 }
+// ***********  Validación de Contraseña  ***********
+let passwordInputVal = document.getElementById("passwordInputVal");
+
+function validarpassword2() {
+    let Contraseña2 = passwordInputVal.value.trim();
+    let Contraseña1 = passwordInput.value.trim();
+
+    let alert_passwordVal = document.getElementById("alert_passwordVal");
+    let alert_passwordVal_txt = document.getElementById("alert_passwordVal_txt");
+
+    //elementos de validación limpios
+    passwordInputVal.style.border = "";
+    alert_passwordVal.style.display = "none";
+    alert_passwordVal_txt.innerHTML = "";
+
+    if (Contraseña1===Contraseña2) {
+        passwordInputVal.style.border = "solid 2px green";
+        return true;
+    } else {
+        alert_passwordVal_txt.insertAdjacentHTML("afterbegin", `Las contraseñas no conciden`);
+        alert_passwordVal.style.display = "flex";
+        passwordInputVal.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
+    }
+}
+
+passwordInputVal.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarpassword2();
+})
 
 passwordInput.addEventListener("change", function (element) {
     element.preventDefault();
