@@ -122,7 +122,7 @@ function validarMensaje() {
         msjArea.style.border = "solid 2px green";
         return true;
     } else {
-        alert_mensaje_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
+        alert_mensaje_txt.insertAdjacentHTML("afterbegin", `Mensaje incorrecto`);
         alert_mensaje.style.display = "flex";
         msjArea.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
