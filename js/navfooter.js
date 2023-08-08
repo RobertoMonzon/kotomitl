@@ -24,14 +24,8 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                aria-expanded="false">Productos</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./productos.html">Hombres</a></li>
-                                <li><a class="dropdown-item" href="./productos.html">Mujeres</a></li>
-                                <li><a class="dropdown-item" href="./productos.html">Niños</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./nosotros.html">Nosotros</a>
@@ -95,23 +89,27 @@ window.addEventListener("load", function (event) {
     
     footer.insertAdjacentHTML("beforeend",
     `
-        <ul class="list-unstyled d-flex">
+    <div class="container-fluid" style="width: 100%;">
+    <ul class="list-unstyled d-flex">
             <li>
                 <a href="#">
-                    <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo">
+                    <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo" style="width: 4.5rem;">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img id="twitterLogo" src="./src/img/logos/twitterLogo.png" alt="twitterLogo">
+                    <img id="twitterLogo" src="./src/img/logos/twitterLogo.png" alt="twitterLogo" style="width: 4.5rem;">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img id="instagramLogo" src="./src/img/logos/instagramLogo.png" alt="instagramlogo">
+                    <img id="instagramLogo" src="./src/img/logos/instagramLogo.png" alt="instagramlogo" style="width: 4.5rem;">
                 </a>
             </li>
         </ul>
+    
+    </div>
+        
     `
     );
 

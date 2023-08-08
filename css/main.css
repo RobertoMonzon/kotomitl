@@ -95,10 +95,52 @@ h2 {
         display: none;
     }
     .contenedor-navbar-catalogo{
-        display: hidden;
-        border-right: none;
+        display: none;
+        visibility: hidden;
+        width: 6.2rem;
 
     }
+
+    #barra-catalogo{
+        display: none;
+
+        
+
+    }
+
+    main #filt_cat2{
+        display: inline-block;
+        padding-bottom: 1%;
+    }
+
+    #filtro-superior #filt_mas2{
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 3%;
+    }
+
+    #filtro-superior #filt_fem2{
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 3%;
+    }
+
+    #filtro-superior #filt_inf2{
+        display: inline-block;
+        font-size: 2rem;
+        padding-bottom: 3%;
+    }
+
+    /* modal */
+
+    #imagen-principal{
+        display: none;
+      }
+
+    .modal-title, .codigo{
+        display: none;
+    }
+
 
 }
 
@@ -158,6 +200,7 @@ footer ul li a {
     60% {
         transform: translate(-1px, -1px);
     }
+
 }
 
 /* ========== CARDS ============== */
@@ -279,13 +322,20 @@ form, form label,.form-control, #btnEnviar{
     padding-bottom: 5rem;
 }
 
-.titulo-catalogo {
+.filtro-catalogo{
     text-align: center; 
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#filt_cat{
+    padding-bottom: 5rem;
 }
 
 .contenedor-navbar-catalogo {
     border-right: solid #353028;
     margin: 90px 0 10px 0;
+    padding-top: 2.4%;
 }
 
 .filtro-catalogo {
@@ -307,6 +357,33 @@ form, form label,.form-control, #btnEnviar{
     font-size: 1.3rem;
     width:9rem; 
     margin: 1rem 2rem 2rem 0;
+}
+
+#filtro-superior{
+    width: 100%;
+
+}
+
+#filtro-superior button{
+    background-color: transparent;
+    border: transparent;
+    color: #353028;
+    font-weight: bold;
+}
+
+#filt_cat2{
+    background-color: transparent;
+    border: transparent;
+    color: #353028;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+
+}
+
+#filt_cat2, #filt_mas2,#filt_fem2,#filt_inf2{
+    font-size: 2.6rem;
+    display: none;
 }
 
 /* modal */
@@ -351,4 +428,14 @@ form, form label,.form-control, #btnEnviar{
   .form-check,.btnmodal,#nombre_producto{
     font-size: 2rem;
   }
+
+
+  .imagen-principal{
+    width: 300px; height: 450px;
+  }
+
+
 /* modal */
+
+
+

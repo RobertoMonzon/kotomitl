@@ -162,7 +162,9 @@ prod1 = [
 
 { id: 7, title: "Camisa Yucateca", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/pantalon1-blanca.jpg", image2: "./src/img/ropa-kotomitl/pantalon2-azul.jpg", image3: "./src/img/ropa-kotomitl/pantalon2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
+{ id: 8, title: "Sandalias de piel", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/sandalias1-blanco.jpg", image2: "./src/img/ropa-kotomitl/sandalias1-azul.jpg", image3: "./src/img/ropa-kotomitl/sandalias1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } }
+
 
 ];
 
-addItem(prod1);
+map(prod1);

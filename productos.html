@@ -25,26 +25,39 @@
   <!-- ================= CONTENIDO ============== -->
   <main class="container mb-5">
     <!-- <section class="container"> -->
+      <button type="button" class="btn btn-outline-primary" id="filt_cat2">Catalogo</button>
+      <div class="container-fluid text-center container-products">
+        <div class="btn-group" role="group"  id="filtro-superior">
+          <button type="button" class="btn btn-outline-primary" id="filt_mas2">Hombre</button>
+          <button type="button" class="btn btn-outline-primary" id="filt_fem2">Mujer</button>
+          <button type="button" class="btn btn-outline-primary" id="filt_inf2">Infante</button>
+        </div>  
+      </div>
     
-    <div class="container-fluid text-center container-products">
+    <div class="container-fluid text-center container-products" id="productos-grande">
+
+
       <div class="row">
-        <div class="col-md-2 contenedor-navbar-catalogo d-flex justify-content-center align-items-top">
+        <div class="col-md-2 contenedor-navbar-catalogo d-flex justify-content-center align-items-top" id="barra-catalogo">
           <div class="catalogo-navbar">
             <ul style="list-style-type: none">
-              <li><a href="" class="filtro-catalogo">Hombre</a></li>
-              <li><a href="" class="filtro-catalogo">Mujer</a></li>
-              <li> <a href="" class="filtro-catalogo">Infantes</a></li>
+              <li><button href="" class="filtro-catalogo" id="filt_mas">Hombre</button></li>
+              <li><button href="" class="filtro-catalogo" id="filt_fem">Mujer</button></li>
+              <li><button href="" class="filtro-catalogo" id="filt_inf">Infantes</button></li>
             </ul>
           </div>
         </div>
         <div class="col-md-10">
-          <h1 class="titulo-catalogo">Catálogo</h1>
+          <button href="" class="filtro-catalogo" id="filt_cat">Catalogo</button>
+          
           <div id="main__prods" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-6">
-
           </div>
         </div>
       </div>
     </div>
+
+
+    
     <!-- </section> -->
   </main>
   <!-- ================= FOOTER ============== -->
@@ -60,7 +73,7 @@
   <script src="./js/navfooter.js"></script>
 
   <!-- Productos -->
-  <script src="./js/productos.js"></script>
+  <script src="./js/productos2.js"></script>
 </body>
 
 </html>
