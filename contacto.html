@@ -11,11 +11,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <!-- fonts google-->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@400;600&display=swap" rel="stylesheet"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <!-- css interno -->
     <link rel="stylesheet" href="./css/main.css">
+    <!-- Logo -->
+    <link rel="shortcut icon" href="./src/img/logos/kotomitl3.png" type="image/x-icon">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -24,95 +30,102 @@
 
     <!-- ================= CONTENIDO ============== -->
     <main class="container mb-5">
-        <section >
-            <!--aqui comienza la seccion-->
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        
-                        <h1>Contáctenos</h1>
-                        <!--Info contacto-->
-                        <div class="inf-contact">
-                            <span>Información</span>
-                            <p> <i class="bi bi-geo-fill icon__contacto"></i> Oaxaca 26, Centro, Dolores Hidalgo, Guanajuato, México.</p>
-                            <p><i class="bi bi-telephone-fill icon__contacto"></i>(+52) 41 81 10 20 62</p>
-                            <p><i class="bi bi-envelope-fill icon__contacto"></i>ventas@kotomitl.com</p>
-                        </div>
+        <section class="informacion__seccion text-center">
+            <!--=================== Sección de información ===============-->
+            <div class="columna">
+                <h1>Contáctenos</h1>
+                <!--Info contacto-->
+                <div class="inf-contact">
+                    <span>Información</span>
+                    <p> <i class="bi bi-geo-fill icon__contacto"></i> Oaxaca 26, Dolores Hidalgo,
+                        Gto.</p>
+                    <p><i class="bi bi-telephone-fill icon__contacto"></i>(+52) 41 81 10 20 62</p>
+                    <p><i class="bi bi-envelope-fill icon__contacto"></i>ventas@kotomitl.com</p>
+                </div>
 
-                        <div class="maps">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8270754170117!2d-100.93788102504558!3d21.15927898328351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b3fa9def5bc27%3A0x5af5e12e7f481a3e!2sOaxaca%2026%2C%20Centro%2C%2037800%20Dolores%20Hidalgo%20Cuna%20de%20la%20Independencia%20Nacional%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1691083849483!5m2!1ses-419!2smx" width="450rem" height="250rem" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                    <!--=================== FORMULARIO DE CONTACTO ===============-->
-                    <div class="col colForm">
-                        <h1 style="text-align: center;">Cuéntanos sobre ti</h1>
-                        <div class="alert alert-danger fade show" style="display:none;" role="alert"
-                            id="alertValidaciones">
-                            <p id="alertValidacionesTexto"></p>
-                        </div>
-
-                        <form class="needs-validation" id="form">
-                            <div class="mb-3">
-                                <label for="nameInput" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nameInput" placeholder="Juan Pérez" value=""
-                                    required>
-                                <div class="invalid-feedback">
-                                    Nombre inválido
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="telInput" class="form-label">Teléfono</label>
-                                <input
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                    type="tel" class="form-control" id="telInput" placeholder="555 123 4567" value=""
-                                    required minlength="10" maxlength="10" autocomplete="tel">
-                                <div class="invalid-feedback">
-                                    Telefono inválido
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="emailInput" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="emailInput"
-                                    placeholder="correo@example.com" value="" required>
-                                <div class="invalid-feedback">
-                                    Email inválido
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="asuntoInput" class="form-label">Asunto</label>
-                                <input type="text" class="form-control" id="asuntoInput" placeholder="" value=""
-                                    required>
-                                <div class="invalid-feedback">
-                                    Asunto inválido
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="msjArea" class="form-label">Mensaje</label>
-                                <textarea class="form-control" id="msjArea" rows="3" value="" required></textarea>
-                                <div class="invalid-feedback">
-                                    Mensaje inválido
-                                </div>
-                            </div>
-
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <!-- <input type="submit" class="btn btn-warning" id="btnEnviar"
-                                    style="margin: 2rem 0 2rem 0;" value="Enviar"> -->
-                                    <button type="button" class="btn btn-warning" id="btnEnviar"><i class="bi bi-send"></i> Enviar </button>
-                            </div>
-
-                            <script type="text/javascript"
-                                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-                            <script type="text/javascript">
-                                emailjs.init("SoLWovVxSmmjDXkRB");
-                            </script>
-                        </form>
-                    </div>
-                    <!--=================== TERMINA FORMULARIO DE CONTACTO ===============-->
+                <div class="maps">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.8270754170117!2d-100.93788102504558!3d21.15927898328351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b3fa9def5bc27%3A0x5af5e12e7f481a3e!2sOaxaca%2026%2C%20Centro%2C%2037800%20Dolores%20Hidalgo%20Cuna%20de%20la%20Independencia%20Nacional%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1691083849483!5m2!1ses-419!2smx"
+                        width="100%" height="100%" style="border:1px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-            <!--aqui termina la seccion-->
+            <!--=================== Formulario de contacto ===============-->
+            <div class="columna colForm">
+                <h1 style="text-align: center;">Cuéntanos sobre ti</h1>
 
+                <form class="needs-validation" id="form" action="https://formsubmit.co/tester.anonimo.85@gmail.com"
+                    method="POST">
+
+                    <!-- Nombre -->
+                    <div class="mb-5">
+                        <div class="d-flex">
+                            <label for="nombreInput" class="form-label">Nombre</label>
+                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                id="alert_nombre">
+                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                <span id="alert_nombre_txt"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" id="nombreInput" placeholder="Ej. Michell Flores"
+                            required minlength="3" maxlength="50" autocomplete="name" name="name">
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="mb-5">
+                        <div class="d-flex">
+                            <label for="telInput" class="form-label">Teléfono</label>
+                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                id="alert_telefono">
+                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                <span id="alert_telefono_txt"></span>
+                            </div>
+                        </div>
+                        <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                            type="tel" class="form-control" id="telInput" placeholder="10 dígitos" required
+                            minlength="10" maxlength="10" autocomplete="tel" name="phone">
+                    </div>
+                    <!-- Email -->
+                    <div class="mb-5">
+                        <div class="d-flex">
+                            <label for="emailInput" class="form-label">E-mail</label>
+
+                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                id="alert_email">
+                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                <span id="alert_email_txt"></span>
+                            </div>
+                        </div>
+                        <input type="email" class="form-control" id="emailInput" placeholder="Ej. correo@example.com"
+                            required name="email">
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="mb-5">
+                        <div class="d-flex">
+                            <label for="msjArea" class="form-label">Mensaje</label>
+                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                id="alert_mensaje">
+                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                <span id="alert_mensaje_txt"></span>
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="msjArea" rows="3" required name="message"></textarea>
+                    </div>
+                    <!-- Botón de envío -->
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-warning" id="btnEnviar" style="margin: 2rem 0 2rem 0;">
+                            <span>
+                                <i class="bi bi-send icon__send"></i>
+                            </span>
+                            Enviar mensaje </button>
+                    </div>
+
+                    <!-- deshabilitar propiedad de captcha y página por defecto de form submit   -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://robertomonzon.github.io/kotomitl/contacto">
+
+                </form>
+            </div>
         </section>
     </main>
 
@@ -130,8 +143,10 @@
     <script src="./js/navfooter.js"></script>
 
     <!-- main -->
-
     <script src="./js/main.js"></script>
+
+    <!-- Sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
