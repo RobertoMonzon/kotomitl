@@ -1,8 +1,6 @@
+// =========== VALIDACIÓN DE FORMULARIO DE REGISTRO ===========
 
-
-// =========== VALIDACIÓN DE FORMULARIO DE CONTACTO ===========
-
-//   ***********  Validación de nombre  ***********
+//   ***********  nombre  ***********
 let nombreInput = document.getElementById("nombreInput");
 
 function validarNombre() {
@@ -33,6 +31,36 @@ nombreInput.addEventListener("change", function (element) {
     validarNombre();
 })
 
+//   ***********  Validación de apellido  ***********
+let apellidoInput = document.getElementById("apellidoInput");
+
+function validarApellido() {
+    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü]{3,}$/;
+    let name = apellidoInput.value.trim().toUpperCase();
+
+    let alert_apellido = document.getElementById("alert_apellido");
+    let alert_apellido_txt = document.getElementById("alert_apellido_txt");
+
+    //elementos de validación limpios
+    apellidoInput.style.border = "";
+    alert_apellido.style.display = "none";
+    alert_apellido_txt.innerHTML = "";
+
+    if (regexName.test(name)) {
+        apellidoInput.style.border = "solid 2px green";
+        return true
+    } else {
+        alert_apellido_txt.insertAdjacentHTML("afterbegin", `Nombre incorrecto`);
+        alert_apellido.style.display = "flex";
+        apellidoInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
+    }
+}
+
+apellidoInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarApellido();
+})
 // ***********  Validación de teléfono  ***********
 let telInput = document.getElementById("telInput");
 
@@ -74,7 +102,7 @@ telInput.addEventListener("change", function (element) {
     validarTelefono();
 })
 
-// ***********  Validación de email  ***********
+// ***********  Email  ***********
 let emailInput = document.getElementById("emailInput");
 
 function validarEmail() {
@@ -104,36 +132,67 @@ emailInput.addEventListener("change", function (element) {
     element.preventDefault();
     validarEmail();
 })
+// ***********  Validación de Email  ***********
+let emailInputVal = document.getElementById("emailInputVal");
 
-// ***********  Validación de mensaje  ***********
-let msjArea = document.getElementById("msjArea");
+function validarEmail2() {
+    let email2 = emailInputVal.value.trim().toLowerCase();
+    let email1 = emailInput.value.trim().toLowerCase();
 
-function validarMensaje() {
-    let alert_mensaje = document.getElementById("alert_mensaje");
-    let alert_mensaje_txt = document.getElementById("alert_mensaje_txt");
-    let mensaje = msjArea.value.trim().length;
+    let alert_emailVal = document.getElementById("alert_emailVal");
+    let alert_emailVal_txt = document.getElementById("alert_emailVal_txt");
 
     //elementos de validación limpios
-    msjArea.style.border = "";
-    alert_mensaje.style.display = "none";
-    alert_mensaje_txt.innerHTML = "";
+    emailInputVal.style.border = "";
+    alert_emailVal.style.display = "none";
+    alert_emailVal_txt.innerHTML = "";
 
-    if (mensaje > 10) {
-        msjArea.style.border = "solid 2px green";
+    if (email1===email2) {
+        emailInputVal.style.border = "solid 2px green";
         return true;
     } else {
-        alert_mensaje_txt.insertAdjacentHTML("afterbegin", `Mensaje incorrecto`);
-        alert_mensaje.style.display = "flex";
-        msjArea.style.border = "solid 2px rgb(186, 3, 3)";
+        alert_emailVal_txt.insertAdjacentHTML("afterbegin", `E-mail no es correcto`);
+        alert_emailVal.style.display = "flex";
+        emailInputVal.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
     }
 }
 
-msjArea.addEventListener("change", function (element) {
+emailInputVal.addEventListener("change", function (element) {
     element.preventDefault();
-    validarMensaje();
+    validarEmail2();
 })
 
+// ***********  CONTRASEÑA  ***********
+let passwordInput = document.getElementById("passwordInput");
+
+function validarpassword() {
+    let regexpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
+    let password = passwordInput.value.trim();
+
+    let alert_password = document.getElementById("alert_password");
+    let alert_password_txt = document.getElementById("alert_password_txt");
+
+    //elementos de validación limpios
+    passwordInput.style.border = "";
+    alert_password.style.display = "none";
+    alert_password_txt.innerHTML = "";
+
+    if (regexpassword.test(password)) {
+        passwordInput.style.border = "solid 2px green";
+        return true;
+    } else {
+        alert_password_txt.insertAdjacentHTML("afterbegin", `Password incorrecto`);
+        alert_password.style.display = "flex";
+        passwordInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
+    }
+}
+
+passwordInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarpassword();
+})
 // ***********  Alerta de error  ***********
 function alertWrong() {
     swal("Información inválida", "Por favor revisa nuevamente el formulario", "error");
@@ -146,18 +205,17 @@ function alertSuccess() {
 
 // ***********  Botón de envío  ***********
 let btnEnviar = document.getElementById("btnEnviar");
-let form = document.getElementById('form');
+
 
 btnEnviar.addEventListener("click", function (event) {
     event.preventDefault();
     let esNombre = validarNombre();
     let esTelefono = validarTelefono();
     let esEmail = validarEmail();
-    let esMensaje = validarMensaje();
+    let esPassword = validarpassword();
 
     if (esNombre && esTelefono && esEmail && esMensaje) {
         alertSuccess();
-        form.submit();
         nombreInput.value = "";
         telInput.value = "";
         emailInput.value = "";

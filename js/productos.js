@@ -60,7 +60,7 @@ function addItem(prods) {
         <div class="container text-center">
             <div class="row">
               <div class="col">
-                <p class="codigo">Codigo:</p>
+                <p class="codigo">Código:</p>
               </div>
               <div class="col">
                 <p class="codigo">${prod.id}</p>
@@ -148,21 +148,23 @@ function addItem(prods) {
 
 prod1 = [
 
-{ id: 1, title: "Camisa Yucateca manga corta", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/camisa1-blanca.jpg", image2: "./src/img/ropa-kotomitl/camisa1-azul.jpg", image3: "./src/img/ropa-kotomitl/camisa1-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 1, title: "Camisa Yucateca manga corta", price: 500, description: "Preciosa camisa blanca de manga corta yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/camisa1-blanca.jpg", image2: "./src/img/ropa-kotomitl/camisa1-azul.jpg", image3: "./src/img/ropa-kotomitl/camisa1-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-{ id: 2, title: "Camisa Yucateca manga larga", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/camisa2-blanca.jpg", image2: "./src/img/ropa-kotomitl/camisa2-azul.jpg", image3: "./src/img/ropa-kotomitl/camisa2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 2, title: "Camisa Yucateca manga larga", price: 500, description: "Preciosa camisa blanca de manga larga yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/camisa2-blanca.jpg", image2: "./src/img/ropa-kotomitl/camisa2-azul.jpg", image3: "./src/img/ropa-kotomitl/camisa2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-{ id: 3, title: "Poncho mexicano", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/poncho2-blanco.jpg", image2: "./src/img/ropa-kotomitl/poncho1-azul.jpg", image3: "./src/img/ropa-kotomitl/poncho1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 3, title: "Poncho mexicano", price: 500, description: "Precioso poncho mexicano bordado a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/poncho2-blanco.jpg", image2: "./src/img/ropa-kotomitl/poncho1-azul.jpg", image3: "./src/img/ropa-kotomitl/poncho1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricado en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-{ id: 4, title: "Short artesanal", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/short1-blanca.jpg", image2: "./src/img/ropa-kotomitl/short1-azul.jpg", image3: "./src/img/ropa-kotomitl/short1-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 4, title: "Short artesanal", price: 500, description: "Precioso short artesanal bordado a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/short1-blanca.jpg", image2: "./src/img/ropa-kotomitl/short1-azul.jpg", image3: "./src/img/ropa-kotomitl/short1-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-{ id: 5, title: "Traje de baño artesanal", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/short2-blanca.jpg", image2: "./src/img/ropa-kotomitl/short2-azul.jpg", image3: "./src/img/ropa-kotomitl/short2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 5, title: "Traje de baño artesanal", price: 500, description: "Precioso traje de baño artesanal bordado a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/short2-blanca.jpg", image2: "./src/img/ropa-kotomitl/short2-azul.jpg", image3: "./src/img/ropa-kotomitl/short2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricado en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-{ id: 6, title: "Zapato de piel", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/zapato1-blanca.jpg", image2: "./src/img/ropa-kotomitl/zapato1-azul.jpg", image3: "./src/img/ropa-kotomitl/zapato1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 6, title: "Zapato de piel", price: 500, description: "Preciosos zapatos de piel fabricados artesanalmente!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/zapato1-blanca.jpg", image2: "./src/img/ropa-kotomitl/zapato1-azul.jpg", image3: "./src/img/ropa-kotomitl/zapato1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricados en taller familiar",rating: { "rate": 4.9, "count": 500 } },
 
-{ id: 7, title: "Camisa Yucateca", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/pantalon1-blanca.jpg", image2: "./src/img/ropa-kotomitl/pantalon2-azul.jpg", image3: "./src/img/ropa-kotomitl/pantalon2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+{ id: 7, title: "Camisa Yucateca", price: 500, description: "Preciosa camisa yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/pantalon1-blanca.jpg", image2: "./src/img/ropa-kotomitl/pantalon2-azul.jpg", image3: "./src/img/ropa-kotomitl/pantalon2-negra.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } },
+
+{ id: 8, title: "Sandalias de piel", price: 500, description: "Preciosa camisa blanca yucateca bordada a mano!", Origen: "Otomi", image: "./src/img/ropa-kotomitl/sandalias1-blanco.jpg", image2: "./src/img/ropa-kotomitl/sandalias1-azul.jpg", image3: "./src/img/ropa-kotomitl/sandalias1-negro.jpg",Desc1:"100% de lino",Desc2:"Fabricada a mano",Desc3:"Fabricada en taller familiar",rating: { "rate": 4.9, "count": 500 } }
 
 
 ];
 
-addItem(prod1);
+map(prod1);

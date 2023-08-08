@@ -24,14 +24,8 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                aria-expanded="false">Productos</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./productos.html">Hombres</a></li>
-                                <li><a class="dropdown-item" href="./productos.html">Mujeres</a></li>
-                                <li><a class="dropdown-item" href="./productos.html">Niños</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./productos.html">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./nosotros.html">Nosotros</a>
@@ -39,6 +33,7 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item">
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
+                        <!--
                         <li class="nav-item especial">
                             <a class="nav-link" href="./perfil.html">Perfil</a>
                         </li>
@@ -46,12 +41,12 @@ window.addEventListener("load", function (event) {
                             <a class="nav-link" href="./carrito.html">Carrito</a>
                         </li>
                         <li class="nav-item especial">
-                            <a class="nav-link" href="./favoritos.html">Favoritos</a>
+                            <a class="nav-link" href="./alta.html">Favoritos</a>
                         </li>
                         <li class="nav-item especial">
                             <input type="text" class="form-control" id="nameInput" placeholder="Buscar... " value=""
                                 required>
-                            <!-- <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
+                        <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
                                     alt="iconoBusqueda" width="40px" height="40px"></a> -->
                         </li>
                     </ul>
@@ -65,13 +60,13 @@ window.addEventListener("load", function (event) {
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="./perfil.html">
+                                <a class="nav-link" href="./registroUsuario.html">
                                     <i class="bi bi-person-circle nav--icon"></i>
                                 </a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="./favoritos.html">
+                                <a class="nav-link" href="./alta.html">
                                     <i class="bi bi-heart-fill nav--icon"></i>
                                 </a>
                             </li>
@@ -81,11 +76,6 @@ window.addEventListener("load", function (event) {
                                     <i class="bi bi-cart-fill nav--icon"></i>
                                 </a>
                             </li>
-
-                            <li class="nav-item precio">
-                                <a class="nav-link" href="#">0.00 MXN</a>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
@@ -97,17 +87,17 @@ window.addEventListener("load", function (event) {
     `
         <ul class="list-unstyled d-flex">
             <li>
-                <a href="#">
+                <a href="https://es-la.facebook.com/" target="_blank">
                     <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://twitter.com/?lang=es" target="_blank">
                     <img id="twitterLogo" src="./src/img/logos/twitterLogo.png" alt="twitterLogo">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="https://www.instagram.com/" target="_blank">
                     <img id="instagramLogo" src="./src/img/logos/instagramLogo.png" alt="instagramlogo">
                 </a>
             </li>
