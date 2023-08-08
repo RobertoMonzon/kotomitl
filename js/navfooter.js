@@ -84,8 +84,7 @@ window.addEventListener("load", function (event) {
     
     footer.insertAdjacentHTML("beforeend",
     `
-    <div class="container-fluid" style="width: 100%;">
-    <ul class="list-unstyled d-flex">
+        <ul class="list-unstyled d-flex">
             <li>
                 <a href="https://es-la.facebook.com/" target="_blank">
                     <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo">
@@ -102,9 +101,6 @@ window.addEventListener("load", function (event) {
                 </a>
             </li>
         </ul>
-    
-    </div>
-        
     `
     );
 
