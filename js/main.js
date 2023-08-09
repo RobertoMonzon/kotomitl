@@ -1,16 +1,30 @@
 
 
 // =========== VALIDACIÓN DE FORMULARIO DE CONTACTO ===========
+let nombreInput = document.getElementById("nombreInput");
+let alert_nombre = document.getElementById("alert_nombre");
+let alert_nombre_txt = document.getElementById("alert_nombre_txt");
+
+let telInput = document.getElementById("telInput");
+let alert_telefono = document.getElementById("alert_telefono");
+let alert_telefono_txt = document.getElementById("alert_telefono_txt");
+
+let emailInput = document.getElementById("emailInput");
+let alert_email = document.getElementById("alert_email");
+let alert_email_txt = document.getElementById("alert_email_txt");
+
+let msjArea = document.getElementById("msjArea");
+let alert_mensaje = document.getElementById("alert_mensaje");
+let alert_mensaje_txt = document.getElementById("alert_mensaje_txt");
+
+let btnEnviar = document.getElementById("btnEnviar");
+let form = document.getElementById('form');
 
 //   ***********  Validación de nombre  ***********
-let nombreInput = document.getElementById("nombreInput");
 
 function validarNombre() {
     let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü]{3,}$/;
     let name = nombreInput.value.trim().toUpperCase();
-
-    let alert_nombre = document.getElementById("alert_nombre");
-    let alert_nombre_txt = document.getElementById("alert_nombre_txt");
 
     //elementos de validación limpios
     nombreInput.style.border = "";
@@ -34,14 +48,10 @@ nombreInput.addEventListener("change", function (element) {
 })
 
 // ***********  Validación de teléfono  ***********
-let telInput = document.getElementById("telInput");
 
 function validarTelefono() {
     let regexPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
     let phone = telInput.value.trim();
-
-    let alert_telefono = document.getElementById("alert_telefono");
-    let alert_telefono_txt = document.getElementById("alert_telefono_txt");
 
     //elementos de validación limpios
     telInput.style.border = "";
@@ -75,14 +85,10 @@ telInput.addEventListener("change", function (element) {
 })
 
 // ***********  Validación de email  ***********
-let emailInput = document.getElementById("emailInput");
 
 function validarEmail() {
     let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
     let email = emailInput.value.trim().toLowerCase();
-
-    let alert_email = document.getElementById("alert_email");
-    let alert_email_txt = document.getElementById("alert_email_txt");
 
     //elementos de validación limpios
     emailInput.style.border = "";
@@ -106,11 +112,8 @@ emailInput.addEventListener("change", function (element) {
 })
 
 // ***********  Validación de mensaje  ***********
-let msjArea = document.getElementById("msjArea");
 
 function validarMensaje() {
-    let alert_mensaje = document.getElementById("alert_mensaje");
-    let alert_mensaje_txt = document.getElementById("alert_mensaje_txt");
     let mensaje = msjArea.value.trim().length;
 
     //elementos de validación limpios
@@ -145,8 +148,6 @@ function alertSuccess() {
 }
 
 // ***********  Botón de envío  ***********
-let btnEnviar = document.getElementById("btnEnviar");
-let form = document.getElementById('form');
 
 btnEnviar.addEventListener("click", function (event) {
     event.preventDefault();
@@ -157,11 +158,23 @@ btnEnviar.addEventListener("click", function (event) {
 
     if (esNombre && esTelefono && esEmail && esMensaje) {
         alertSuccess();
-        form.submit();
+
+        setTimeout(() => {
+            form.submit()
+        }, 2000);
+
         nombreInput.value = "";
+        nombreInput.style.border = ""
+
         telInput.value = "";
+        telInput.style.border = "";
+
         emailInput.value = "";
+        emailInput.style.border = "";
+
         msjArea.value = "";
+        msjArea.style.border = "";
+
     } else {
         alertWrong();
     }
