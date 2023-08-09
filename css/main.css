@@ -523,3 +523,12 @@ form {
     background-color: #1c412f;
     color: white;
 }
+
+.static {
+    position:absolute;
+    background: white;
+  }
+  
+  .static:hover {
+    opacity:0;
+  }
