@@ -45,11 +45,11 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item especial">
                             <a class="nav-link" href="./alta.html">Favoritos</a>
                         </li>
-                        <li class="nav-item especial">
+                       <!-- <li class="nav-item especial">
                             <input type="text" class="form-control" id="nameInput" placeholder="Buscar... " value=""
                                 required>
                         <a class="nav-link" href="#"><img src="./src/img/logos/iconoBusqueda.png"
-                                    alt="iconoBusqueda" width="40px" height="40px"></a> -->
+                                    alt="iconoBusqueda" width="40px" height="40px"></a>-->
                         </li>
                     </ul>
                     <div class="iconoSuperior media">
