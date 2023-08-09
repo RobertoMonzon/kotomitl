@@ -248,7 +248,7 @@ btnGuardar.addEventListener("click", function (event) {
         let producto = `{codigo: ${codigoInput.value}, imagen: ${urlPrevia}, cantidad: ${cantidadInput.value}, nombre: ${nombreInput.value}, precio: ${precioInput.value}, costo: ${costoInput.value}, categoria: ${categoriaInput.value}, descripcion: ${descripcion.value}}`
         ls.setItem(cont, JSON.stringify(producto));
         console.log("si2");
-        alertValidacionesTextoBueno.insertAdjacentHTML("afterbegin", `El producto se agrego correctamente.`);
+        alertValidacionesTextoBueno.insertAdjacentHTML("afterbegin", `El producto se agregó correctamente.`);
         alertValidacionesBueno.style.display = "block";
 
         codigoInput.value="";
