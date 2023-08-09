@@ -161,19 +161,18 @@ btnEnviar.addEventListener("click", function (event) {
 
         setTimeout(() => {
             form.submit()
+            nombreInput.value = "";
+            nombreInput.style.border = ""
+    
+            telInput.value = "";
+            telInput.style.border = "";
+    
+            emailInput.value = "";
+            emailInput.style.border = "";
+    
+            msjArea.value = "";
+            msjArea.style.border = "";
         }, 2000);
-
-        nombreInput.value = "";
-        nombreInput.style.border = ""
-
-        telInput.value = "";
-        telInput.style.border = "";
-
-        emailInput.value = "";
-        emailInput.style.border = "";
-
-        msjArea.value = "";
-        msjArea.style.border = "";
 
     } else {
         alertWrong();
