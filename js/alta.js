@@ -20,9 +20,12 @@ let cantidad = cantidadInput.value;
 let isValid = true;
 let num = 0;
 let cont = 0;
-let ls = localStorage;
+// let ls = localStorage;
 let urlPrevia;
 let imgExist = false;
+
+let listaProductos = new Array(); // para almacenar elementos de la tabla
+
 
 function validarCodigoInput() {
     regexName = /^[a-zA-Z0-9]{3,}$/;
@@ -79,7 +82,7 @@ function validarDescripcionInput() {
 }
 
 function validarCategoriaInput() {
-    if (!(categoriaInput.value>0)) {
+    if (!(categoriaInput.value > 0)) {
         return false
     }
     return true;
@@ -110,7 +113,7 @@ cantidadInput.addEventListener("keyup", function (event) {
     console.log(cantidad);
 })
 
-function imagePreview(event, querySelector){
+function imagePreview(event, querySelector) {
 
     //Recuperamos el input que desencadeno la acción
     const input = event.target;
@@ -120,7 +123,7 @@ function imagePreview(event, querySelector){
 
     // Verificamos si existe una imagen seleccionada
     if (!input.files.length) return
-    
+
 
     //Recuperamos el archivo subido
     file = input.files[0];
@@ -133,11 +136,12 @@ function imagePreview(event, querySelector){
 
     urlPrevia = objectURL;
 
-    imgExist=true;
+    imgExist = true;
     console.log(urlPrevia);
+    //blob:http://127.0.0.1:5500/6bdde9a1-44e4-4d01-971c-537f4c35549b
 }
 
-function restauraImagen(){
+function restauraImagen() {
     //Recuperamos la etiqueta img donde cargaremos la imagen
     $previa = document.getElementById("previa");
 
@@ -147,14 +151,15 @@ function restauraImagen(){
     //Modificamos el atributo src de la etiqueta img
     $previa.src = objectURL;
 
-    imgExist=true;
-    
+    imgExist = true;
+
 }
 
 btnGuardar.addEventListener("click", function (event) {
     event.preventDefault();
     alertValidaciones.style.display = "none";
     alertValidacionesTexto.innerHTML = "";
+    alertValidacionesTextoBueno.innerHTML = "";
 
     codigoInput.style.border = "";
     cantidadInput.style.border = "";
@@ -242,26 +247,62 @@ btnGuardar.addEventListener("click", function (event) {
     }
 
     console.log("si");
+
     if (isValid) {
         console.log("si1");
         cont++;
-        let producto = `{codigo: ${codigoInput.value}, imagen: ${urlPrevia}, cantidad: ${cantidadInput.value}, nombre: ${nombreInput.value}, precio: ${precioInput.value}, costo: ${costoInput.value}, categoria: ${categoriaInput.value}, descripcion: ${descripcion.value}}`
-        ls.setItem(cont, JSON.stringify(producto));
-        console.log("si2");
+
+        let producto = `
+        {       
+        "id": 1, 
+        "title": "${nombreInput.value}", 
+        "price": ${precioInput.value}, 
+        "description" : "${descripcion.value}", 
+        "Origen" : "N.A.", 
+        "image" : "./src/img/camara.png", 
+        "image2" : "./src/img/camara.png", 
+        "image3" : "${urlPrevia}",
+        "Desc1" : "N.A.",
+        "Desc2" : "N.A.",
+        "Desc3" : "N.A.",
+        "gen" : "mas"
+        }`;
+
+        /*codigo: ${codigoInput.value},
+        imagen: , 
+        cantidad: ${cantidadInput.value}, 
+        nombre: , 
+        precio: , 
+        costo: ${costoInput.value}, 
+        categoria: ${categoriaInput.value}, 
+        descripcion: */
+
+        //convierte en objeto para almacenarlo
+        listaProductos.push(JSON.parse(producto));
+        console.log(listaProductos);
+
+        // convierte objeto en string para localStorage
+        localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
+
+        // ls.setItem(cont, JSON.stringify(producto));
+        // console.log("si2");
+
+
         alertValidacionesTextoBueno.insertAdjacentHTML("afterbegin", `El producto se agrego correctamente.`);
         alertValidacionesBueno.style.display = "block";
 
-        codigoInput.value="";
-        cantidadInput.value="0";
-        nombreInput.value="";
-        costoInput.value="";
-        precioInput.value="";
-        categoriaInput.value="0";
-        descripcion.value="";
+        codigoInput.value = "";
+        cantidadInput.value = "0";
+        nombreInput.value = "";
+        costoInput.value = "";
+        precioInput.value = "";
+        categoriaInput.value = "0";
+        descripcion.value = "";
         restauraImagen();
     }
 
 });
 
 
+// localStorage.clear(); para limpiar almacenamiento
 
