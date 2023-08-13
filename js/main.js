@@ -1,5 +1,3 @@
-
-
 // =========== VALIDACIÓN DE FORMULARIO DE CONTACTO ===========
 let nombreInput = document.getElementById("nombreInput");
 let alert_nombre = document.getElementById("alert_nombre");
