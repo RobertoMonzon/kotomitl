@@ -15,7 +15,7 @@ const passwordInputVal = document.getElementById('passwordInputVal');
 let nombreInput = document.getElementById("nombreInput");
 
 function validarNombre() {
-    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü]{3,}$/;
+    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{3,50}$/;
     let name = nombreInput.value.trim().toUpperCase();
 
     let alert_nombre = document.getElementById("alert_nombre");
@@ -46,7 +46,7 @@ nombreInput.addEventListener("change", function (element) {
 let apellidoInput = document.getElementById("apellidoInput");
 
 function validarApellido() {
-    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü]{3,}$/;
+    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ,']{3,50}$/;
     let name = apellidoInput.value.trim().toUpperCase();
 
     let alert_apellido = document.getElementById("alert_apellido");
@@ -61,7 +61,7 @@ function validarApellido() {
         apellidoInput.style.border = "solid 2px green";
         return true
     } else {
-        alert_apellido_txt.insertAdjacentHTML("afterbegin", `Nombre incorrecto`);
+        alert_apellido_txt.insertAdjacentHTML("afterbegin", `Apellido incorrecto`);
         alert_apellido.style.display = "flex";
         apellidoInput.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
@@ -162,7 +162,7 @@ function validarEmail2() {
         emailInputVal.style.border = "solid 2px green";
         return true;
     } else {
-        alert_emailVal_txt.insertAdjacentHTML("afterbegin", `E-mail no es correcto`);
+        alert_emailVal_txt.insertAdjacentHTML("afterbegin", `No coincide e-mail`);
         alert_emailVal.style.display = "flex";
         emailInputVal.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
@@ -178,7 +178,7 @@ emailInputVal.addEventListener("change", function (element) {
 let passwordInput = document.getElementById("passwordInput");
 
 function validarpassword() {
-    let regexpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
+    let regexpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&-_/]{8,15}/;
     let password = passwordInput.value.trim();
 
     let alert_password = document.getElementById("alert_password");
@@ -193,7 +193,7 @@ function validarpassword() {
         passwordInput.style.border = "solid 2px green";
         return true;
     } else {
-        alert_password_txt.insertAdjacentHTML("afterbegin", `Password incorrecto`);
+        alert_password_txt.insertAdjacentHTML("afterbegin", `Contraseña incorrecta`);
         alert_password.style.display = "flex";
         passwordInput.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
@@ -218,7 +218,7 @@ function validarpassword2() {
         passwordInputVal.style.border = "solid 2px green";
         return true;
     } else {
-        alert_passwordVal_txt.insertAdjacentHTML("afterbegin", `Las contraseñas no conciden`);
+        alert_passwordVal_txt.insertAdjacentHTML("afterbegin", `No concide con la contraseña`);
         alert_passwordVal.style.display = "flex";
         passwordInputVal.style.border = "solid 2px rgb(186, 3, 3)";
         return false;
@@ -246,14 +246,15 @@ function alertSuccess() {
 
 // ***********  Alerta de error  ***********
 function alertWrong() {
-    swal("Hay errores en el formulario. Por favor, revisa nuevamente.", "error");
+    swal("Información inválida :(", "Por favor, revisa nuevamente", "error");
 }
 
 // ***********  Alerta de éxito  ***********
 function alertSuccess() {
-    swal("¡Registro exitoso!, ya puedes iniciar sesión", "success");
+    swal("¡Registro exitoso!", "Ya puedes iniciar sesión", "success");
 }
 
+let listaUsuarios = new Array(); // para almacenar elementos de la tabla
 
 // Escucha el evento click en el botón de envío
 document.getElementById('btnEnviar').addEventListener('click', function () {
@@ -268,16 +269,16 @@ document.getElementById('btnEnviar').addEventListener('click', function () {
 
     // Si todas las validaciones son exitosas, guarda el registro en el localStorage
     if (esNombre && esApellido && esTelefono && esEmail && esEmailVal && esPassword && esPasswordVal) {
-        const registro = {
-            nombre: nombreInput.value,
-            apellido: apellidoInput.value,
-            telefono: telInput.value,
-            email: emailInput.value,
-            password: passwordInput.value
-        };
+        const registro = `{
+            "nombre": "${nombreInput.value.trim().toUpperCase()}",
+            "apellido": "${apellidoInput.value.trim().toUpperCase()}",
+            "telefono": "${telInput.value}",
+            "email": "${emailInput.value.trim().toLowerCase()}",
+            "password": "${passwordInput.value}"
+        }`;
         
-        const registroJSON = JSON.stringify(registro);
-        localStorage.setItem('registroUsuario', registroJSON);
+        listaUsuarios.push(JSON.parse(registro));
+        localStorage.setItem('registroUsuario', JSON.stringify(listaUsuarios));
 
         // Limpia los campos del formulario
         nombreInput.value = '';
@@ -294,9 +295,20 @@ document.getElementById('btnEnviar').addEventListener('click', function () {
             text: "Ya puedes iniciar sesión.",
             icon: "success"
         }).then(function() {
-            window.location.href = "../loginUsuario.html";
+            // window.location.href = "../loginUsuario.html";
         });
     } else {
         alertWrong();
     }
 });
+
+window.addEventListener("load", function (event) {
+    event.preventDefault();
+    if (this.localStorage.getItem("listaUsuarios") != null) {
+        // Obtener el arreglo del localStorage
+        var listaUsuariosJSON = localStorage.getItem('listaUsuarios');
+
+        // Convertir la cadena JSON nuevamente a un arreglo
+        listaUsuarios = JSON.parse(listaUsuariosJSON);
+    }
+})

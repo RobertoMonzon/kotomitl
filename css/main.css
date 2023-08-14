@@ -42,7 +42,7 @@ p {
 }
 
 /* ======= NAVBAR ======== */
-header{
+header {
     width: auto;
 }
 
@@ -469,10 +469,10 @@ form {
     main #filt_cat2 {
         display: inline-block;
         margin-bottom: 5%;
-        
+
     }
 
-    #filtro-superior{
+    #filtro-superior {
         margin-bottom: 5%;
     }
 
@@ -505,7 +505,11 @@ form {
         display: none;
     }
 
-
+    .banner_registro, .banner_registro img{
+        height: .5rem;
+        width: .5rem;
+        visibility: hidden;
+    }
 }
 
 
@@ -574,9 +578,22 @@ form {
 .container_img #imageFile_1,
 .container_img #imageFile_2,
 .container_img #imageFile_3 {
-    
+
     max-width: 90%;
     max-height: 90%;
     border-radius: 5%;
+}
+
+.banner_registro img {
+    /* border: 1px solid gray; */
+    /* padding: 10px; */
+    box-shadow:  8px 8px 5px rgba(237, 137, 6, 0.3);
+    border-radius: 45px;
+    color:white;
+}
+
+.banner_registro{
+    padding-bottom: 5rem;
+    padding-left: 5rem;
 }
 

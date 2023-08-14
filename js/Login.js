@@ -1,64 +1,14 @@
 // =========== VALIDACIÓN DE FORMULARIO DE LOGIN ===========
-let emailInput = document.getElementById("emailInput");
-let passwordInput = document.getElementById("passwordInput");
-let btnEnviar = document.getElementById("btnEnviar");
+var emailInput = document.getElementById("emailInput");
+var passwordInput = document.getElementById("passwordInput");
+var btnEnviar = document.getElementById("btnEnviar");
 
-// Escucha el evento click en el botón de envío
-btnEnviar.addEventListener("click", function () {
-    // Se obtienen los valores de los campos del formulario
-    let email = emailInput.value.trim().toLowerCase();
-    let password = passwordInput.value.trim();
+var alert_email_login = document.getElementById("alert_email_login")
+var alert_email_login_txt = document.getElementById("alert_email_login_txt")
 
-    // Se obtienen los registros almacenados en el localStorage
-    let storedRecordJSON = localStorage.getItem('registroUsuario');
-    if (!storedRecordJSON) {
-        alert("No hay registros almacenados. Debes registrarte primero.");
-        return;
-    }
-    let storedRecord = JSON.parse(storedRecordJSON);
+var alert_password_login = document.getElementById("alert_password_login")
+var alert_password_login_txt = document.getElementById("alert_password_login_txt")
 
-    // Compara el email y la contraseña con los valores almacenados
-    if (storedRecord.email === email && storedRecord.password === password) {
-        // En caso de que las credenciales sean correctas, muestra un mensaje de éxito
-        alertSuccess();
-
-        // Limpia los campos de entrada
-        emailInput.value = '';
-        passwordInput.value = '';
-    } else {
-        // Credenciales incorrectas, muestra un mensaje de error
-        alertWrong();
-    }
-});
-
-// Función para validar el formato de email
-function validarEmail() {
-    let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-    let email = emailInput.value.trim().toLowerCase();
-
-    let alert_email = document.getElementById("alert_email");
-    let alert_email_txt = document.getElementById("alert_email_txt");
-
-    // Elementos de validación limpios
-    emailInput.style.border = "";
-    alert_email.style.display = "none";
-    alert_email_txt.innerHTML = "";
-
-    if (regexEmail.test(email)) {
-        emailInput.style.border = "solid 2px green";
-        return true;
-    } else {
-        alert_email_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
-        alert_email.style.display = "flex";
-        emailInput.style.border = "solid 2px rgb(186, 3, 3)";
-        return false;
-    }
-}
-
-emailInput.addEventListener("change", function (element) {
-    element.preventDefault();
-    validarEmail();
-});
 
 // ***********  Alerta de error  ***********
 function alertWrong() {
@@ -67,36 +17,106 @@ function alertWrong() {
 
 // ***********  Alerta de éxito  ***********
 function alertSuccess() {
-    swal("Inicio de sesión exitoso", "Tu correo y contraseña coinciden","success");
+    swal("Inicio de sesión exitoso", "", "success");
 }
 
-//IMPLEMENTAR ESTE TIPO DE ALERTAS AL PROGRAMA
+// ***********  Validación de email  ***********
 
-/*
+function validarEmail() {
+    let email = emailInput.value.trim().toLowerCase();
 
+    let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+    //elementos de validación limpios
+    emailInput.style.border = "";
+    alert_email_login.style.display = "none";
+    alert_email_login_txt.innerHTML = "";
 
-// ***********  Botón de envío  ***********
+    if (regexEmail.test(email)) {
+        emailInput.style.border = "solid 2px green";
+        return true;
+    } else {
+        alert_email_login_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
+        alert_email_login.style.display = "flex";
+        emailInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
+    }
+}
 
-btnEnviar.addEventListener("click", function (event) {
-    event.preventDefault();
+emailInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarEmail();
+})
+// ***********  Validación de Password  ***********
+
+function validarPassword() {
+    let regexpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&-_/]{8,15}/;
+    let password = passwordInput.value;
+
+    //elementos de validación limpios
+    passwordInput.style.border = "";
+    alert_password_login.style.display = "none";
+    alert_password_login_txt.innerHTML = "";
+
+    if (password.length > 7 && password.length < 16 && regexpassword.test(password)) {
+        passwordInput.style.border = "solid 2px green";
+        return true;
+    } else {
+        alert_password_login_txt.insertAdjacentHTML("afterbegin", `Contraseña incorrecta`);
+        alert_password_login.style.display = "flex";
+        passwordInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
+    }
+}
+
+passwordInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarPassword();
+})
+
+// ***********  Integración de validaciones en botón de envío  ***********
+
+btnEnviar.addEventListener("click", function () {
+
+    // Se obtienen los valores de los campos del formulario
+    let email = emailInput.value.trim().toLowerCase();
+    let password = passwordInput.value.trim();
 
     let esEmail = validarEmail();
-    let esPassword = validarMensaje();
+    let esPassword = validarPassword();
 
-    if (esNombre && esTelefono && esEmail && esMensaje) {
-        alertSuccess();
+    if (esEmail && esPassword) {
 
-        setTimeout(() => {
-            form.submit()
-               
-            emailInput.value = "";
-            emailInput.style.border = "";
-    
+        // Se obtienen los registros almacenados en el localStorage
+        let storedRecordJSON = localStorage.getItem('registroUsuario');
+        let storedRecord = JSON.parse(storedRecordJSON);
 
-        }, 2000);
+        for (let i = 0; i < storedRecord.length; i++) {
 
-    } else {
-        alertWrong();
+            if (storedRecord[i].email == email && storedRecord[i].password == password) {
+                alertSuccess();
+
+                    emailInput.style.border = "";
+                    alert_email_login.style.display = "none";
+                    alert_email_login_txt.innerHTML = "";
+                    emailInput.value = "";
+
+                    passwordInput.style.border = "";
+                    alert_password_login.style.display = "none";
+                    alert_password_login_txt.innerHTML = "";
+                    passwordInput.value = "";
+
+                break
+
+            } else {
+                alertWrong();
+                alert_password_login.style.display = "flex";
+                alert_password_login.style.color = "rgb(217 162 7)"
+                passwordInput.style.border = "solid 2px rgb(217 162 7)";
+
+                alert_email_login.style.display = "flex";
+                alert_email_login.style.color = "rgb(217 162 7)"
+                emailInput.style.border = "solid 2px rgb(217 162 7)";
+            }
+        }
     }
 });
-*/
