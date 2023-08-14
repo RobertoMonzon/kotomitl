@@ -14,7 +14,8 @@ body {
     background-color: #faebd7;
     position: relative;
     margin: 0;
-    min-height: 100vh;/* Mínimo alto de la ventana del navegador */
+    min-height: 100vh;
+    /* Mínimo alto de la ventana del navegador */
     padding-bottom: 0rem;
     box-sizing: inherit;
     color: #353028;
@@ -41,6 +42,10 @@ p {
 }
 
 /* ======= NAVBAR ======== */
+header{
+    width: auto;
+}
+
 .nav-item {
     font-size: 2rem;
     padding-right: 4rem;
@@ -89,7 +94,7 @@ footer {
     background-color: #1c412f;
 
     position: relative;
-    
+
 }
 
 footer ul li a {
@@ -187,7 +192,7 @@ footer ul li a {
 }
 
 
-/* ============= CONCACTO ================== */
+/* ============= CONTACTO ================== */
 .inf-contact {
     padding-top: 5%;
     padding-bottom: 5%;
@@ -458,12 +463,17 @@ form {
     }
 
     #barra-catalogo {
-        display: none;
+        margin: 0;
     }
 
     main #filt_cat2 {
         display: inline-block;
-        padding-bottom: 1%;
+        margin-bottom: 5%;
+        
+    }
+
+    #filtro-superior{
+        margin-bottom: 5%;
     }
 
     #filtro-superior #filt_mas2 {
@@ -528,3 +538,45 @@ form {
     background-color: #1c412f;
     color: white;
 }
+
+.static {
+    position: absolute;
+    background: white;
+}
+
+.static:hover {
+    opacity: 0;
+}
+
+/* =========  Cargar productos nuevos ========= */
+.container_label {
+    width: 95%;
+}
+
+.container_img {
+    width: 25rem;
+    height: 25rem;
+    background-color: rgb(255, 255, 255);
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.icon_container_img {
+    font-size: 15rem;
+    display: flex;
+    color: #4b9e74;
+}
+
+.container_img #imageFile_1,
+.container_img #imageFile_2,
+.container_img #imageFile_3 {
+    
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5%;
+}
+

@@ -1,267 +1,501 @@
-let fileInput = document.getElementById("file-input");
-let codigoInput = document.getElementById("codigoInput");
-let cantidadInput = document.getElementById("cantidadInput");
-let btnMenos = document.getElementById("btnMenos");
-let btnMas = document.getElementById("btnMas");
+// =========== VALIDACIÓN DE FORMULARIO DE CONTACTO ===========
+
+//Elementos del formulario de html
 let nombreInput = document.getElementById("nombreInput");
+let alert_nombre = document.getElementById("alert_nombre");
+let alert_nombre_txt = document.getElementById("alert_nombre_txt");
+let nombreProductotxt = "";//valor para localStorage
+
+let origenInput = document.getElementById("origenInput");
+let alert_origen = document.getElementById("alert_origen");
+let alert_origen_txt = document.getElementById("alert_origen_txt");
+let origenProductotxt = "";
+
+let descripcionInput = document.getElementById("descripcionInput");
+let alert_descripcion = document.getElementById("alert_descripcion");
+let alert_descripcion_txt = document.getElementById("alert_descripcion_txt");
+let descripcionProductotxt = "";//valor para localStorage
+
 let precioInput = document.getElementById("precioInput");
-let costoInput = document.getElementById("costoInput");
-let categoriaInput = document.getElementById("categoria");
-let descripcion = document.getElementById("descripcion");
-let btnGuardar = document.getElementById("btnGuardar");
+let alert_precio = document.getElementById("alert_precio");
+let alert_precio_txt = document.getElementById("alert_precio_txt");
+let precioProductotxt = "";//valor para localStorage
 
-let alertValidacionesTexto = document.getElementById("alertValidacionesTexto");
-let alertValidaciones = document.getElementById("alertValidaciones");
+let categoriaInput = document.getElementById("categoriaInput");
+let alert_categoria = document.getElementById("alert_categoria");
+let alert_categoria_txt = document.getElementById("alert_categoria_txt");
+let categoriaProductotxt = "";//valor para localStorage
 
-let alertValidacionesBueno = document.getElementById("alertValidacionesBueno");
-let alertValidacionesTextoBueno = document.getElementById("alertValidacionesTextoBueno");
+let materialInput = document.getElementById("materialInput");
+let alert_material = document.getElementById("alert_material");
+let alert_material_txt = document.getElementById("alert_material_txt");
+let materialProductotxt = "";//valor para localStorage
 
-let cantidad = cantidadInput.value;
-let isValid = true;
-let num = 0;
-let cont = 0;
-let ls = localStorage;
-let urlPrevia;
-let imgExist = false;
+let sugerenciaInput = document.getElementById("sugerenciaInput");
+let alert_sugerencia = document.getElementById("alert_sugerencia");
+let alert_sugerencia_txt = document.getElementById("alert_sugerencia_txt");
+let sugerenciaProductotxt = "";//valor para localStorage
 
-function validarCodigoInput() {
-    regexName = /^[a-zA-Z0-9]{3,}$/;
-    let codigo = codigoInput.value.trim()
-    if (!regexName.test(codigo)) {
-        return false
-    }
-    return true;
-}
+let adicionalInput = document.getElementById("adicionalInput");
+let alert_adicional = document.getElementById("alert_adicional");
+let alert_adicional_txt = document.getElementById("alert_adicional_txt");
+let adicionalProductotxt = "";//valor para localStorage
 
-function validarCantidadInput() {
-    regexCantidad = /^[0-9]$/;
-    let cantidad = cantidadInput.value.trim()
-    if (!regexCantidad.test(cantidad)) {
-        return false
-    }
-    return true;
-}
+//Carga de imágenes
+let fileImage_1 = document.getElementById('fileImage_1');
+let btnFake_1 = document.getElementById('btnFake_1');
+let imageFile_1 = document.getElementById('imageFile_1');
+let imagen_1 = "";//valor para localStorage
 
-function validaNombreInput() {
-    regexName = /^[a-zA-Z" "]{3,}$/;
-    let nombre = nombreInput.value.trim()
-    if (!regexName.test(nombre)) {
-        return false
-    }
-    return true;
-}
+let fileImage_2 = document.getElementById('fileImage_2');
+let btnFake_2 = document.getElementById('btnFake_2');
+let imageFile_2 = document.getElementById('imageFile_2');
+let imagen_2 = "";//valor para localStorage
 
-function validarPrecioInput() {
-    //regexPrecio = /^[0-9]$/;
-    let precio = precioInput.value.trim();
-    if (!precio.length > 0) {
-        return false
-    }
-    return true;
-}
-
-function validarCostoInput() {
-    //regexCosto = /^[0-9]$/;
-    let costo = costoInput.value.trim();
-    if (!costo > 0) {
-        return false
-    }
-    return true;
-}
-
-function validarDescripcionInput() {
-    regexDescripcion = /^[a-zA-Z0-9" "]{3,}$/;
-    let descrip = descripcion.value.trim()
-    if (!regexDescripcion.test(descrip)) {
-        return false
-    }
-    return true;
-}
-
-function validarCategoriaInput() {
-    if (!(categoriaInput.value>0)) {
-        return false
-    }
-    return true;
-}
-
-btnMenos.addEventListener("click", function (event) {
-    event.preventDefault();
-    cantidad = cantidadInput.value;
-    if (cantidad > 0) {
-        cantidadInput.value = cantidad -= 1;
-        console.log(cantidad);
-    }
-})
-
-btnMas.addEventListener("click", function (event) {
-    event.preventDefault();
-    num = cantidadInput.value;
-    num++;
-    console.log(num);
-    cantidadInput.value = num;
+let fileImage_3 = document.getElementById('fileImage_3');
+let btnFake_3 = document.getElementById('btnFake_3');
+let imageFile_3 = document.getElementById('imageFile_3');
+let imagen_3 = "";//valor para localStorage
 
 
-})
+//contenedores de imágenes
+const container_1 = document.getElementById("container_1");
+const container_2 = document.getElementById("container_2");
+const container_3 = document.getElementById("container_3");
 
-cantidadInput.addEventListener("keyup", function (event) {
-    event.preventDefault();
-    cantidad = cantidadInput.value;
-    console.log(cantidad);
-})
+//Botón de envío
+const btnEnviar = document.getElementById("btnEnviar");
 
-function imagePreview(event, querySelector){
+//   ***********  0. Reset de las validaciones  ***********
 
-    //Recuperamos el input que desencadeno la acción
-    const input = event.target;
+function borrarValidaciones() {
 
-    //Recuperamos la etiqueta img donde cargaremos la imagen
-    $previa = document.querySelector(querySelector);
-
-    // Verificamos si existe una imagen seleccionada
-    if (!input.files.length) return
-    
-
-    //Recuperamos el archivo subido
-    file = input.files[0];
-
-    //Creamos la url
-    objectURL = URL.createObjectURL(file);
-
-    //Modificamos el atributo src de la etiqueta img
-    $previa.src = objectURL;
-
-    urlPrevia = objectURL;
-
-    imgExist=true;
-    console.log(urlPrevia);
-}
-
-function restauraImagen(){
-    //Recuperamos la etiqueta img donde cargaremos la imagen
-    $previa = document.getElementById("previa");
-
-    //Creamos la url
-    objectURL = "src/img/camara.png";
-
-    //Modificamos el atributo src de la etiqueta img
-    $previa.src = objectURL;
-
-    imgExist=true;
-    
-}
-
-btnGuardar.addEventListener("click", function (event) {
-    event.preventDefault();
-    alertValidaciones.style.display = "none";
-    alertValidacionesTexto.innerHTML = "";
-
-    codigoInput.style.border = "";
-    cantidadInput.style.border = "";
+    //elementos de validación limpios
     nombreInput.style.border = "";
+    alert_nombre.style.display = "none";
+    alert_nombre_txt.innerHTML = "";
+
+
+    origenInput.style.border = "";
+    alert_origen.style.display = "none";
+    alert_origen_txt.innerHTML = "";
+
+
+    descripcionInput.style.border = "";
+    alert_descripcion.style.display = "none";
+    alert_descripcion_txt.innerHTML = "";
+
+
     precioInput.style.border = "";
-    costoInput.style.border = "";
-    categoria.style.border = "";
-    descripcion.style.border = "";
+    alert_precio.style.display = "none";
+    alert_precio_txt.innerHTML = "";
 
-    codigoInput.value = codigoInput.value.trim();
-    cantidadInput.value = cantidadInput.value.trim();
-    nombreInput.value = nombreInput.value.trim();
-    precioInput.value = precioInput.value.trim();
-    costoInput.value = costoInput.value.trim();
-    categoria.value = categoria.value.trim();
-    descripcion.value = descripcion.value.trim();
 
-    if (!validarCodigoInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `El <strong>codigo</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display = "block"
-        codigoInput.style.border = "solid 0.5px red";
-        isValid = false;
-        codigoInput.value = "";
-        codigoInput.focus();
+    categoriaInput.style.border = "";
+    alert_categoria.style.display = "none";
+    alert_categoria_txt.innerHTML = "";
+
+
+    materialInput.style.border = "";
+    alert_material.style.display = "none";
+    alert_material_txt.innerHTML = "";
+
+
+    sugerenciaInput.style.border = "";
+    alert_sugerencia.style.display = "none";
+    alert_sugerencia_txt.innerHTML = "";
+
+
+    adicionalInput.style.border = "";
+    alert_adicional.style.display = "none";
+    alert_adicional_txt.innerHTML = "";
+}
+
+//   ***********  1. Validación de nombre  ***********
+
+function validarNombre() {
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{5,}$/;
+    valor = nombreInput.value.trim().toUpperCase();
+
+    if (regexName.test(valor)) {
+        nombreInput.style.border = "solid 2px green";
+        nombreProductotxt = valor;
+        return true
+    } else {
+        alert_nombre_txt.insertAdjacentHTML("afterbegin", `Nombre incorrecto`);
+        alert_nombre.style.display = "flex";
+        nombreInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!validarCantidadInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `La <strocantidad</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display = "block"
-        cantidadInput.style.border = "solid 0.5px red";
-        isValid = false;
-        cantidadInput.value = "";
-        cantidadInput.focus();
+nombreInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarNombre();
+})
+
+//   ***********  2. Validación de origen  ***********
+
+function validarOrigen() {
+    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{3,}$/;
+    valor = origenInput.value.trim().toUpperCase();
+
+    if (regexName.test(valor)) {
+        origenInput.style.border = "solid 2px green";
+        origenProductotxt = valor;
+        return true
+    } else {
+        alert_origen_txt.insertAdjacentHTML("afterbegin", `Texto incorrecto`);
+        alert_origen.style.display = "flex";
+        origenInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!validaNombreInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `El nombre</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display = "block"
-        nombreInput.style.border = "solid 0.5px red";
-        isValid = false;
-        nombreInput.value = "";
-        nombreInput.focus();
+origenInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarOrigen();
+})
+
+//   ***********  3. Validación de descripcion  ***********
+
+function validarDescripcion() {
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{15,150}$/;
+    valor = descripcionInput.value.trim();
+
+    if (regexName.test(valor)) {
+        descripcionInput.style.border = "solid 2px green";
+        descripcionProductotxt = valor;
+        return true
+    } else {
+        alert_descripcion_txt.insertAdjacentHTML("afterbegin", `Descripción incorrecta`);
+        alert_descripcion.style.display = "flex";
+        descripcionInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!validarPrecioInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `El <strong>precio</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display = "block"
-        precioInput.style.border = "solid 0.5px red";
-        isValid = false;
-        precioInput.value = "";
-        precioInput.focus();
+descripcionInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarDescripcion();
+})
+
+//   ***********  4. Validación de precio  ***********
+
+function validarPrecio() {
+    // let regexName = /^[^0-9.]{2,7}$/;
+    valor = precioInput.value.trim();
+
+    if (!isNaN(parseFloat(valor)) && valor.length > 0 && valor.length < 8) {
+        precioInput.style.border = "solid 2px green";
+        precioProductotxt = ((Math.floor(valor * 100) / 100).toFixed(2));
+        return true
+    } else {
+        alert_precio_txt.insertAdjacentHTML("afterbegin", `Incorrecto`);
+        alert_precio.style.display = "flex";
+        precioInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!validarCostoInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `El <strong>costo</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display = "block"
-        costoInput.style.border = "solid 0.5px red";
-        isValid = false;
-        costoInput.value = "";
-        costoInput.focus();
+precioInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarPrecio();
+})
+
+//   ***********  5. Validación de categoría  ***********
+
+function validarCategoria() {
+
+    valor = categoriaInput.value;
+
+    if (valor != "") {
+        categoriaInput.style.border = "solid 2px green";
+        categoriaProductotxt = valor;
+        return true
+    } else {
+        alert_categoria_txt.insertAdjacentHTML("afterbegin", `Incorrecta`);
+        alert_categoria.style.display = "flex";
+        categoriaInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!validarDescripcionInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `El <strong>descripcion</strong> no es correcto.<br/>`);
-        alertValidaciones.style.display = "block"
-        descripcion.style.border = "solid 0.5px red";
-        isValid = false;
-        descripcion.value = "";
-        descripcion.focus();
+categoriaInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarCategoria();
+})
+
+//   ***********  6. Validación de material  ***********
+
+function validarMaterial() {
+
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,%,-,(,),ñ,Ñ]{4,50}$/;
+    valor = materialInput.value.trim();
+
+    if (regexName.test(valor)) {
+        materialInput.style.border = "solid 2px green";
+        materialProductotxt = valor;
+        return true
+    } else {
+        alert_material_txt.insertAdjacentHTML("afterbegin", `Texto incorrecto`);
+        alert_material.style.display = "flex";
+        materialInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!validarCategoriaInput()) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `Seleccione una <strong>categoria </strong> valida.<br/>`);
-        alertValidaciones.style.display = "block"
-        categoriaInput.style.border = "solid 0.5px red";
-        isValid = false;
-        categoriaInput.value = "0";
-        categoriaInput.focus();
+materialInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarMaterial();
+})
+
+//   ***********  7. Validación de sugerencia  ***********
+
+function validarSugerencia() {
+
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{5,100}$/;
+    valor = sugerenciaInput.value.trim();
+
+    if (regexName.test(valor)) {
+        sugerenciaInput.style.border = "solid 2px green";
+        sugerenciaProductotxt = valor;
+        return true
+    } else {
+        alert_sugerencia_txt.insertAdjacentHTML("afterbegin", `Texto incorrecto`);
+        alert_sugerencia.style.display = "flex";
+        sugerenciaInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    if (!imgExist) {
-        alertValidacionesTexto.insertAdjacentHTML("afterbegin", `Seleccione una <strong>imagen </strong> valida.<br/>`);
-        alertValidaciones.style.display = "block"
-        isValid = false;
+sugerenciaInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarSugerencia();
+})
+
+//   ***********  8. Validación de adicional  ***********
+
+function validarAdicional() {
+
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{5,100}$/;
+    valor = adicionalInput.value.trim();
+
+    if (regexName.test(valor)) {
+        adicionalInput.style.border = "solid 2px green";
+        adicionalProductotxt = valor;
+        return true
+    } else {
+        alert_adicional_txt.insertAdjacentHTML("afterbegin", `Texto incorrecto`);
+        alert_adicional.style.display = "flex";
+        adicionalInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
     }
+}
 
-    console.log("si");
-    if (isValid) {
-        console.log("si1");
-        cont++;
-        let producto = `{codigo: ${codigoInput.value}, imagen: ${urlPrevia}, cantidad: ${cantidadInput.value}, nombre: ${nombreInput.value}, precio: ${precioInput.value}, costo: ${costoInput.value}, categoria: ${categoriaInput.value}, descripcion: ${descripcion.value}}`
-        ls.setItem(cont, JSON.stringify(producto));
-        console.log("si2");
-        alertValidacionesTextoBueno.insertAdjacentHTML("afterbegin", `El producto se agregó correctamente.`);
-        alertValidacionesBueno.style.display = "block";
+adicionalInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarAdicional();
+})
 
-        codigoInput.value="";
-        cantidadInput.value="0";
-        nombreInput.value="";
-        costoInput.value="";
-        precioInput.value="";
-        categoriaInput.value="0";
-        descripcion.value="";
-        restauraImagen();
-    }
+// ================== Carga imágenes ========================
 
+//   ***********  Carga de imagen 1   ***********
+
+btnFake_1.addEventListener('click', function () {
+    container_1.style.border = "";
+    fileImage_1.click();
 });
 
+fileImage_1.addEventListener('change', function () {
+    previewFile1('imageFile_1', 'fileImage_1', 'container_img_1')
+    //previewFile(id imagen, input type file , textArea);
+});
+
+function previewFile1(img, inputFile, container) {
+
+    var preview = document.getElementById(img);
+    var file = document.getElementById(inputFile).files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        document.getElementById(container).style.display = "none";
+        document.getElementById(img).style.display = "flex";
+        imagen_1 = reader.result; //texto con la imagen
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }// file
+}
 
 
+//   ***********  Carga de imagen 2   ***********
+
+
+btnFake_2.addEventListener('click', function () {
+    container_2.style.border = "";
+    fileImage_2.click();
+});
+
+fileImage_2.addEventListener('change', function () {
+    previewFile2('imageFile_2', 'fileImage_2', 'container_img_2')
+});
+
+function previewFile2(img, inputFile, container) {
+
+    var preview = document.getElementById(img);
+    var file = document.getElementById(inputFile).files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        document.getElementById(container).style.display = "none";
+        document.getElementById(img).style.display = "flex";
+        imagen_2 = reader.result; //texto con la imagen
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }// file
+}
+
+//   ***********  Carga de imagen 3   ***********
+
+btnFake_3.addEventListener('click', function () {
+    container_3.style.border = "";
+    fileImage_3.click();
+});
+
+fileImage_3.addEventListener('change', function () {
+    previewFile3('imageFile_3', 'fileImage_3', 'container_img_3')
+});
+
+function previewFile3(img, inputFile, container) {
+
+    var preview = document.getElementById(img);
+    var file = document.getElementById(inputFile).files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        document.getElementById(container).style.display = "none";
+        document.getElementById(img).style.display = "flex";
+        imagen_3 = reader.result; //texto con la imagen
+        preview.src = reader.result;
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }// file
+}// previewFile 
+
+
+function validarImagen1() {
+    if (imagen_1 == "") {
+        container_1.style.border = "solid 3px rgb(186, 3, 3)";
+        return false;
+    } else {
+        container_1.style.border = "solid 3px green";
+        return true;
+    }
+}
+
+function validarImagen2() {
+    if (imagen_2 == "") {
+        container_2.style.border = "solid 3px rgb(186, 3, 3)";
+        return false;
+    } else {
+        container_2.style.border = "solid 3px green";
+        return true;
+    }
+}
+
+function validarImagen3() {
+    if (imagen_3 == "") {
+        container_3.style.border = "solid 3px rgb(186, 3, 3)";
+        return false;
+    } else {
+        container_3.style.border = "solid 3px green";
+        return true;
+    }
+}
+
+// ***********  Alerta de error  ***********
+function alertWrong() {
+    swal("Información inválida", "Por favor revisa nuevamente el formulario", "error");
+}
+
+// ***********  Alerta de éxito  ***********
+function alertSuccess() {
+    swal("Producto agregado :)", "Visualiza tu producto en el catálogo", "success");
+}
+
+// ***********  Almacenamiento en localstorage  ***********
+
+let listaProductos = new Array(); // para almacenar elementos de la tabla
+
+function guardarStorage() {
+    let producto = `
+        {       
+        "id": 1, 
+        "title": "${nombreProductotxt}", 
+        "price": ${precioProductotxt}, 
+        "description" : "${descripcionProductotxt}", 
+        "Origen" : "${origenProductotxt}", 
+        "image" : "${imagen_1}", 
+        "image2" : "${imagen_2}", 
+        "image3" : "${imagen_3}",
+        "Desc1" : "${materialProductotxt}",
+        "Desc2" : "${sugerenciaProductotxt}",
+        "Desc3" : "${adicionalProductotxt}",
+        "gen" : "${categoriaProductotxt}"
+        }`;
+
+    //convierte en objeto para almacenarlo
+    listaProductos.push(JSON.parse(producto));
+
+    // convierte objeto en string para localStorage
+    localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
+}
+
+
+// ***********  Ejecución integral de las funciones  ***********
+
+btnEnviar.addEventListener("click", function (element) {
+    element.preventDefault();
+
+    borrarValidaciones();
+
+    let esNombre = validarNombre();
+    let esOrigen = validarOrigen();
+    let esDescripcion = validarDescripcion();
+    let esPrecio = validarPrecio();
+    let esCategoria = validarCategoria();
+    let esMaterial = validarMaterial();
+    let esSugerencia = validarSugerencia();
+    let esAdicional = validarAdicional();
+
+    let esImagen1 = validarImagen1();
+    let esImagen2 = validarImagen2();
+    let esImagen3 = validarImagen3();
+
+    if (esNombre && esOrigen && esDescripcion && esPrecio && esCategoria && esMaterial && esSugerencia && esAdicional && esImagen1 && esImagen2 && esImagen3) {
+        guardarStorage();
+        alertSuccess();
+        borrarValidaciones();
+    } else {
+        alertWrong();
+    }
+})
+
+window.addEventListener("load", function (event) {
+    event.preventDefault();
+    if (this.localStorage.getItem("listaProductos") != null) {
+        // Obtener el arreglo del localStorage
+        var listaProductosJSON = localStorage.getItem('listaProductos');
+
+        // Convertir la cadena JSON nuevamente a un arreglo
+        listaProductos = JSON.parse(listaProductosJSON);
+    }
+})
