@@ -1,92 +1,63 @@
 // =========== VALIDACIÓN DE FORMULARIO DE LOGIN ===========
 
-// ***********  Email  ***********
-let emailInputLogin = document.getElementById("emailInputLogin");
-
-function validarEmail() {
-    let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-    let email = emailInputLogin.value.trim().toLowerCase();
-
-    let alert_email_login = document.getElementById("alert_email_login");
-    let alert_email_txt_login = document.getElementById("alert_email_txt_login");
-
-    //elementos de validación limpios
-    emailInputLogin.style.border = "";
-    alert_email_login.style.display = "none";
-    alert_email_txt_login.innerHTML = "";
-
-    if (regexEmail.test(email)) {
-        emailInputLogin.style.border = "solid 2px green";
-        return true;
-    } else {
-        alert_email_txt_login.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
-        alert_email_login.style.display = "flex";
-        emailInputLogin.style.border = "solid 2px rgb(186, 3, 3)";
-        return false;
-    }
-}
-
-emailInputLogin.addEventListener("change", function (element) {
-    element.preventDefault();
-    validarEmail();
-})
-
-
-// ***********  CONTRASEÑA  ***********
+// =========== VALIDACIÓN DE FORMULARIO DE LOGIN ===========
+let emailInput = document.getElementById("emailInput");
 let passwordInput = document.getElementById("passwordInput");
-
-function validarpassword() {
-    let regexpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}/;
-    let password = passwordInput.value.trim();
-
-    let alert_password = document.getElementById("alert_password");
-    let alert_password_txt = document.getElementById("alert_password_txt");
-
-    //elementos de validación limpios
-    passwordInput.style.border = "";
-    alert_password.style.display = "none";
-    alert_password_txt.innerHTML = "";
-
-    if (regexpassword.test(password)) {
-        passwordInput.style.border = "solid 2px green";
-        return true;
-    } else {
-        alert_password_txt.insertAdjacentHTML("afterbegin", `Password incorrecto`);
-        alert_password.style.display = "flex";
-        passwordInput.style.border = "solid 2px rgb(186, 3, 3)";
-        return false;
-    }
-}
-
-passwordInput.addEventListener("change", function (element) {
-    element.preventDefault();
-    validarpassword();
-})
-// ***********  Alerta de error  ***********
-function alertWrong() {
-    swal("Información inválida", "Por favor revisa nuevamente el formulario", "error");
-}
-
-// ***********  Alerta de éxito  ***********
-function alertSuccess() {
-    swal("Mensaje enviado", "Nos contactáremos muy pronto contigo", "success");
-}
-
-// ***********  Botón de envío  ***********
 let btnEnviar = document.getElementById("btnEnviar");
 
+// Escucha el evento click en el botón de envío
+btnEnviar.addEventListener("click", function () {
+    // Se obtienen los valores de los campos del formulario
+    let email = emailInput.value.trim().toLowerCase();
+    let password = passwordInput.value.trim();
 
-btnEnviar.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    let esEmail = validarEmail();
-    let esPassword = validarpassword();
-
-    if (esEmail) {
-        alertSuccess();
-        emailInputLogin.value = "";
-        
-    } else {
-        alertWrong();
+    // Se obtienen los registros almacenados en el localStorage
+    let storedRecordJSON = localStorage.getItem('registroUsuario');
+    if (!storedRecordJSON) {
+        alert("No hay registros almacenados. Debes registrarte primero.");
+        return;
     }
+    let storedRecord = JSON.parse(storedRecordJSON);
+
+    // Compara el email y la contraseña con los valores almacenados
+    if (storedRecord.email === email && storedRecord.password === password) {
+        // En caso de que las credenciales sean correctas, muestra un mensaje de éxito
+        alert("Inicio de sesión exitoso");
+    } else {
+        // Credenciales incorrectas, muestra un mensaje de error
+        alert("Correo electrónico o contraseña incorrectos");
+    }
+
+    // Limpia los campos de entrada
+    emailInput.value = '';
+    passwordInput.value = '';
+});
+
+// Función para validar el formato de email
+function validarEmail() {
+    let regexEmail = /(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
+    let email = emailInput.value.trim().toLowerCase();
+
+    let alert_email = document.getElementById("alert_email");
+    let alert_email_txt = document.getElementById("alert_email_txt");
+
+    // Elementos de validación limpios
+    emailInput.style.border = "";
+    alert_email.style.display = "none";
+    alert_email_txt.innerHTML = "";
+
+    if (regexEmail.test(email)) {
+        emailInput.style.border = "solid 2px green";
+        return true;
+    } else {
+        alert_email_txt.insertAdjacentHTML("afterbegin", `E-mail incorrecto`);
+        alert_email.style.display = "flex";
+        emailInput.style.border = "solid 2px rgb(186, 3, 3)";
+        return false;
+    }
+}
+
+emailInput.addEventListener("change", function (element) {
+    element.preventDefault();
+    validarEmail();
 });

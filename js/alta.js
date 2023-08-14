@@ -418,7 +418,7 @@ function validarImagen3() {
     } else {
         container_3.style.border = "solid 3px green";
         return true;
-    }
+    } 
 }
 
 // ***********  Alerta de error  ***********

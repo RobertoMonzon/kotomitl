@@ -1,4 +1,15 @@
 // =========== VALIDACIÓN DE FORMULARIO DE REGISTRO ===========
+// Obtén los elementos del formulario
+const form = document.getElementById('form');
+/*const nombreInput = document.getElementById('nombreInput');
+const apellidoInput = document.getElementById('apellidoInput');
+const telInput = document.getElementById('telInput');
+const emailInput = document.getElementById('emailInput');
+const emailInputVal = document.getElementById('emailInputVal');
+const passwordInput = document.getElementById('passwordInput');
+const passwordInputVal = document.getElementById('passwordInputVal');
+*/
+// Funciones de validación
 
 //   ***********  nombre  ***********
 let nombreInput = document.getElementById("nombreInput");
@@ -233,24 +244,43 @@ function alertSuccess() {
     swal("Mensaje enviado", "Nos contactáremos muy pronto contigo", "success");
 }
 
-// ***********  Botón de envío  ***********
-let btnEnviar = document.getElementById("btnEnviar");
 
-
-btnEnviar.addEventListener("click", function (event) {
-    event.preventDefault();
+// Escucha el evento click en el botón de envío
+document.getElementById('btnEnviar').addEventListener('click', function () {
+    // Realiza las validaciones
     let esNombre = validarNombre();
+    let esApellido = validarApellido();
     let esTelefono = validarTelefono();
     let esEmail = validarEmail();
+    let esEmailVal = validarEmail2();
     let esPassword = validarpassword();
+    let esPasswordVal = validarpassword2();
 
-    if (esNombre && esTelefono && esEmail && esMensaje) {
-        alertSuccess();
-        nombreInput.value = "";
-        telInput.value = "";
-        emailInput.value = "";
-        msjArea.value = "";
+    // Si todas las validaciones son exitosas, guarda el registro en el localStorage
+    if (esNombre && esApellido && esTelefono && esEmail && esEmailVal && esPassword && esPasswordVal) {
+        const registro = {
+            nombre: nombreInput.value,
+            apellido: apellidoInput.value,
+            telefono: telInput.value,
+            email: emailInput.value,
+            password: passwordInput.value
+        };
+        
+        const registroJSON = JSON.stringify(registro);
+        localStorage.setItem('registroUsuario', registroJSON);
+
+        // Limpia los campos del formulario
+        nombreInput.value = '';
+        apellidoInput.value = '';
+        telInput.value = '';
+        emailInput.value = '';
+        emailInputVal.value = '';
+        passwordInput.value = '';
+        passwordInputVal.value = '';
+
+        // Mensaje de éxito
+        alert('¡Tu registro se ha realizado exitosamente!.');
     } else {
-        alertWrong();
+        alert('Hay errores en el formulario. Por favor, revisa nuevamente.');
     }
 });
