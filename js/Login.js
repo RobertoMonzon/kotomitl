@@ -61,3 +61,42 @@ emailInput.addEventListener("change", function (element) {
     element.preventDefault();
     validarEmail();
 });
+
+//IMPLEMENTAR ESTE TIPO DE ALERTAS AL PROGRAMA
+
+/*
+// ***********  Alerta de error  ***********
+function alertWrong() {
+    swal("El usuario y la contraseña no coinciden, por favor revísalos", "error");
+}
+
+// ***********  Alerta de éxito  ***********
+function alertSuccess() {
+    swal("Inicio de sesión exitoso", "success");
+}
+
+// ***********  Botón de envío  ***********
+
+btnEnviar.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let esEmail = validarEmail();
+    let esPassword = validarMensaje();
+
+    if (esNombre && esTelefono && esEmail && esMensaje) {
+        alertSuccess();
+
+        setTimeout(() => {
+            form.submit()
+               
+            emailInput.value = "";
+            emailInput.style.border = "";
+    
+
+        }, 2000);
+
+    } else {
+        alertWrong();
+    }
+});
+*/

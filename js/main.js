@@ -24,7 +24,7 @@ function validarNombre() {
     let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü]{3,}$/;
     let name = nombreInput.value.trim().toUpperCase();
 
-    //elementos de validación limpios
+    //elementos de validación limpios 
     nombreInput.style.border = "";
     alert_nombre.style.display = "none";
     alert_nombre_txt.innerHTML = "";
