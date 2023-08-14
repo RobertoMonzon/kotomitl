@@ -1,6 +1,4 @@
 // =========== VALIDACIÓN DE FORMULARIO DE LOGIN ===========
-
-// =========== VALIDACIÓN DE FORMULARIO DE LOGIN ===========
 let emailInput = document.getElementById("emailInput");
 let passwordInput = document.getElementById("passwordInput");
 let btnEnviar = document.getElementById("btnEnviar");
@@ -22,15 +20,15 @@ btnEnviar.addEventListener("click", function () {
     // Compara el email y la contraseña con los valores almacenados
     if (storedRecord.email === email && storedRecord.password === password) {
         // En caso de que las credenciales sean correctas, muestra un mensaje de éxito
-        alert("Inicio de sesión exitoso");
+        alertSuccess();
+
+        // Limpia los campos de entrada
+        emailInput.value = '';
+        passwordInput.value = '';
     } else {
         // Credenciales incorrectas, muestra un mensaje de error
-        alert("Correo electrónico o contraseña incorrectos");
+        alertWrong();
     }
-
-    // Limpia los campos de entrada
-    emailInput.value = '';
-    passwordInput.value = '';
 });
 
 // Función para validar el formato de email
@@ -62,18 +60,20 @@ emailInput.addEventListener("change", function (element) {
     validarEmail();
 });
 
-//IMPLEMENTAR ESTE TIPO DE ALERTAS AL PROGRAMA
-
-/*
 // ***********  Alerta de error  ***********
 function alertWrong() {
-    swal("El usuario y la contraseña no coinciden, por favor revísalos", "error");
+    swal("El correo y/o la contraseña no coinciden", "Por favor revisa nuevamente tus datos", "error");
 }
 
 // ***********  Alerta de éxito  ***********
 function alertSuccess() {
-    swal("Inicio de sesión exitoso", "success");
+    swal("Inicio de sesión exitoso", "Tu correo y contraseña coinciden","success");
 }
+
+//IMPLEMENTAR ESTE TIPO DE ALERTAS AL PROGRAMA
+
+/*
+
 
 // ***********  Botón de envío  ***********
 

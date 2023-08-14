@@ -244,6 +244,16 @@ function alertSuccess() {
     swal("Mensaje enviado", "Nos contactáremos muy pronto contigo", "success");
 }
 
+// ***********  Alerta de error  ***********
+function alertWrong() {
+    swal("Hay errores en el formulario. Por favor, revisa nuevamente.", "error");
+}
+
+// ***********  Alerta de éxito  ***********
+function alertSuccess() {
+    swal("¡Registro exitoso!, ya puedes iniciar sesión", "success");
+}
+
 
 // Escucha el evento click en el botón de envío
 document.getElementById('btnEnviar').addEventListener('click', function () {
@@ -279,8 +289,14 @@ document.getElementById('btnEnviar').addEventListener('click', function () {
         passwordInputVal.value = '';
 
         // Mensaje de éxito
-        alert('¡Tu registro se ha realizado exitosamente!.');
+        swal({
+            title: "¡Registro exitoso!",
+            text: "Ya puedes iniciar sesión.",
+            icon: "success"
+        }).then(function() {
+            window.location.href = "../loginUsuario.html";
+        });
     } else {
-        alert('Hay errores en el formulario. Por favor, revisa nuevamente.');
+        alertWrong();
     }
 });
