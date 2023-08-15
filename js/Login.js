@@ -93,17 +93,24 @@ btnEnviar.addEventListener("click", function () {
         for (let i = 0; i < storedRecord.length; i++) {
 
             if (storedRecord[i].email == email && storedRecord[i].password == password) {
-                alertSuccess();
 
-                    emailInput.style.border = "";
-                    alert_email_login.style.display = "none";
-                    alert_email_login_txt.innerHTML = "";
-                    emailInput.value = "";
+                sessionStorage.setItem('estadoLogin', true);
+                sessionStorage.setItem('welcome', true);
+                sessionStorage.setItem('userLogin', storedRecord[i].nombre);
 
-                    passwordInput.style.border = "";
-                    alert_password_login.style.display = "none";
-                    alert_password_login_txt.innerHTML = "";
-                    passwordInput.value = "";
+                emailInput.style.border = "";
+                alert_email_login.style.display = "none";
+                alert_email_login_txt.innerHTML = "";
+                emailInput.value = "";
+
+                passwordInput.style.border = "";
+                alert_password_login.style.display = "none";
+                alert_password_login_txt.innerHTML = "";
+                passwordInput.value = "";
+
+                setTimeout(function () {
+                    window.location.href = "../index.html";
+                }, 1000);
 
                 break
 

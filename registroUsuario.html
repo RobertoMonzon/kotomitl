@@ -34,34 +34,40 @@
                 <h1 style="text-align: center;">¡Regístrate!</h1>
 
                 <form class="needs-validation" id="form">
-
-                    <!-- Nombre -->
-                    <div class="mb-5">
-                        <div class="d-flex" style="width: 95%;">
-                            <label for="nombreInput" class="form-label">Nombre</label>
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_nombre">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_nombre_txt"></span>
+                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 mt-4">
+                        <div class="col">
+                            <!-- Nombre -->
+                            <div class="mb-5">
+                                <div class="d-flex" style="width: 95%;">
+                                    <label for="nombreInput" class="form-label">Nombre</label>
+                                    <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                        id="alert_nombre">
+                                        <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                        <span id="alert_nombre_txt"></span>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" id="nombreInput" placeholder="Ej. Michell"
+                                    required minlength="3" maxlength="50" autocomplete="name" name="name">
                             </div>
                         </div>
-                        <input type="text" class="form-control" id="nombreInput" placeholder="Ej. Michell" required
-                            minlength="3" maxlength="50" autocomplete="name" name="name">
-                    </div>
 
-                    <!-- Apellido -->
-                    <div class="mb-5">
-                        <div class="d-flex" style="width: 95%;">
-                            <label for="apellidoInput" class="form-label">Apellido</label>
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_apellido">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_apellido_txt"></span>
+                        <div class="col">
+                            <!-- Apellido -->
+                            <div class="mb-5">
+                                <div class="d-flex" style="width: 95%;">
+                                    <label for="apellidoInput" class="form-label">Apellido</label>
+                                    <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                        id="alert_apellido">
+                                        <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                        <span id="alert_apellido_txt"></span>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" id="apellidoInput" placeholder="Ej. Morales"
+                                    required minlength="3" maxlength="50" autocomplete="family-name">
                             </div>
                         </div>
-                        <input type="text" class="form-control" id="apellidoInput" placeholder="Ej. Morales" required
-                            minlength="3" maxlength="50" autocomplete="family-name">
                     </div>
+
                     <!-- Teléfono -->
                     <div class="mb-5">
                         <div class="d-flex" style="width: 95%;">
@@ -87,11 +93,11 @@
                                 <span id="alert_email_txt"></span>
                             </div>
                         </div>
-                        <input type="email" class="form-control" id="emailInput" placeholder="Ej. correo@example.com" autocomplete="email"
-                            required name="email">
+                        <input type="email" class="form-control" id="emailInput" placeholder="Ej. correo@example.com"
+                            autocomplete="email" required name="email">
                     </div>
                     <!-- Email validación -->
-                    <div class="mb-5" >
+                    <div class="mb-5">
                         <div class="d-flex" style="width: 95%;">
                             <label for="emailInputVal" class="form-label">Confirma tu E-mail</label>
 
@@ -101,8 +107,8 @@
                                 <span id="alert_emailVal_txt"></span>
                             </div>
                         </div>
-                        <input type="email" class="form-control" id="emailInputVal" placeholder="Ingresa nuevamente el correo"
-                            required name="email">
+                        <input type="email" class="form-control" id="emailInputVal"
+                            placeholder="Ingresa nuevamente el correo" required name="email">
                     </div>
                     <!-- Contraseña -->
                     <div class="mb-5">
@@ -116,9 +122,12 @@
                             </div>
                         </div>
                         <input type="password" class="form-control" id="passwordInput"
-                            placeholder="Ingresa la nueva contraseña">
-                        <p class="fs-6 mx-auto " style="width: 90%;">Contraseña de 8 a 15 caracteres <br>Debe incluir al
-                            menos una letra minúscula, una mayúscula, un dígito y un carácter especial $@$!%*?&-_/</p>
+                            placeholder="Ingresa la nueva contraseña (8 a 15 caracteres)">
+                        <span class="justify-content-center">
+                            <p class="fs-6 fw-bold mx-auto " style="width: 86%;">Debe incluir al
+                                menos una letra minúscula, una mayúscula, un dígito y un carácter especial $@$!%*?&-_/
+                            </p>
+                        </span>
                     </div>
                     <!-- Contraseña Validación -->
                     <div class="mb-5">
@@ -147,7 +156,7 @@
 
                     <div class="d-grid gap-2 col-7 mx-auto text-center">
                         <h3>¿Ya tienes una cuenta?</h3>
-                        <h3><a href="./loginUsuario.html" style="font-size: inherit;">¡Inicia sesión!</a></h3>
+                        <h3><a class="text-decoration-none" href="./loginUsuario.html" style="font-size: inherit;">¡Inicia sesión!</a></h3>
                     </div>
 
                 </form>

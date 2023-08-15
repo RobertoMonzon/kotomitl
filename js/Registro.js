@@ -158,7 +158,7 @@ function validarEmail2() {
     alert_emailVal.style.display = "none";
     alert_emailVal_txt.innerHTML = "";
 
-    if (email1===email2) {
+    if (email1 === email2) {
         emailInputVal.style.border = "solid 2px green";
         return true;
     } else {
@@ -214,7 +214,7 @@ function validarpassword2() {
     alert_passwordVal.style.display = "none";
     alert_passwordVal_txt.innerHTML = "";
 
-    if (Contraseña1===Contraseña2) {
+    if (Contraseña1 === Contraseña2) {
         passwordInputVal.style.border = "solid 2px green";
         return true;
     } else {
@@ -254,6 +254,24 @@ function alertSuccess() {
     swal("¡Registro exitoso!", "Ya puedes iniciar sesión", "success");
 }
 
+// Se obtienen los registros almacenados en el localStorage
+function validaEmailNuevo() {
+    let storedRecordJSON = localStorage.getItem('registroUsuario');
+    let storedRecord = JSON.parse(storedRecordJSON);
+    let contador = 0;
+
+    for (let i = 0; i < storedRecord.length; i++) {
+
+        if (storedRecord[i].email == emailInput.value.trim().toLowerCase()) {
+            contador++;
+        }
+    }
+
+    return (contador == 0);
+}
+
+
+// ***********  Integración de validaciones  ***********
 let listaUsuarios = new Array(); // para almacenar elementos de la tabla
 
 // Escucha el evento click en el botón de envío
@@ -266,37 +284,37 @@ document.getElementById('btnEnviar').addEventListener('click', function () {
     let esEmailVal = validarEmail2();
     let esPassword = validarpassword();
     let esPasswordVal = validarpassword2();
+    let esEmailNuevo = validaEmailNuevo();
 
     // Si todas las validaciones son exitosas, guarda el registro en el localStorage
     if (esNombre && esApellido && esTelefono && esEmail && esEmailVal && esPassword && esPasswordVal) {
-        const registro = `{
-            "nombre": "${nombreInput.value.trim().toUpperCase()}",
-            "apellido": "${apellidoInput.value.trim().toUpperCase()}",
-            "telefono": "${telInput.value}",
-            "email": "${emailInput.value.trim().toLowerCase()}",
-            "password": "${passwordInput.value}"
-        }`;
-        
-        listaUsuarios.push(JSON.parse(registro));
-        localStorage.setItem('registroUsuario', JSON.stringify(listaUsuarios));
+        if (esEmailNuevo) {
+            const registro = `{
+                "nombre": "${nombreInput.value.trim().toUpperCase()}",
+                "apellido": "${apellidoInput.value.trim().toUpperCase()}",
+                "telefono": "${telInput.value}",
+                "email": "${emailInput.value.trim().toLowerCase()}",
+                "password": "${passwordInput.value}"
+            }`;
 
-        // Limpia los campos del formulario
-        nombreInput.value = '';
-        apellidoInput.value = '';
-        telInput.value = '';
-        emailInput.value = '';
-        emailInputVal.value = '';
-        passwordInput.value = '';
-        passwordInputVal.value = '';
+            listaUsuarios.push(JSON.parse(registro));
+            localStorage.setItem('registroUsuario', JSON.stringify(listaUsuarios));
 
-        // Mensaje de éxito
-        swal({
-            title: "¡Registro exitoso!",
-            text: "Ya puedes iniciar sesión.",
-            icon: "success"
-        }).then(function() {
-            // window.location.href = "../loginUsuario.html";
-        });
+            // Limpia los campos del formulario
+            nombreInput.value = '';
+            apellidoInput.value = '';
+            telInput.value = '';
+            emailInput.value = '';
+            emailInputVal.value = '';
+            passwordInput.value = '';
+            passwordInputVal.value = '';
+
+            // Mensaje de éxito
+            swal({ title: "¡Registro exitoso!", text: "Ya puedes iniciar sesión.", icon: "success" })
+
+        } else {
+            swal({ title: "¡Correo ya registrado!", text: "Intenta nuevamente con otro e-mail", icon: "error" })
+        }
     } else {
         alertWrong();
     }

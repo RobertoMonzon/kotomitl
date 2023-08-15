@@ -22,82 +22,71 @@
 </head>
 
 <body>
-    <!-- ================= NAVBAR ============== -->
-    <header id="navbar"></header>
-
-
-
 
     <!-- ================= CONTENIDO ============== -->
-    <main class="container mb-5 container-fluid" style="max-height: 100%;">
+    <header id="navbar"></header>
+    <!-- ================= NAVBAR ============== -->
 
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 mt-4">
-
-                <!--=================== Primera columna ===============-->
-                <!--=======Sección de banner ======-->
-                <div class="col banner_registro" style="align-items: center; display: grid;">
-                    <img src="./src/img/home/img4.jpg" width="80%" style="margin:10rem 10rem 0 auto; border-radius: 1%;">
-                </div>
-
-                <!--=================== Segunda columna ===============-->
-                <!--====== Formulario de registro =======-->
-
-                <div class="col">
-                    <h1 style="text-align: center;">¡Inicia sesión!</h1>
+    <main class="container w-100 m-auto">
+        <div class=" form-signin row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3 mt-3 mb-3 justify-content-center">
+            <div class="col" style="width: auto;"></div>
+            <div class="col" style="width: 80%;">
+                <h1 style="text-align: center;">¡Inicia sesión!</h1>
+                <form class="needs-validation" id="form">
 
 
-                    <form class="needs-validation" id="form">
+                    <!-- Email -->
+                    <div class="mb-5">
+                        <div class="d-flex" style="width: 95%;">
 
-                        <!-- Email -->
-                        <div class="mb-5">
-                            <div class="d-flex" style="width: 95%;">
-                                <label for="emailInput" class="form-label">E-mail</label>
-
-                                <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                    id="alert_email_login">
-                                    <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                    <span id="alert_email_login_txt"></span>
-                                </div>
+                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                id="alert_email_login">
+                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                <span id="alert_email_login_txt"></span>
                             </div>
-                            <input type="email" class="form-control" id="emailInput"
-                                placeholder="Ej. correo@example.com" required name="email">
                         </div>
+                        <input type="email" class="form-control text-center" id="emailInput" placeholder="correo@example.com"
+                            required name="email">
+                    </div>
 
-                        <!-- Contraseña -->
-                        <div class="mb-5">
-                            <div class="d-flex" style="width: 95%;">
-                                <label for="passwordInput" class="form-label">Contraseña</label>
-                                <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                    id="alert_password_login">
-                                    <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                    <span id="alert_password_login_txt"></span>
-                                </div>
+                    <!-- Contraseña -->
+                    <div class="mb-5">
+                        <div class="d-flex" style="width: 95%;">
+                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                id="alert_password_login">
+                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                <span id="alert_password_login_txt"></span>
                             </div>
-                            <input type="password" class="form-control" id="passwordInput"
-                                placeholder="Ingresa tu contraseña">
                         </div>
+                        <input type="password" class="form-control text-center" id="passwordInput"
+                            placeholder="Ingresa tu contraseña">
+                    </div>
 
-                        <!-- Botón de envío -->
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="button" class="btn btn-warning" id="btnEnviar" style="margin: 2rem 0 2rem 0;">
-                                <span>
-                                    <i class="bi bi-send icon__send"></i>
-                                </span>
-                                Iniciar sesión </button>
-                        </div>
+                    <!-- Botón de envío -->
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-warning" id="btnEnviar" style="margin: 2rem 0 2rem 0;">
+                            <span>
+                                <i class="bi bi-send icon__send"></i>
+                            </span>
+                            Iniciar sesión </button>
+                    </div>
 
-                        <div class="d-grid gap-2 col-7 mx-auto">
-                            <h3>¿No tienes una cuenta? <a href="./registroUsuario.html"
-                                    style="font-size: inherit;">¡Regístrate!</a></h3>
-                        </div>
-                    </form>
+                    <div class="d-grid gap-2 col-7 mx-auto text-center">
+                        <h3>¿No tienes una cuenta?</h3>
+                        <h3><a class="text-decoration-none" href="./registroUsuario.html"
+                                style="font-size: inherit;">¡Regístrate!</a></h3>
+                    </div>
+                </form>
 
-                </div>
             </div>
-
+            <div class="col" style="width: auto;"></div>
+        </div>
     </main>
     <!-- ================= FOOTER ============== -->
-    <footer class="text-center text-lg-center justify-content-center d-flex mt-auto" id="footer" style="position: absolute;"></footer>
+    <footer class="text-center text-lg-center justify-content-center d-flex mt-auto" style="position: absolute;"
+        id="footer"></footer>
+
+
     <!---JS Nabvar & Footer--->
 
     <script src="./js/navfooter.js"></script>

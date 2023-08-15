@@ -588,7 +588,7 @@ form {
     /* border: 1px solid gray; */
     /* padding: 10px; */
     box-shadow:  8px 8px 5px rgba(237, 137, 6, 0.3);
-    border-radius: 45px;
+    border-radius: 2%;
     color:white;
 }
 
@@ -597,3 +597,6 @@ form {
     padding-left: 5rem;
 }
 
+.swal2-title{
+    font-size: 3rem;
+}
