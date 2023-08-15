@@ -256,14 +256,16 @@ function alertSuccess() {
 
 // Se obtienen los registros almacenados en el localStorage
 function validaEmailNuevo() {
-    let storedRecordJSON = localStorage.getItem('registroUsuario');
+    let storedRecordJSON = localStorage.getItem('listaUsuarios');
     let storedRecord = JSON.parse(storedRecordJSON);
     let contador = 0;
 
-    for (let i = 0; i < storedRecord.length; i++) {
+    if (storedRecord != null) {
+        for (let i = 0; i < storedRecord.length; i++) {
 
-        if (storedRecord[i].email == emailInput.value.trim().toLowerCase()) {
-            contador++;
+            if (storedRecord[i].email == emailInput.value.trim().toLowerCase()) {
+                contador++;
+            }
         }
     }
 
