@@ -161,7 +161,7 @@ origenInput.addEventListener("change", function (element) {
 //   ***********  3. Validación de descripcion  ***********
 
 function validarDescripcion() {
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{15,150}$/;
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ.]{15,150}$/;
     valor = descripcionInput.value.trim();
 
     if (regexName.test(valor)) {
@@ -279,11 +279,12 @@ sugerenciaInput.addEventListener("change", function (element) {
 
 function validarAdicional() {
 
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{5,100}$/;
+    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ.]{5,100}$/;
     valor = adicionalInput.value.trim();
 
     if (regexName.test(valor)) {
         adicionalInput.style.border = "solid 2px green";
+        alert_adicional.style.display = "none";
         adicionalProductotxt = valor;
         return true
     } else {
