@@ -74,41 +74,42 @@ function borrarValidaciones() {
     nombreInput.style.border = "";
     alert_nombre.style.display = "none";
     alert_nombre_txt.innerHTML = "";
-
+    nombreInput.value="";
 
     origenInput.style.border = "";
     alert_origen.style.display = "none";
     alert_origen_txt.innerHTML = "";
-
+    origenInput.value=""
 
     descripcionInput.style.border = "";
     alert_descripcion.style.display = "none";
     alert_descripcion_txt.innerHTML = "";
-
+    descripcionInput.value=""
 
     precioInput.style.border = "";
     alert_precio.style.display = "none";
     alert_precio_txt.innerHTML = "";
-
+    precioInput.value="";
 
     categoriaInput.style.border = "";
     alert_categoria.style.display = "none";
     alert_categoria_txt.innerHTML = "";
-
+    categoriaInput.value="";
 
     materialInput.style.border = "";
     alert_material.style.display = "none";
     alert_material_txt.innerHTML = "";
-
+    materialInput.value="";
 
     sugerenciaInput.style.border = "";
     alert_sugerencia.style.display = "none";
     alert_sugerencia_txt.innerHTML = "";
-
+    sugerenciaInput.value="";
 
     adicionalInput.style.border = "";
     alert_adicional.style.display = "none";
     alert_adicional_txt.innerHTML = "";
+    adicionalInput.value="";
 }
 
 //   ***********  1. Validación de nombre  ***********
@@ -464,8 +465,6 @@ function guardarStorage() {
 
 btnEnviar.addEventListener("click", function (element) {
     element.preventDefault();
-
-    borrarValidaciones();
 
     let esNombre = validarNombre();
     let esOrigen = validarOrigen();

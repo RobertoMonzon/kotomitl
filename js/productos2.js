@@ -538,10 +538,6 @@ prod1 = [
     Desc3: "Variedad de colores ",
     gen: "inf"
   }
-
-
-
-
 ];
 
 function mostrarArreglo() {
