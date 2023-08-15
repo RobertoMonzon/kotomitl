@@ -109,7 +109,7 @@ btnEnviar.addEventListener("click", function () {
                 passwordInput.value = "";
 
                 setTimeout(function () {
-                    window.location.href = "../index.html";
+                    window.location.href = "https://robertomonzon.github.io/kotomitl/index.html";
                 }, 1000);
 
                 break
