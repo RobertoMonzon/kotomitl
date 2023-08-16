@@ -115,8 +115,12 @@ function borrarValidaciones() {
 //   ***********  1. Validación de nombre  ***********
 
 function validarNombre() {
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{5,}$/;
+    let regexName = /^[a-zA-Z0-9," "áéíóúÁÉÍÓÚüÜñÑ._]{3,}$/;
     valor = nombreInput.value.trim().toUpperCase();
+
+    nombreInput.style.border = "";
+    alert_nombre.style.display = "none";
+    alert_nombre_txt.innerHTML = "";
 
     if (regexName.test(valor)) {
         nombreInput.style.border = "solid 2px green";
@@ -138,8 +142,12 @@ nombreInput.addEventListener("change", function (element) {
 //   ***********  2. Validación de origen  ***********
 
 function validarOrigen() {
-    let regexName = /^[a-zA-Z," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{3,}$/;
+    let regexName = /^[a-zA-Z," ",áéíóúÁÉÍÓÚüÜñÑ._]{3,}$/;
     valor = origenInput.value.trim().toUpperCase();
+
+    origenInput.style.border = "";
+    alert_origen.style.display = "none";
+    alert_origen_txt.innerHTML = "";
 
     if (regexName.test(valor)) {
         origenInput.style.border = "solid 2px green";
@@ -161,8 +169,12 @@ origenInput.addEventListener("change", function (element) {
 //   ***********  3. Validación de descripcion  ***********
 
 function validarDescripcion() {
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ.]{15,150}$/;
+    let regexName = /^[a-zA-Z0-9," ",áéíóúÁÉÍÓÚüÜñÑ.]{15,150}$/;
     valor = descripcionInput.value.trim();
+
+    descripcionInput.style.border = "";
+    alert_descripcion.style.display = "none";
+    alert_descripcion_txt.innerHTML = "";
 
     if (regexName.test(valor)) {
         descripcionInput.style.border = "solid 2px green";
@@ -187,6 +199,10 @@ function validarPrecio() {
     // let regexName = /^[^0-9.]{2,7}$/;
     valor = precioInput.value.trim();
 
+    precioInput.style.border = "";
+    alert_precio.style.display = "none";
+    alert_precio_txt.innerHTML = "";
+
     if (!isNaN(parseFloat(valor)) && valor.length > 0 && valor.length < 8) {
         precioInput.style.border = "solid 2px green";
         precioProductotxt = ((Math.floor(valor * 100) / 100).toFixed(2));
@@ -210,6 +226,11 @@ function validarCategoria() {
 
     valor = categoriaInput.value;
 
+    categoriaInput.style.border = "";
+    alert_categoria.style.display = "none";
+    alert_categoria_txt.innerHTML = "";
+
+
     if (valor != "") {
         categoriaInput.style.border = "solid 2px green";
         categoriaProductotxt = valor;
@@ -231,8 +252,12 @@ categoriaInput.addEventListener("change", function (element) {
 
 function validarMaterial() {
 
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,%,-,(,),ñ,Ñ]{4,50}$/;
+    let regexName = /^[a-zA-Z0-9," ",áéíóúÁÉÍÓÚüÜñÑ./&%;*_]{4,50}$/;
     valor = materialInput.value.trim();
+
+    materialInput.style.border = "";
+    alert_material.style.display = "none";
+    alert_material_txt.innerHTML = "";
 
     if (regexName.test(valor)) {
         materialInput.style.border = "solid 2px green";
@@ -255,8 +280,12 @@ materialInput.addEventListener("change", function (element) {
 
 function validarSugerencia() {
 
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ]{5,100}$/;
+    let regexName = /^[a-zA-Z0-9," ",áéíóúÁÉÍÓÚüÜñÑ._]{5,100}$/;
     valor = sugerenciaInput.value.trim();
+
+    sugerenciaInput.style.border = "";
+    alert_sugerencia.style.display = "none";
+    alert_sugerencia_txt.innerHTML = "";
 
     if (regexName.test(valor)) {
         sugerenciaInput.style.border = "solid 2px green";
@@ -279,8 +308,12 @@ sugerenciaInput.addEventListener("change", function (element) {
 
 function validarAdicional() {
 
-    let regexName = /^[a-zA-Z0-9," ",á,é,í,ó,ú,Á,É,Í,Ó,Ú,ü,Ü,ñ,Ñ.]{5,100}$/;
+    let regexName = /^[a-zA-Z0-9," ",áéíóúÁÉÍÓÚüÜñÑ._]{5,100}$/;
     valor = adicionalInput.value.trim();
+
+    adicionalInput.style.border = "";
+    alert_adicional.style.display = "none";
+    alert_adicional_txt.innerHTML = "";
 
     if (regexName.test(valor)) {
         adicionalInput.style.border = "solid 2px green";
@@ -484,6 +517,22 @@ btnEnviar.addEventListener("click", function (element) {
         guardarStorage();
         alertSuccess();
         borrarValidaciones();
+        
+        imageFile_1.src="";
+        imageFile_1.style.display="none";
+        container_1.style.border = "";
+        document.getElementById("container_img_1").style.display = "flex";
+
+        imageFile_2.src="";
+        imageFile_2.style.display="none";
+        container_2.style.border = "";
+        document.getElementById("container_img_2").style.display = "flex";
+
+        imageFile_3.src="";
+        imageFile_3.style.display="none";
+        container_3.style.border = "";
+        document.getElementById("container_img_3").style.display = "flex";
+
     } else {
         alertWrong();
     }
