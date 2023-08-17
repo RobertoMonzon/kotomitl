@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,244 +26,251 @@
     <header id="navbar"></header>
 
     <!-- ================= CONTENIDO ============== -->
-    <main class="container mb-5">
+    <main class="wrapper">
+        <section class="container">
+            <!-- Formulario -->
+            <form class="" id="form" action="" method="" style="padding: 0;">
+                <!-- Sección de inputs -->
 
-        <!-- Formulario -->
-        <form class="" id="form" action="" method="" style="padding: 0;">
-            <!-- Sección de inputs -->
+                <h1 style="background-color: #4b9e74;color: white; padding: .5%;" class="">Formulario para agregar
+                    nuevos
+                    productos</h1>
 
-            <h1 style="background-color: #4b9e74;color: white; padding: .5%;" class="">Formulario para agregar nuevos
-                productos</h1>
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 mt-4">
+                    <!-- Primera columna -->
+                    <div class="col">
+                        <h3 class="mb-5 mt-4 text-center fw-bold">1. Valores de caratula de la tarjeta del producto</h3>
 
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 mt-4">
-                <!-- Primera columna -->
-                <div class="col">
-                    <h3 class="mb-5 mt-4 text-center fw-bold">1. Valores de caratula de la tarjeta del producto</h3>
-
-                    <!-- Nombre -->
-                    <div class="mb-5">
-                        <div class="d-flex container_label">
-                            <label for="nombreInput" class="form-label">Nombre del producto</label>
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_nombre">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_nombre_txt"></span>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" id="nombreInput" placeholder="Mínimo 5 caracteres"
-                            required minlength="5" maxlength="50">
-                    </div>
-
-                    <!-- Origen de producto -->
-                    <div class="mb-5">
-                        <div class="d-flex container_label">
-                            <label for="origenInput" class="form-label">Origen del producto</label>
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_origen">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_origen_txt"></span>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" id="origenInput" placeholder="Ej. Otomí" required
-                            minlength="5" maxlength="50">
-                    </div>
-
-                    <!-- Descripción -->
-                    <div class="mb-5">
-                        <div class="d-flex container_label">
-                            <label for="descripcionInput" class="form-label">Descripción del producto</label>
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_descripcion">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_descripcion_txt"></span>
-                            </div>
-                        </div>
-                        <textarea class="form-control" id="descripcionInput" required
-                            placeholder="Entre 15 y 150 caracteres" rows="5" minlength="15" maxlength="150"></textarea>
-                    </div>
-                </div>
-
-                <!-- Segunda columna -->
-                <div class="col">
-                    <h3 class="mb-5 mt-4 text-center fw-bold">2. Detalles del producto dentro de la
-                        tarjeta
-                    </h3>
-
-                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-2 mt-0 mx-auto" style="width: 95%;">
-
-                        <!-- Precio -->
-                        <div class="mb-5 mt-0">
+                        <!-- Nombre -->
+                        <div class="mb-5">
                             <div class="d-flex container_label">
-                                <label for="precioInput" class="form-label" style="margin-left: 2rem;">Precio</label>
+                                <label for="nombreInput" class="form-label">Nombre del producto</label>
                                 <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                    id="alert_precio">
+                                    id="alert_nombre">
                                     <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                    <span id="alert_precio_txt"></span>
+                                    <span id="alert_nombre_txt"></span>
                                 </div>
                             </div>
-                            <input oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-                                type="text" class="form-control" id="precioInput" placeholder="Ej. 499.99" required
-                                minlength="1" maxlength="7">
+                            <input type="text" class="form-control" id="nombreInput" placeholder="Mínimo 5 caracteres"
+                                required minlength="5" maxlength="50">
                         </div>
 
-                        <!-- Categoría -->
-                        <div class="mb-5 mt-0">
+                        <!-- Origen de producto -->
+                        <div class="mb-5">
                             <div class="d-flex container_label">
-                                <label for="categoriaInput" style="margin-left: 2rem;"
-                                    class="form-label">Categoría</label>
+                                <label for="origenInput" class="form-label">Origen del producto</label>
                                 <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                    id="alert_categoria">
+                                    id="alert_origen">
                                     <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                    <span id="alert_categoria_txt"></span>
+                                    <span id="alert_origen_txt"></span>
                                 </div>
                             </div>
-                            <select id="categoriaInput" name="categoriaInput" class="form-select form-control" required>
-                                <option value="" selected>Seleccionar</option>
-                                <option value="fem">Mujer</option>
-                                <option value="mas">Hombre</option>
-                                <option value="inf">Infante</option>
-                            </select>
+                            <input type="text" class="form-control" id="origenInput" placeholder="Ej. Otomí" required
+                                minlength="5" maxlength="50">
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="mb-5">
+                            <div class="d-flex container_label">
+                                <label for="descripcionInput" class="form-label">Descripción del producto</label>
+                                <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                    id="alert_descripcion">
+                                    <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                    <span id="alert_descripcion_txt"></span>
+                                </div>
+                            </div>
+                            <textarea class="form-control" id="descripcionInput" required
+                                placeholder="Entre 15 y 150 caracteres" rows="5" minlength="15"
+                                maxlength="150"></textarea>
                         </div>
                     </div>
 
-                    <!-- Material -->
-                    <div class="mb-5">
-                        <div class="d-flex container_label">
-                            <label for="materialInput" class="form-label">Materiales</label>
+                    <!-- Segunda columna -->
+                    <div class="col">
+                        <h3 class="mb-5 mt-4 text-center fw-bold">2. Detalles del producto dentro de la
+                            tarjeta
+                        </h3>
 
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_material">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_material_txt"></span>
+                        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-2 mt-0 mx-auto" style="width: 95%;">
+
+                            <!-- Precio -->
+                            <div class="mb-5 mt-0">
+                                <div class="d-flex container_label">
+                                    <label for="precioInput" class="form-label"
+                                        style="margin-left: 2rem;">Precio</label>
+                                    <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                        id="alert_precio">
+                                        <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                        <span id="alert_precio_txt"></span>
+                                    </div>
+                                </div>
+                                <input
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                    type="text" class="form-control" id="precioInput" placeholder="Ej. 499.99" required
+                                    minlength="1" maxlength="7">
+                            </div>
+
+                            <!-- Categoría -->
+                            <div class="mb-5 mt-0">
+                                <div class="d-flex container_label">
+                                    <label for="categoriaInput" style="margin-left: 2rem;"
+                                        class="form-label">Categoría</label>
+                                    <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                        id="alert_categoria">
+                                        <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                        <span id="alert_categoria_txt"></span>
+                                    </div>
+                                </div>
+                                <select id="categoriaInput" name="categoriaInput" class="form-select form-control"
+                                    required>
+                                    <option value="" selected>Seleccionar</option>
+                                    <option value="fem">Mujer</option>
+                                    <option value="mas">Hombre</option>
+                                    <option value="inf">Infante</option>
+                                </select>
                             </div>
                         </div>
-                        <input type="text" class="form-control" id="materialInput" placeholder="Ej. 100% Algodón"
-                            required>
-                    </div>
-                    <!-- Sugerencia -->
-                    <div class="mb-5">
-                        <div class="d-flex container_label">
-                            <label for="sugerenciaInput" class="form-label">Sugerencia de uso</label>
 
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_sugerencia">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_sugerencia_txt"></span>
+                        <!-- Material -->
+                        <div class="mb-5">
+                            <div class="d-flex container_label">
+                                <label for="materialInput" class="form-label">Materiales</label>
+
+                                <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                    id="alert_material">
+                                    <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                    <span id="alert_material_txt"></span>
+                                </div>
                             </div>
+                            <input type="text" class="form-control" id="materialInput" placeholder="Ej. 100% Algodón"
+                                required>
                         </div>
-                        <input type="text" class="form-control" id="sugerenciaInput"
-                            placeholder="Ej. Perfecto para viajar a la playa" required>
-                    </div>
-                    <!-- Adicional -->
-                    <div class="mb-5">
-                        <div class="d-flex container_label">
-                            <label for="adicionalInput" class="form-label">Comentario adicional</label>
+                        <!-- Sugerencia -->
+                        <div class="mb-5">
+                            <div class="d-flex container_label">
+                                <label for="sugerenciaInput" class="form-label">Sugerencia de uso</label>
 
-                            <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
-                                id="alert_adicional">
-                                <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
-                                <span id="alert_adicional_txt"></span>
+                                <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                    id="alert_sugerencia">
+                                    <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                    <span id="alert_sugerencia_txt"></span>
+                                </div>
                             </div>
+                            <input type="text" class="form-control" id="sugerenciaInput"
+                                placeholder="Ej. Perfecto para viajar a la playa" required>
                         </div>
-                        <input type="text" class="form-control" id="adicionalInput" placeholder="Ej. Diseño único"
-                            required>
-                    </div>
-                </div>
-            </div>
+                        <!-- Adicional -->
+                        <div class="mb-5">
+                            <div class="d-flex container_label">
+                                <label for="adicionalInput" class="form-label">Comentario adicional</label>
 
-            <hr>
-
-            <!-- Sección de carga de imágenes -->
-            <h3 class="mb-5 mt-5 text-center fw-bold">3. Carga tres imágenes para completar tu nueva tarjeta</h3>
-
-            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3 mt-3 mb-3">
-                <!-- Columna 1 de imagen -->
-                <div class="col text-center mt-5">
-                    <h3>Imagen principal</h3>
-                    <div class="container_img" id="container_1">
-                        <span id="container_img_1"><i class="bi bi-image icon_container_img"></i></span>
-                        <img id="imageFile_1" name="imageFile_1" src="" alt="" />
-                    </div>
-
-                    <!-- Botón de carga -->
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary" value="Subir imagen" id="btnFake_1"
-                            style="margin: 2rem 0 2rem 0;">
-                            <span>
-                                <i class="bi bi-arrow-bar-up icon__send"></i>
-                            </span>
-                            <span class="icon__send">
-                                Subir imagen
-                            </span>
-                            <input type="file" class="form-control-file" id="fileImage_1" style="display:none">
-                        </button>
+                                <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
+                                    id="alert_adicional">
+                                    <span><i class="bi bi-exclamation-triangle-fill icon__warning"></i></span>
+                                    <span id="alert_adicional_txt"></span>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" id="adicionalInput" placeholder="Ej. Diseño único"
+                                required>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Columna 2 de imagen -->
-                <div class="col text-center mt-5">
-                    <h3>Imagen secundaria 1</h3>
-                    <div class="container_img" id="container_2">
-                        <span id="container_img_2"><i class="bi bi-image icon_container_img"></i></span>
-                        <img id="imageFile_2" name="imageFile_2" src="" alt="" />
+                <hr>
+
+                <!-- Sección de carga de imágenes -->
+                <h3 class="mb-5 mt-5 text-center fw-bold">3. Carga tres imágenes para completar tu nueva tarjeta</h3>
+
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-3 mt-3 mb-3">
+                    <!-- Columna 1 de imagen -->
+                    <div class="col text-center mt-5">
+                        <h3>Imagen principal</h3>
+                        <div class="container_img" id="container_1">
+                            <span id="container_img_1"><i class="bi bi-image icon_container_img"></i></span>
+                            <img id="imageFile_1" name="imageFile_1" src="" alt="" />
+                        </div>
+
+                        <!-- Botón de carga -->
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="button" class="btn btn-primary" value="Subir imagen" id="btnFake_1"
+                                style="margin: 2rem 0 2rem 0;">
+                                <span>
+                                    <i class="bi bi-arrow-bar-up icon__send"></i>
+                                </span>
+                                <span class="icon__send">
+                                    Subir imagen
+                                </span>
+                                <input type="file" class="form-control-file" id="fileImage_1" style="display:none">
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Botón de carga -->
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary" value="Subir imagen" id="btnFake_2"
-                            style="margin: 2rem 0 2rem 0;">
-                            <span>
-                                <i class="bi bi-arrow-bar-up icon__send"></i>
-                            </span>
-                            <span class="icon__send">
-                                Subir imagen
-                            </span>
-                            <input type="file" class="form-control-file" id="fileImage_2" style="display:none">
-                        </button>
+                    <!-- Columna 2 de imagen -->
+                    <div class="col text-center mt-5">
+                        <h3>Imagen secundaria 1</h3>
+                        <div class="container_img" id="container_2">
+                            <span id="container_img_2"><i class="bi bi-image icon_container_img"></i></span>
+                            <img id="imageFile_2" name="imageFile_2" src="" alt="" />
+                        </div>
+
+                        <!-- Botón de carga -->
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="button" class="btn btn-primary" value="Subir imagen" id="btnFake_2"
+                                style="margin: 2rem 0 2rem 0;">
+                                <span>
+                                    <i class="bi bi-arrow-bar-up icon__send"></i>
+                                </span>
+                                <span class="icon__send">
+                                    Subir imagen
+                                </span>
+                                <input type="file" class="form-control-file" id="fileImage_2" style="display:none">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Columna 3 de imagen -->
+                    <div class="col text-center mt-5">
+                        <h3>Imagen secundaria 2</h3>
+                        <div class="container_img" id="container_3">
+                            <span id="container_img_3"><i class="bi bi-image icon_container_img"></i></span>
+                            <img id="imageFile_3" name="imageFile_3" src="" alt="" />
+                        </div>
+
+                        <!-- Botón de carga -->
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button type="button" class="btn btn-primary" value="Subir imagen" id="btnFake_3"
+                                style="margin: 2rem 0 2rem 0;">
+                                <span>
+                                    <i class="bi bi-arrow-bar-up icon__send"></i>
+                                </span>
+                                <span class="icon__send">
+                                    Subir imagen
+                                </span>
+                                <input type="file" class="form-control-file" id="fileImage_3" style="display:none">
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Columna 3 de imagen -->
-                <div class="col text-center mt-5">
-                    <h3>Imagen secundaria 2</h3>
-                    <div class="container_img" id="container_3">
-                        <span id="container_img_3"><i class="bi bi-image icon_container_img"></i></span>
-                        <img id="imageFile_3" name="imageFile_3" src="" alt="" />
-                    </div>
+                <hr>
 
-                    <!-- Botón de carga -->
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary" value="Subir imagen" id="btnFake_3"
-                            style="margin: 2rem 0 2rem 0;">
-                            <span>
-                                <i class="bi bi-arrow-bar-up icon__send"></i>
-                            </span>
-                            <span class="icon__send">
-                                Subir imagen
-                            </span>
-                            <input type="file" class="form-control-file" id="fileImage_3" style="display:none">
-                        </button>
-                    </div>
+                <!-- Botón de envío completo-->
+                <div class="d-grid gap-2 mx-auto" style="width: 20rem;">
+                    <button type="button" class="btn btn-warning text-nowrap" id="btnEnviar"
+                        style="margin: 2rem 0 2rem 0;">
+                        <span>
+                            <i class="bi bi-send icon__send fw-bold"></i>
+                        </span>
+                        <span class="icon__send fw-bold">Subir producto</span>
+                    </button>
                 </div>
-            </div>
 
-            <hr>
-
-            <!-- Botón de envío completo-->
-            <div class="d-grid gap-2 mx-auto" style="width: 20rem;">
-                <button type="button" class="btn btn-warning text-nowrap" id="btnEnviar" style="margin: 2rem 0 2rem 0;">
-                    <span>
-                        <i class="bi bi-send icon__send fw-bold"></i>
-                    </span>
-                    <span class="icon__send fw-bold">Subir producto</span>
-                </button>
-            </div>
-
-        </form>
+            </form>
+        </section>
     </main>
 
     <!-- ================= FOOTER ============== -->
-    <footer class="text-center text-lg-center justify-content-center d-flex mt-auto" id="footer"></footer>
+    <footer id="footer"></footer>
 
     <!-- ================= JS ============== -->
     <!--Bootstrap-->
@@ -271,7 +279,7 @@
         crossorigin="anonymous"></script>
 
     <!---JS Nabvar & Footer--->
-    <script src="./js/navfooter.js"></script>
+    <script src="./js/navfooter2.js"></script>
 
     <!-- Funciones de alta de productos -->
     <script src="./js/alta.js"></script>

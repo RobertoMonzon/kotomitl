@@ -26,19 +26,19 @@
     <header id="navbar"></header>
 
     <!-- ================= CONTENIDO ============== -->
-    <main class="container mb-5">
-        <section class="informacion__seccion text-center">
+    <main class="wrapper">
+        <section class="informacion__seccion text-center container mb-5">
             <!--=================== Formulario de registro ===============-->
 
             <div class="columna colForm">
-                <h1 style="text-align: center;">¡Regístrate!</h1>
+                <h2 style="text-align: center;">¡Regístrate!</h2>
 
                 <form class="needs-validation" id="form">
                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2 mt-4">
                         <div class="col">
                             <!-- Nombre -->
                             <div class="mb-5">
-                                <div class="d-flex" style="width: 95%;">
+                                <div class="d-flex" style="width: 90%;">
                                     <label for="nombreInput" class="form-label">Nombre</label>
                                     <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
                                         id="alert_nombre">
@@ -47,14 +47,14 @@
                                     </div>
                                 </div>
                                 <input type="text" class="form-control" id="nombreInput" placeholder="Ej. Michell"
-                                    required minlength="3" maxlength="50" autocomplete="name" name="name">
+                                    required minlength="3" maxlength="50" autocomplete="name" name="name" style="width: 80%;">
                             </div>
                         </div>
 
                         <div class="col">
                             <!-- Apellido -->
                             <div class="mb-5">
-                                <div class="d-flex" style="width: 95%;">
+                                <div class="d-flex" style="width: 90%;">
                                     <label for="apellidoInput" class="form-label">Apellido</label>
                                     <div class="warning__text" style="display:none; color:rgb(186, 3, 3)" role="alert"
                                         id="alert_apellido">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <input type="text" class="form-control" id="apellidoInput" placeholder="Ej. Morales"
-                                    required minlength="3" maxlength="50" autocomplete="family-name">
+                                    required minlength="3" maxlength="50" autocomplete="family-name"  style="width: 80%;">
                             </div>
                         </div>
                     </div>
@@ -155,8 +155,8 @@
                     </div>
 
                     <div class="d-grid gap-2 col-7 mx-auto text-center">
-                        <h3>¿Ya tienes una cuenta?</h3>
-                        <h3><a class="text-decoration-none" href="./loginUsuario.html" style="font-size: inherit;">¡Inicia sesión!</a></h3>
+                        <h5>¿Ya tienes una cuenta?</h5>
+                        <h5><a class="text-decoration-none" href="./loginUsuario.html" style="font-size: inherit;">¡Inicia sesión!</a></h5>
                     </div>
 
                 </form>
@@ -168,10 +168,10 @@
         </section>
     </main>
     <!-- ================= FOOTER ============== -->
-    <footer class="text-center text-lg-center justify-content-center d-flex mt-auto" id="footer"></footer>
-    <!---JS Nabvar & Footer--->
+    <footer id="footer"></footer>
 
-    <script src="./js/navfooter.js"></script>
+    <!---JS Nabvar & Footer--->
+    <script src="./js/navfooter2.js"></script>
 
     <!-- ================= JS ============== -->
     <!--Bootstrap-->

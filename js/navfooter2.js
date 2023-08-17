@@ -32,6 +32,9 @@ window.addEventListener("load", function (event) {
                         <li class="nav-item">
                             <a class="nav-link" href="./contacto.html">Contacto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./alta.html">Añadir</a>
+                        </li>
                         <li class="nav-item especial">
                             <a class="nav-link" href="./registroUsuario.html">Registro</a>
                         </li>

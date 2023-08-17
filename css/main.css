@@ -12,12 +12,11 @@ html {
 
 body {
     background-color: #faebd7;
-    position: relative;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    /* Mínimo alto de la ventana del navegador */
-    padding-bottom: 0rem;
-    box-sizing: inherit;
     color: #353028;
 }
 
@@ -61,6 +60,7 @@ header {
 
 .nav-link {
     color: white;
+    padding-left: 1rem;
 }
 
 .nav-link:hover {
@@ -77,24 +77,31 @@ header {
 
 .dropdown-menu,
 .dropdown-item {
-    background-color: antiquewhite;
+    background-color: #c3c3c3;
     font-size: 1.6rem;
+    color: #353028;
 }
 
+.wrapper {
+    flex: 1;
+}
 
 /* ======= FOOTER ======== */
-footer {
-    margin-top: 3rem;
-    font-size: 1.8rem;
-    padding: 3.5rem;
-    text-align: center;
+/* footer {
     right: 0;
     left: 0;
     bottom: 0;
+} */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
     background-color: #1c412f;
-
-    position: relative;
-
+    margin-top: 3rem;
 }
 
 footer ul li a {
@@ -432,12 +439,20 @@ form {
 /* ============= MEDIAS ================== */
 
 @media screen and (max-width: 992px) {
+
     /* .navbar-nav .nav-item a{
         display: inline;
     } */
+    .navbar-brand {
+        padding: 1rem 1rem 1rem 0;
+    }
 
     .especial {
         display: contents;
+    }
+
+    .nav-link {
+        padding-left: 1rem;
     }
 
     .iconoSuperior {
@@ -505,10 +520,15 @@ form {
         display: none;
     }
 
-    .banner_registro, .banner_registro img{
+    .banner_registro,
+    .banner_registro img {
         height: .5rem;
         width: .5rem;
         visibility: hidden;
+    }
+
+    footer {
+        padding: 20px;
     }
 }
 
@@ -587,16 +607,17 @@ form {
 .banner_registro img {
     /* border: 1px solid gray; */
     /* padding: 10px; */
-    box-shadow:  8px 8px 5px rgba(237, 137, 6, 0.3);
+    box-shadow: 8px 8px 5px rgba(237, 137, 6, 0.3);
     border-radius: 2%;
-    color:white;
+    color: white;
 }
 
-.banner_registro{
+.banner_registro {
     padding-bottom: 5rem;
     padding-left: 5rem;
 }
 
-.swal2-title{
+.swal2-title {
     font-size: 3rem;
 }
+
