@@ -86,6 +86,11 @@ btnEnviar.addEventListener("click", function () {
 
     if (esEmail && esPassword) {
 
+        if (localStorage.getItem('registroUsuario')===null){
+            swal("No hay datos registrados", "Por favor primero regístrate", "error");
+            return false;
+        }
+
         // Se obtienen los registros almacenados en el localStorage
         let storedRecordJSON = localStorage.getItem('registroUsuario');
         let storedRecord = JSON.parse(storedRecordJSON);

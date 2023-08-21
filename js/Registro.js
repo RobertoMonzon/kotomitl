@@ -303,13 +303,40 @@ document.getElementById('btnEnviar').addEventListener('click', function () {
             localStorage.setItem('registroUsuario', JSON.stringify(listaUsuarios));
 
             // Limpia los campos del formulario
-            nombreInput.value = '';
-            apellidoInput.value = '';
+            nombreInput.value="";
+            nombreInput.style.border = "";
+            alert_nombre.style.display = "none";
+            alert_nombre_txt.innerHTML = "";
+            
+            apellidoInput.value="";
+            apellidoInput.style.border = "";
+            alert_apellido.style.display = "none";
+            alert_apellido_txt.innerHTML = "";
+
             telInput.value = '';
+            telInput.style.border = "";
+            alert_telefono.style.display = "none";
+            alert_telefono_txt.innerHTML = "";
+
             emailInput.value = '';
+            emailInput.style.border = "";
+            alert_email.style.display = "none";
+            alert_email_txt.innerHTML = "";
+
             emailInputVal.value = '';
+            emailInputVal.style.border = "";
+            alert_emailVal.style.display = "none";
+            alert_emailVal_txt.innerHTML = "";
+
             passwordInput.value = '';
+            passwordInput.style.border = "";
+            alert_password.style.display = "none";
+            alert_password_txt.innerHTML = "";
+
             passwordInputVal.value = '';
+            passwordInputVal.style.border = "";
+            alert_passwordVal.style.display = "none";
+            alert_passwordVal_txt.innerHTML = "";
 
             // Mensaje de éxito
             swal({ title: "¡Registro exitoso!", text: "Ya puedes iniciar sesión.", icon: "success" })
