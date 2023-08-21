@@ -43,7 +43,7 @@ window.addEventListener("load", function (event) {
                             </li>
                         
                             <li class="nav-item especial">
-                                <a class="nav-link" href="#">Cerrar sesión</a>
+                                <a class="nav-link" href="#" onclick="cierreSesion()">Cerrar sesión</a>
                             </li>
     
                         </ul>
@@ -78,7 +78,7 @@ window.addEventListener("load", function (event) {
                                         </li>
                                         <li>
                                             <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="" aria-pressed="false">
-                                            <a class="nav-link" href="#" style="color:#353028">
+                                            <a class="nav-link" href="#" style="color:#353028" onclick="cierreSesion()">
                                                 Cerrar sesión
                                             </a>
                                             </button>
@@ -236,3 +236,11 @@ window.addEventListener("load", function (event) {
     );
 
 });// window load{}
+
+function cierreSesion(){
+    sessionStorage.setItem('estadoLogin',false)
+    swal("¡Hasta pronto¡","Cierre de sesión exitoso", "success");
+    setTimeout(function () {
+        window.location.href = "https://robertomonzon.github.io/kotomitl/index.html";
+    }, 1000);
+}
