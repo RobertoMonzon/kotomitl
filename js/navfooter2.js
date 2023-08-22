@@ -39,7 +39,7 @@ window.addEventListener("load", function (event) {
                             </li>
                             
                             <li class="nav-item especial">
-                                <a class="nav-link" href="#">Mi cuenta</a>
+                                <a class="nav-link" href="../infoUsuario.html">Mi cuenta</a>
                             </li>
                         
                             <li class="nav-item especial">
@@ -214,24 +214,26 @@ window.addEventListener("load", function (event) {
     
     
     footer.insertAdjacentHTML("beforeend",
-    `
-        <ul class="list-unstyled d-flex">
+    `    
+        <ul class="list-unstyled d-flex justify-content-between align-items-center">
             <li>
                 <a href="https://es-la.facebook.com/" target="_blank">
                     <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo">
-                </a>
+                 </a>
             </li>
+
             <li>
                 <a href="https://twitter.com/?lang=es" target="_blank">
                     <img id="twitterLogo" src="./src/img/logos/twitterLogo.png" alt="twitterLogo">
                 </a>
             </li>
+
             <li>
                 <a href="https://www.instagram.com/" target="_blank">
                     <img id="instagramLogo" src="./src/img/logos/instagramLogo.png" alt="instagramlogo">
                 </a>
             </li>
-        </ul>
+        </ul> 
     `
     );
 
