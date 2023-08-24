@@ -406,10 +406,14 @@ footer ul li a {
 .icons_tech {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 3rem;
 }
 
+.icons_tech img{
+    padding: 1rem;
+}
 /* ============= CONTACTO ================== */
 .inf-contact {
     padding-top: 5%;
