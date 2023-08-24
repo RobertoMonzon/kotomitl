@@ -55,11 +55,11 @@ ENGINE = InnoDB;
 -- Table `kotomitldb`.`admin`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kotomitldb`.`admin` (
-  `adminid` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `contrasenia` BLOB NOT NULL,
-  PRIMARY KEY (`adminid`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
