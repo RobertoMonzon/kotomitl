@@ -219,7 +219,7 @@ window.addEventListener("load", function (event) {
             <li>
                 <a href="https://es-la.facebook.com/" target="_blank">
                     <img id="facebookLogo" src="./src/img/logos/facebookLogo.png" alt="facebookLogo">
-                 </a>
+                </a>
             </li>
 
             <li>
@@ -241,8 +241,8 @@ window.addEventListener("load", function (event) {
 
 function cierreSesion(){
     sessionStorage.setItem('estadoLogin',false)
-    swal("¡Hasta pronto¡","Cierre de sesión exitoso", "success");
+    swal("¡Hasta pronto!"," Aunque se estaba poniendo bueno...", "success");
     setTimeout(function () {
-        window.location.href = "https://robertomonzon.github.io/kotomitl/index.html";
+        window.location.href = "./index.html";
     }, 1000);
 }

@@ -16,8 +16,8 @@ function showProducts(prods) {
     
                     <!-- productos-->
                     <div class="col" style="margin-bottom: 1rem;">
-                        <div class="card card__team h-100">
-                            <div style="text-align: center;">
+                        <div class="card card_producto card__team h-100">
+                            <div style="text-align: center;" class="img_producto">
                                 <img src="${prod.image}"
                                     style="width: auto; height: 150px; margin-top: 1rem;"
                                     class="img-fluid rounded" alt="${prod.title}">
@@ -33,7 +33,7 @@ function showProducts(prods) {
                             </div>
                             
                             <div style="text-align:center; margin: 0 auto 1.5rem auto;">
-                            <button type="button" class="btn btn-warning btn-producto" data-bs-toggle="modal" data-bs-target="#exampleModal${prod.id}">
+                            <button type="button" id="btn-producto" class="btn btn-warning btn-producto" data-bs-toggle="modal" data-bs-target="#exampleModal${prod.id}">
                             Ver más 
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
@@ -571,4 +571,22 @@ window.addEventListener("load", function (event) {
   } else {
     showProducts(prod1);
   }
+  let img_producto = document.querySelectorAll('.img_producto');
+  console.log(img_producto);
+
+  let modal = function (modalClick) {
+    const modalToggle = new bootstrap.Modal(document.querySelector(document.querySelectorAll('.btn-producto')[modalClick].getAttribute("data-bs-target")));
+    modalToggle.toggle();
+  };//Function click
+
+  img_producto.forEach((imagen, i) => {
+    imagen.addEventListener('click', () => {
+      modal(i);
+    })
+  });
+
 })
+
+
+
+

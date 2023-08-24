@@ -38,6 +38,8 @@ h2 {
 
 p {
     font-size: 1.6rem;
+    letter-spacing: .05rem;
+    word-spacing: .5rem;
 }
 
 /* ======= NAVBAR ======== */
@@ -127,7 +129,7 @@ footer ul li a {
 
     10%,
     90% {
-        transform: translate(-1px, -2px);
+        transform: translate(-.5px, -2px);
     }
 
     20%,
@@ -143,29 +145,211 @@ footer ul li a {
 
     40%,
     60% {
-        transform: translate(-1px, -1px);
+        transform: translate(-.5px, -.5px);
     }
 }
 
 /* ========== CARDS ============== */
+
+
+
+
+.text-focus-in-2 {
+    -webkit-animation: text-focus-in-2 1.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in-2 1.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in-2 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in-2 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.text-focus-in-3 {
+    -webkit-animation: text-focus-in-3 .6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in-3 .6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in-3 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in-3 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.text-focus-in-4 {
+    -webkit-animation: text-focus-in-4 .8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in-4 .8s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in-4 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in-4 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.text-focus-in-5 {
+    -webkit-animation: text-focus-in-5 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in-5 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in-5 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in-5 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.text-focus-in-6 {
+    -webkit-animation: text-focus-in-6 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in-6 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes text-focus-in-6 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes text-focus-in-6 {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+.img_compa {
+    width: 12rem;
+    height: 12rem;
+    margin-top: 1rem;
+    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
 
 .title__card {
     display: flex;
     justify-content: center;
     text-align: center;
     color: rgb(80, 80, 80);
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
 }
 
 .subtitle__card {
     text-align: center;
-    color: rgb(10, 96, 54);
-    font-size: 2rem;
+    color: rgb(104, 104, 104);
+    font-size: 1.7rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
+    line-height: 1.2;
+    /* text-shadow:  .5px 0 rgb(20,20,20), -.5px 0 rgb(20,20,20), 0 .5px rgb(20,20,20), 0 -.5px rgb(20,20,20),
+    .5px .5px rgb(20,20,20), -.5px -.5px rgb(20,20,20), .5px -.5px rgb(20,20,20), -.5px .5px rgb(20,20,20); */
+
 }
 
 .card-body {
@@ -175,11 +359,13 @@ footer ul li a {
 }
 
 .card {
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 2px .5px rgba(0, 0, 0, 0.1);
 }
 
 .card-team:hover {
     box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1rem);
+    transition: .2s;
 }
 
 .card-footer {
@@ -195,9 +381,34 @@ footer ul li a {
 
 .social__media__icon {
     font-size: 2.5rem;
-    color: rgb(83, 83, 83);
+    color: rgb(19, 81, 51);
 }
 
+.social__media__icon:hover {
+    font-size: 2.7rem;
+    color: rgb(57, 137, 98);
+}
+
+
+.generation{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #0074b9;
+}
+
+
+.generation:hover{
+    cursor: pointer;
+    color: #005a8e;
+    text-decoration: underline;
+}
+
+.icons_tech {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
 
 /* ============= CONTACTO ================== */
 .inf-contact {
@@ -287,6 +498,15 @@ form {
 
 /* ============= PRODUCTOS ================== */
 
+.img_producto:hover {
+    cursor: pointer;
+}
+
+.card_producto:hover{
+    /* transform: translateY(-1rem); */
+    transition: .3s;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
+}
 
 .container-products {
     width: 100%;
@@ -335,7 +555,7 @@ form {
     cursor: pointer;
     font-size: 2.8rem;
     transition: .5s;
-    text-shadow: 2px 0px 1px#CBA328;
+    text-shadow: 2px 0px .5px#CBA328;
 }
 
 .btn-producto {
@@ -586,7 +806,7 @@ form {
     justify-content: center;
     align-items: center;
     border-radius: 5%;
-    box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 2px .5px rgba(0, 0, 0, 0.3);
 }
 
 .icon_container_img {
@@ -605,7 +825,7 @@ form {
 }
 
 .banner_registro img {
-    /* border: 1px solid gray; */
+    /* border: .5px solid gray; */
     /* padding: 10px; */
     box-shadow: 8px 8px 5px rgba(237, 137, 6, 0.3);
     border-radius: 2%;
@@ -620,4 +840,3 @@ form {
 .swal2-title {
     font-size: 3rem;
 }
-
