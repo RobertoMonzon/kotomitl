@@ -57,14 +57,14 @@ function showProducts(prods) {
     <div class="row" style="width: 100%;">
       <div class="col my-auto" style="width: 15%;">
         <ul class="list-group">
-            <li class="list-group-item" style="width: 70%;"><img src="${prod.image}" class="rounded mx-auto d-block" alt="..." style="max-width: 60%; max-height: 70%px;"></li>
-            <li class="list-group-item" style="width: 70%"><img src="${prod.image2}" class="rounded mx-auto d-block" alt="..." style="max-width: 60%; max-height: 70%;"></li>
-            <li class="list-group-item" style="width: 70%"><img src="${prod.image3}" class="rounded mx-auto d-block" alt="..." style="max-width: 60%; max-height: 70%;"></li>
+            <li class="list-group-item" style="width: 70%;"><img src="${prod.image}" onclick="cambiarimagen(this)" class="rounded mx-auto d-block img-pequena" alt="..." style="max-width: 60%; max-height: 70%px;"></li>
+            <li class="list-group-item" style="width: 70%"><img src="${prod.image2}"  onclick="cambiarimagen(this)" class="rounded mx-auto d-block img-pequena" alt="..." style="max-width: 60%; max-height: 70%;"></li>
+            <li class="list-group-item" style="width: 70%"><img src="${prod.image3}" onclick="cambiarimagen(this)" class="rounded mx-auto d-block img-pequena" alt="..." style="max-width: 60%; max-height: 70%;"></li>
 
           </ul>
       </div>
       <div class="col" style="width: 50%;align-items: center;" id="imagen-principal">
-        <img src="${prod.image}" class="rounded mx-auto d-block" alt="..." " style=" max-width: 95%; max-height: 95%;">
+        <img src="${prod.image}"  id="img-grande" class="rounded mx-auto d-block" alt="..." " style=" max-width: 95%; max-height: 95%;">
       </div>
       <div class="col" style="width: 35%;">
         <!--Nombre del producto-->

@@ -844,3 +844,14 @@ form {
 .swal2-title {
     font-size: 3rem;
 }
+
+
+.img-pequena{
+    opacity: 0.6;
+
+}
+
+.img-pequena:hover{
+    opacity: 1;
+
+}
