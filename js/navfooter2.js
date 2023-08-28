@@ -18,7 +18,7 @@ window.addEventListener("load", function (event) {
                         aria-label="Toggle navigation" style="margin-right:1rem;">
                         <span class="navbar-toggler-icon" style="font-size:2rem;"></span>
                     </button>    
-                <a class="navbar-brand " href="./index.html"><img src="./src/img/logos/KotomitlO.png" width="180rem" alt="Kotomitl"></a>
+                <a class="navbar-brand " href="./index.html"><img src="./src/img/logos/KotomitlO.png" width="130rem" alt="Kotomitl"></a>
     
                     <div class="collapse navbar-collapse" id="navbarsExample05">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -120,7 +120,7 @@ window.addEventListener("load", function (event) {
                         aria-label="Toggle navigation" style="margin-right:1rem;">
                         <span class="navbar-toggler-icon" style="font-size:2rem;"></span>
                     </button>    
-                <a class="navbar-brand " href="./index.html"><img src="./src/img/logos/KotomitlO.png" width="180rem" alt="Kotomitl"></a>
+                <a class="navbar-brand " href="./index.html"><img src="./src/img/logos/KotomitlO.png" width="130rem" alt="Kotomitl"></a>
     
                     <div class="collapse navbar-collapse" id="navbarsExample05">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
