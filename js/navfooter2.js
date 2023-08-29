@@ -29,10 +29,10 @@ window.addEventListener("load", function (event) {
                                 <a class="nav-link" href="./productos.html">Productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                                <a class="nav-link" href="./contacto.html">Contacto</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./contacto.html">Contacto</a>
+                                <a class="nav-link" href="./nosotros.html">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./alta.html">Añadir</a>
@@ -130,13 +130,15 @@ window.addEventListener("load", function (event) {
                             <li class="nav-item">
                                 <a class="nav-link" href="./productos.html">Productos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                            </li>
+        
                             <li class="nav-item">
                                 <a class="nav-link" href="./contacto.html">Contacto</a>
                             </li>
                             
+                            <li class="nav-item">
+                                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                            </li>
+
                             <li class="nav-item especial">
                                 <a class="nav-link" href="./registroUsuario.html">Registro</a>
                             </li>

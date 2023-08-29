@@ -159,7 +159,6 @@ function showProducts(prods) {
 
 filt_cat.addEventListener("click", function (event) {
   showProducts(prod1);
-
 });
 
 filt_mas.addEventListener("click", function (event) {

@@ -18,6 +18,17 @@ let alert_mensaje_txt = document.getElementById("alert_mensaje_txt");
 let btnEnviar = document.getElementById("btnEnviar");
 let form = document.getElementById('form');
 
+// contador para sumar dígitos o caracteres repetidos
+
+function repetidos(elemento, repeticiones) {
+    let sum = 0;
+    for (i = 0; i < elemento.length; i++) {
+        if (elemento.charAt(i) == elemento.charAt(i + 1))
+            sum++;
+    }
+    return repeticiones>=sum;
+}
+
 //   ***********  Validación de nombre  ***********
 
 function validarNombre() {
@@ -28,8 +39,9 @@ function validarNombre() {
     nombreInput.style.border = "";
     alert_nombre.style.display = "none";
     alert_nombre_txt.innerHTML = "";
+    
 
-    if (regexName.test(name)) {
+    if (regexName.test(name) && repetidos(name,2)) {
         nombreInput.style.border = "solid 2px green";
         return true
     } else {
@@ -56,17 +68,8 @@ function validarTelefono() {
     alert_telefono.style.display = "none";
     alert_telefono_txt.innerHTML = "";
 
-    // contador para sumar dígitos repetidos
-    let sum = 0;
-
-    //determina si los dígitos se repiten consecutivamente, lo cual más adelante sirve como control de errores.
-    for (i = 0; i < phone.length; i++) {
-        if (phone.charAt(i) == phone.charAt(i + 1)) {
-            sum++;
-        }
-    }
     //valida el cumplimiento del regex y que no supere 5 dígitos repetidos
-    if (regexPhone.test(phone) && !(sum > 5)) {
+    if (regexPhone.test(phone) && repetidos(phone,4)) {
         telInput.style.border = "solid 2px green";
         return true
     } else {
@@ -112,14 +115,14 @@ emailInput.addEventListener("change", function (element) {
 // ***********  Validación de mensaje  ***********
 
 function validarMensaje() {
-    let mensaje = msjArea.value.trim().length;
+    let mensaje = msjArea.value.trim();
 
     //elementos de validación limpios
     msjArea.style.border = "";
     alert_mensaje.style.display = "none";
     alert_mensaje_txt.innerHTML = "";
 
-    if (mensaje > 10) {
+    if (mensaje.length > 10 && repetidos(mensaje,2)) {
         msjArea.style.border = "solid 2px green";
         return true;
     } else {
@@ -129,6 +132,7 @@ function validarMensaje() {
         return false;
     }
 }
+
 
 msjArea.addEventListener("change", function (element) {
     element.preventDefault();
@@ -165,3 +169,6 @@ btnEnviar.addEventListener("click", function (event) {
         alertWrong();
     }
 });
+
+
+

@@ -11,6 +11,17 @@ const passwordInputVal = document.getElementById('passwordInputVal');
 */
 // Funciones de validación
 
+// contador para sumar dígitos o caracteres repetidos
+
+function repetidos(elemento, repeticiones) {
+    let sum = 0;
+    for (i = 0; i < elemento.length; i++) {
+        if (elemento.charAt(i) == elemento.charAt(i + 1))
+            sum++;
+    }
+    return repeticiones>=sum;
+}
+
 //   ***********  nombre  ***********
 let nombreInput = document.getElementById("nombreInput");
 
@@ -26,7 +37,7 @@ function validarNombre() {
     alert_nombre.style.display = "none";
     alert_nombre_txt.innerHTML = "";
 
-    if (regexName.test(name)) {
+    if (regexName.test(name) && repetidos(name,2)) {
         nombreInput.style.border = "solid 2px green";
         return true
     } else {
@@ -57,7 +68,7 @@ function validarApellido() {
     alert_apellido.style.display = "none";
     alert_apellido_txt.innerHTML = "";
 
-    if (regexName.test(name)) {
+    if (regexName.test(name) && repetidos(name,2)) {
         apellidoInput.style.border = "solid 2px green";
         return true
     } else {
