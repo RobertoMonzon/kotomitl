@@ -521,6 +521,7 @@ form {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 0;
 }
 
 .catalogo-navbar ul {
@@ -528,7 +529,7 @@ form {
 }
 
 .catalogo-navbar ul li {
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
 }
 
 .filtro-catalogo {
@@ -687,6 +688,22 @@ form {
         display: none;
     }
 
+    .formtallas{
+        font-size: 2rem;
+    }
+
+    .formtallas input[type=radio]#tCh,
+    .formtallas input[type=radio]#tM,
+    .formtallas input[type=radio]#tG,
+    .formtallas input[type=radio]#tXg{
+        color: #1c412f;
+    }
+
+    #col1{
+        display: none;
+        visibility: hidden;
+    }
+
     .contenedor-navbar-catalogo {
         display: none;
         visibility: hidden;
@@ -754,6 +771,56 @@ form {
     footer {
         padding: 20px;
     }
+
+    #tallas{
+        width: 60%;
+        font-size: 12px;
+    }
+
+    #desc-prod{
+        text-align: justify;
+        font-size: 10px;
+    }
+
+    #min, #max, #filt_precio{
+        display: none;
+        visibility: hidden;
+    }
+
+    #carrito,#comprar,#cerrar{
+        font-size: 12px;
+    }
+
+
+    #inlineRadio1,#inlineRadio2,#inlineRadio3,#inlineRadio4 {
+        width: 9px;
+        height: 9px;
+        border: 0;
+    }
+    
+    #titulo-tallas{
+        display: none;
+        visibility: hidden;
+    }
+
+    #img-grande{
+        width: 300px;
+        height: 700px;
+    }
+
+    #main_image img{
+        height: 70%;
+        width: 70%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    #lista-desc{
+        visibility: hidden;
+        display: none;
+    }
+    
+    
 }
 
 
@@ -765,6 +832,7 @@ form {
     .informacion__seccion>div {
         width: 50%;
     }
+
 }
 
 .texto_boton {
@@ -854,4 +922,55 @@ form {
 .img-pequena:hover{
     opacity: 1;
 
+}
+
+#miniaturas li img{
+    width: 35%;
+    height: 30.5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 33px;
+    cursor:pointer;
+    display: block;
+    opacity: .7;
+}
+
+#img-grande{
+    width: 70%;
+    height: 70%;
+}
+
+#miniaturas img:hover{
+    opacity: 1;
+}
+
+#main_image img{
+    height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+input[type='radio'] {
+    background-color: green;
+    width: 20px;
+}
+
+#tallas{
+    width: 20%;
+}
+
+#desc-prod{
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+#lista-desc li{
+    list-style-type: none;
+    font-size: 1.2rem;
+}
+
+#img-grande{
+    margin-top: 5rem;
+    margin-right: 60rem;
 }

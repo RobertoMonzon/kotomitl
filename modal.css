@@ -1,0 +1,35 @@
+#modal-producto .card{
+    background-color: rgb(177, 235, 177);
+}
+
+#miniaturas li img{
+    width: 75%;
+    height: 30.5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 33px;
+    cursor:pointer;
+    display: block;
+    opacity: .7;
+}
+
+#miniaturas img:hover{
+    opacity: 1;
+}
+
+#main_image img{
+    height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#modal-info{
+    width: 100%;
+    height: auto;
+}
+
+
+#modal-info p{
+    font-size: 20px;
+}
