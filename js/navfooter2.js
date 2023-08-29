@@ -39,7 +39,7 @@ window.addEventListener("load", function (event) {
                             </li>
                             
                             <li class="nav-item especial">
-                                <a class="nav-link" href="../infoUsuario.html">Mi cuenta</a>
+                                <a class="nav-link" href="./infoUsuario.html>Mi cuenta</a>
                             </li>
                         
                             <li class="nav-item especial">
