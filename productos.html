@@ -30,112 +30,35 @@
     <section class="container mb-5">
       <button type="button" class="btn btn-outline-primary" id="filt_cat2">Catálogo</button>
       <div class="container-fluid text-center container-products">
-        <div class="btn-group" role="group"  id="filtro-superior">
+        <div class="btn-group" role="group" id="filtro-superior">
           <button type="button" class="btn btn-outline-primary" id="filt_mas2">Hombre</button>
           <button type="button" class="btn btn-outline-primary" id="filt_fem2">Mujer</button>
           <button type="button" class="btn btn-outline-primary" id="filt_inf2">Infante</button>
-        </div>  
-      </div>
-    
-    <div class="container-fluid text-center container-products" id="productos-grande">
-
-
-      <div class="row">
-        <div class="col-md-2 contenedor-navbar-catalogo d-flex justify-content-center align-items-top" id="barra-catalogo">
-          <div class="catalogo-navbar">
-
-            <!-- <div class="form-outline" style="width: 15rem;"> -->
-              <!-- <input  style="width: 15rem; height:2rem; font-size: 1.6rem;" type="text" placeholder="Busqueda" id="filtro_nombre"/> -->
-              <!-- <input  type="number" id="min" class="form-control" placeholder="min" />
-              <input  type="number" id="max" class="form-control" placeholder="max"/>
-              <br>
-              <br>
-              <button  style="width: 12rem; height: 2rem;" id="filt_precio">filtrar</button>
-
-               -->
-
-            <!-- </div>
-            <br>
-            <br> -->
-
-            <!-- <div class="btn-group" role="group" id="filtro-color">
-              <button type="button" class="btn btn-light" id="btnblanco"></button>
-              <button type="button" class="btn btn-primary" id="btnazul"></button>
-              <button type="button" class="btn btn-dark" id="btnnegro"></button>
-            </div> -->
-            <ul style="list-style-type: none">
-              <li><button href="" class="filtro-catalogo" id="filt_mas">Hombre</button></li>
-              <li><button href="" class="filtro-catalogo" id="filt_fem">Mujer</button></li>
-              <li><button href="" class="filtro-catalogo" id="filt_inf">Infantes</button></li>
-            </ul>
-
-
-           
-          </div>
         </div>
-        <div class="col-md-10">
-          <!-- boton -->
-          <button href="" class="filtro-catalogo" id="filt_cat">Catálogo</button>
-          <!-- boton -->
+      </div>
 
-          <div class="container text-center" style="padding-bottom: 5rem;">
-            <div class="row">
-              <div class="col">
-                <!-- contenedor colores -->
-                <div class="container text-center">
-                  <div class="row">
-                    <div class="col">
-                      <button type="button" style="width: 3rem; height: 2rem;" class="btn btn-light" id="btnblanco"></button>
-                      <button type="button" style="width: 3rem; height: 2rem;" class="btn btn-primary" id="btnazul"></button>
-                      <button type="button" style="width: 3rem; height: 2rem;" class="btn btn-dark" id="btnnegro"></button>
-                    </div>
-                  </div>
-                </div>
-              <!-- contenedor colores -->
-              </div>
-              <div class="col">
-                <!-- max min -->
-                <div class="container text-center">
-                  <div class="row">
-                    <div class="col" style="width: 2rem;">
-                      <input  style="width: 8rem; height: 2rem;" type="number" id="min" class="form-control" placeholder="min"/>
-                    </div>
-                    <div class="col" style="width: 2rem;"> 
-                      <input  style="width: 8rem; height: 2rem;" type="number" id="max" class="form-control" placeholder="max"/>
-                      <br>
-                    </div>
-                    <div class="col" style="width: 2rem;">
-                      <button  style="width: 7rem; height: 2rem; font-size: 1rem;" id="filt_precio">filtrar</button>
-                    </div>
-                  </div>
-                </div>
-                <!-- max min -->
-              </div>
-              <div class="col">
-              <!-- busqueda -->         
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col">
-                    <input  style="width: 15rem; height:2rem; font-size: 1.6rem;" type="text" placeholder="Busqueda" id="filtro_nombre"/>
-                  </div>
-                </div>
-              </div>
-              <!-- busqueda -->
-              </div>
+      <div class="container-fluid text-center container-products" id="productos-grande">
+
+
+        <div class="row">
+          <div class="col-md-2 contenedor-navbar-catalogo d-flex justify-content-center align-items-top"
+            id="barra-catalogo">
+            <div class="catalogo-navbar">
+              <ul style="list-style-type: none">
+                <li><button href="" class="filtro-catalogo" id="filt_mas">Hombre</button></li>
+                <li><button href="" class="filtro-catalogo" id="filt_fem">Mujer</button></li>
+                <li><button href="" class="filtro-catalogo" id="filt_inf">Infantes</button></li>
+              </ul>
             </div>
           </div>
+          <div class="col-md-10">
+            <button href="" class="mb-5 filtro-catalogo" id="filt_cat">Catálogo</button>
 
-
-
-          
-          <!-- catalogo -->
-          <div id="main__prods" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-6">
-            
+            <div id="main__prods" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-6">
+            </div>
           </div>
-          <!-- catalogo -->
         </div>
       </div>
-    </div>
     </section>
   </main>
   <!-- ================= FOOTER ============== -->
@@ -151,14 +74,11 @@
   <script src="./js/navfooter2.js"></script>
 
   <!-- Productos -->
-  <script src="./js/productos3.js"></script>
+  <script src="./js/productos.js"></script>
 
   <script>
-
-
-    function cambiarimagen(smallimg)
-    {
-      var fullimg=document.getElementById("img-grande");
+    function cambiarimagen(smallimg) {
+      var fullimg = document.getElementById("img-grande");
       fullimg.src = smallimg.src;
     }
   </script>

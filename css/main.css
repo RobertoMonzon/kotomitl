@@ -776,7 +776,7 @@ form {
 
     #desc-prod{
         text-align: justify;
-        font-size: 10px;
+        font-size: 1.6rem;
     }
 
     #min, #max, #filt_precio{
@@ -815,6 +815,7 @@ form {
     #lista-desc{
         visibility: hidden;
         display: none;
+        font-size: 1rem;
     }
     
     
@@ -959,12 +960,11 @@ input[type='radio'] {
 
 #desc-prod{
     text-align: justify;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 #lista-desc li{
-    list-style-type: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #img-grande{
