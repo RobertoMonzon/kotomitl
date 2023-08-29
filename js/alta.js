@@ -473,7 +473,7 @@ let listaProductos = new Array(); // para almacenar elementos de la tabla
 function guardarStorage() {
     let producto = `
         {       
-        "id": 1, 
+        "id": 33, 
         "title": "${nombreProductotxt}", 
         "price": ${precioProductotxt}, 
         "description" : "${descripcionProductotxt}", 

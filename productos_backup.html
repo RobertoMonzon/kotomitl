@@ -27,9 +27,8 @@
 
   <!-- ================= CONTENIDO ============== -->
   <main class="wrapper">
-    <section class="mb-5">
+    <section class="container mb-5">
       <button type="button" class="btn btn-outline-primary" id="filt_cat2">Catálogo</button>
-
       <div class="container-fluid text-center container-products">
         <div class="btn-group" role="group" id="filtro-superior">
           <button type="button" class="btn btn-outline-primary" id="filt_mas2">Hombre</button>
@@ -41,11 +40,10 @@
       <div class="container-fluid text-center container-products" id="productos-grande">
 
 
-        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2">
+        <div class="row">
           <div class="col-md-2 contenedor-navbar-catalogo d-flex justify-content-center align-items-top"
             id="barra-catalogo">
-            <div class="catalogo-navbar" style="text-align: center;">
-
+            <div class="catalogo-navbar">
               <ul style="list-style-type: none">
                 <li><button href="" class="filtro-catalogo" id="filt_mas">Hombre</button></li>
                 <li><button href="" class="filtro-catalogo" id="filt_fem">Mujer</button></li>
@@ -54,66 +52,10 @@
             </div>
           </div>
           <div class="col-md-10">
-            <button href="" class="filtro-catalogo mb-5 mt-3" id="filt_cat">Catálogo</button>
-            <div class="text-center" style="padding-bottom:3rem; display: none;">
-              <div class="row ">
-                <!-- busqueda -->
-                <div class="col-4">
-                  <h3 class="mb-4">Búsqueda</h3>
-                  <div>
-                    <label style="font-size: 1.6rem;">🔎</label>
-                    <input style="width: 25rem; font-size: 1.6rem; text-align: center;" type="text"
-                      placeholder="Tipo de ropa" id="filtro_nombre" />
-                  </div>
-                </div>
-                <!-- contenedor colores -->
-                <div class="col-3">
-                  <div class="row">
-                    <div class="col-9">
-                      <h3 class="mb-4">Filtro por color</h3>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-3">
-                      <button type="button" style="width: 3rem; height: 3rem;" class="btn btn-light"
-                        id="btnblanco"></button>
-                    </div>
-                    <div class="col-3">
-                      <button type="button" style="width: 3rem; height: 3rem;" class="btn btn-primary"
-                        id="btnazul"></button>
-                    </div>
-                    <div class="col-3">
-                      <button type="button" style="width: 3rem; height: 3rem;" class="btn btn-dark"
-                        id="btnnegro"></button>
-                    </div>
-                  </div>
-                </div>
-                <!-- max min -->
-                <div class="col-3">
-                  <div class="row text-center">
-                    <h3 class="mb-4">Filtro por precio</h3>
-                    <input style="width: 10rem;" type="text" id="min" class="form-control" placeholder="$ mínimo" />
-                    <input style="width: 10rem;" type="text" id="max" class="form-control" placeholder="$ máximo" />
-                    <button type="button" class="btn btn-warning" style="width: 7rem;" id="filt_precio">filtrar</button>
-                  </div>
-                </div>
-                <!-- boton de reset -->
-                <div class="col-2" style="display: flex; align-content: end; justify-content: center;">
-                  <div style="align-self: flex-end;">
-                    <button type="button" class="btn btn-danger" id="filt_cat" style="height: 3.5rem;">Deshacer
-                      filtros</button>
-                  </div>
-                </div>
-              </div>
+            <button href="" class="mb-5 filtro-catalogo" id="filt_cat">Catálogo</button>
+
+            <div id="main__prods" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-6">
             </div>
-
-
-            <!-- catalogo -->
-
-            <div id="main__prods" class="container mt-0 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-6">
-
-            </div>
-
           </div>
         </div>
       </div>
@@ -135,8 +77,6 @@
   <script src="./js/productos.js"></script>
 
   <script>
-
-
     function cambiarimagen(smallimg) {
       var fullimg = document.getElementById("img-grande");
       fullimg.src = smallimg.src;
