@@ -37,6 +37,9 @@ function showProducts(prods) {
                                 <div class="subtitle__card">
                                     <span>${prod.origen}</span>
                                 </div>
+                                <div class="subtitle__card">
+                                    <span>$ ${prod.precio}</span>
+                                </div>
                                 <p class="card-text" style="text-align: justify;">${prod.descripcion.slice(0, 50)} ... </p>
                             </div>
                             
@@ -535,7 +538,7 @@ prod1 = [
     descripcion: "Bufanda artesanal azul, tejida con pasión y tradición mexicana.",
     precio: 345,
     origen: "maya",
-    color: "azul",
+    color: "blanco",
     cantidad: 25,
     talla: "2",
     materiales: "Fibras naturales y orgánicas de la región",
