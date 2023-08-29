@@ -38,6 +38,10 @@ window.addEventListener("load", function (event) {
                                 <a class="nav-link" href="./alta.html">Añadir</a>
                             </li>
                             
+                            <li class="nav-item" >
+                                <a class="nav-link" href="./infoUsuario.html">Bienvenid@ {usuario.nombre}</a>
+                            </li>
+
                             <li class="nav-item especial">
                                 <a class="nav-link" href="./infoUsuario.html>Mi cuenta</a>
                             </li>
