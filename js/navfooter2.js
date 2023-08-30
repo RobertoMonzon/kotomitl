@@ -2,14 +2,16 @@
 
 let footer = document.getElementById("footer");
 let navbar = document.getElementById("navbar");
+let nombre__usuario = document.getElementById("nombre__usuario");
 
 window.addEventListener("load", function (event) {
     event.preventDefault();
 
-    if (sessionStorage.getItem('estadoLogin')==='true'){
-
+    if (sessionStorage.getItem('estadoLogin') === 'true') {
+        let nombre = this.sessionStorage.getItem('userLogin');
+        nombre= capitalizeAllWords(nombre);
         navbar.insertAdjacentHTML("beforeend",
-        `
+            `
         <nav class="navbar navbar-expand-lg custom-navbar">
     
                 <div class="container-fluid ">
@@ -22,7 +24,7 @@ window.addEventListener("load", function (event) {
                 
     
                     <div class="collapse navbar-collapse" id="navbarsExample05">
-                        <div class="nav-table">
+                        <div class="nav-table mt-3 mb-3">
                             <div class="row row-cols-3 align-items-center">
                             <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
                             class="nav-link" aria-current="page" href="./index.html">Inicio</a></span></div>
@@ -35,16 +37,18 @@ window.addEventListener("load", function (event) {
                             <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
                             class="nav-link" href="./nosotros.html">Nosotros</a></div>
                             <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;">
+                            
                             <div class="dropdown">
                                 <button class="btn-link nav-link dropdown-toggle show" type="button" data-bs-toggle="dropdown"
                                     aria-expanded="false" style="font-size: 1rem;">
                                     <i class="bi bi-person-fill-check nav--icon"></i>
                                 </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="./infoUsuario.html">Mi cuenta</a></li>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="./infoUsuario.html">Cuenta</a></li>
                                     <li><a class="dropdown-item" href="#" onclick="cierreSesion()">Cerrar sesión</a></li>
                                 </ul>
                             </div>
+                            <h5 class="text-center" style="color:white;">${nombre}</h5>
                     </div>
                             </div>
                         </div>
@@ -72,7 +76,10 @@ window.addEventListener("load", function (event) {
                             
                             </ul>
                             
-                        <div class="iconoSuperior media" style="margin-right:4rem">
+                            <h4 id="nombre__usuario" class="mb-0" style="transform: translateY(.2rem); color: white; font-weight:bold;">${nombre}</h4>
+                        
+                            <div class="iconoSuperior media align-items-center" style="margin-right:4rem">
+                            
                             <ul class="d-flex list-unstyled me-auto mb-2 mb-lg-0">
                                 
                                 <li class="nav-item dropdown">
@@ -87,7 +94,7 @@ window.addEventListener("load", function (event) {
                                         <li>
                                             <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="registro" aria-pressed="false">
                                             <a class="nav-link" href="./infoUsuario.html" style="color:#353028">
-                                                Mi Cuenta
+                                                Cuenta
                                             </a>
                                             </button>
                                         </li>
@@ -106,9 +113,9 @@ window.addEventListener("load", function (event) {
                 </div>
             </nav>
         `);
-    }else{
+    } else {
         navbar.insertAdjacentHTML("beforeend",
-        `
+            `
         <nav class="navbar navbar-expand-lg custom-navbar">
     
                 <div class="container-fluid ">
@@ -152,6 +159,7 @@ window.addEventListener("load", function (event) {
                             </ul>
                             
                         <div class="iconoSuperior media" style="margin-right:4rem">
+                            <h3 id="nombre__usuario"></h3>
                             <ul class="d-flex list-unstyled me-auto mb-2 mb-lg-0">
                                 
                                 <li class="nav-item dropdown">
@@ -188,10 +196,10 @@ window.addEventListener("load", function (event) {
     }
 
 
-    
-    
+
+
     footer.insertAdjacentHTML("beforeend",
-    `    
+        `    
         <ul class="list-unstyled d-flex justify-content-between align-items-center">
             <li>
                 <a href="https://es-la.facebook.com/" target="_blank">
@@ -216,10 +224,18 @@ window.addEventListener("load", function (event) {
 
 });// window load{}
 
-function cierreSesion(){
-    sessionStorage.setItem('estadoLogin',false)
-    swal("¡Hasta pronto!"," Aunque se estaba poniendo bueno...", "success");
+function cierreSesion() {
+    sessionStorage.setItem('estadoLogin', false)
+    swal("¡Hasta pronto!", " Aunque se estaba poniendo bueno...", "success");
     setTimeout(function () {
         window.location.href = "./index.html";
     }, 1000);
+}
+
+function capitalizeAllWords(str) {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
 }
