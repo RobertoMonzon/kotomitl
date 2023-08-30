@@ -21,13 +21,41 @@
     <link rel="stylesheet" href="./css/main.css">
     <!-- Logo -->
     <link rel="shortcut icon" href="./src/img/logos/kotomitl3.png" type="image/x-icon">
+    
 </head>
 
 <body>
     <header id="navbar"></header>
-    <main class="wrapper">
-        
-        
+    <main class="wrapper" style="background-color: midnightblue;">
+        <div class="row row-cols-3 align-items-center">
+            <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
+                        class="nav-link" aria-current="page" href="./index.html">Inicio</a></span></div>
+            <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
+                        class="nav-link" href="./productos.html">Productos</a></span></div>
+            <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
+                        class="nav-link" href="./contacto.html">Contacto</a></span></div>
+            <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
+                        class="nav-link" href="./alta.html">Añadir</a></div>
+            <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;"><a
+                        class="nav-link" href="./nosotros.html">Nosotros</a></div>
+            <div class="col d-flex justify-content-center"><span style="font-size: 1.5rem; margin: 1rem;">
+                    <div class="dropdown">
+                        <button class="btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle show" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="font-size: 1rem;">
+                            <i class="bi bi-person-fill-check nav--icon"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./infoUsuario.html">Mi cuenta</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="cierreSesion()">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+
+        <!-- <button type="button" class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true" data-bs-display="static">
+            <span class="d-lg-none" aria-hidden="true">Bootstrap</span><span class="visually-hidden">Bootstrap&nbsp;</span> v5.3 <span class="visually-hidden">(switch to other versions)</span>
+          </button> -->
+
     </main>
     <footer id="footer"></footer>
 
