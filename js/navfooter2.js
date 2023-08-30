@@ -70,15 +70,8 @@ window.addEventListener("load", function (event) {
                                 <a class="nav-link" href="./alta.html">Añadir</a>
                             </li>
                             
-                            <li class="nav-item especial">
-                                <a class="nav-link" href="../infoUsuario.html">Mi cuenta</a>
-                            </li>
-                        
-                            <li class="nav-item especial">
-                                <a class="nav-link" href="#" onclick="cierreSesion()">Cerrar sesión</a>
-                            </li>
-    
-                        </ul>
+                            </ul>
+                            
                         <div class="iconoSuperior media" style="margin-right:4rem">
                             <ul class="d-flex list-unstyled me-auto mb-2 mb-lg-0">
                                 
